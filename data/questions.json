@@ -1,0 +1,152 @@
+[
+  {
+    "id": "Q01",
+    "query": "忘记统一账号密码，如何重置？",
+    "expected_ids": [
+      "IT-001"
+    ],
+    "answerable": true
+  },
+  {
+    "id": "Q02",
+    "query": "账号连续输错密码被锁定多久？",
+    "expected_ids": [
+      "IT-002"
+    ],
+    "answerable": true
+  },
+  {
+    "id": "Q03",
+    "query": "远程办公 VPN 连接失败怎么办？",
+    "expected_ids": [
+      "IT-003"
+    ],
+    "answerable": true
+  },
+  {
+    "id": "Q04",
+    "query": "办公无线网络叫什么，首次接入需要什么？",
+    "expected_ids": [
+      "IT-004"
+    ],
+    "answerable": true
+  },
+  {
+    "id": "Q05",
+    "query": "邮箱容量是多少，满了如何清理？",
+    "expected_ids": [
+      "IT-005"
+    ],
+    "answerable": true
+  },
+  {
+    "id": "Q06",
+    "query": "打印机离线应如何处理？",
+    "expected_ids": [
+      "IT-006"
+    ],
+    "answerable": true
+  },
+  {
+    "id": "Q07",
+    "query": "安装工作软件需要什么审批？",
+    "expected_ids": [
+      "IT-007"
+    ],
+    "answerable": true
+  },
+  {
+    "id": "Q08",
+    "query": "电脑重复蓝屏如何报修？",
+    "expected_ids": [
+      "IT-008"
+    ],
+    "answerable": true
+  },
+  {
+    "id": "Q09",
+    "query": "共享文件夹权限多久能开通？",
+    "expected_ids": [
+      "IT-009"
+    ],
+    "answerable": true
+  },
+  {
+    "id": "Q10",
+    "query": "多因素认证更换手机要怎么操作？",
+    "expected_ids": [
+      "IT-010"
+    ],
+    "answerable": true
+  },
+  {
+    "id": "Q11",
+    "query": "会议室投屏的连接码在哪里？",
+    "expected_ids": [
+      "IT-011"
+    ],
+    "answerable": true
+  },
+  {
+    "id": "Q12",
+    "query": "网盘误删文件可以恢复多久以前的？",
+    "expected_ids": [
+      "IT-012"
+    ],
+    "answerable": true
+  },
+  {
+    "id": "Q13",
+    "query": "密码重置用什么验证身份？",
+    "expected_ids": [
+      "IT-001"
+    ],
+    "answerable": true
+  },
+  {
+    "id": "Q14",
+    "query": "多因素认证的旧手机丢失怎么办？",
+    "expected_ids": [
+      "IT-010"
+    ],
+    "answerable": true
+  },
+  {
+    "id": "Q15",
+    "query": "文档不小心扔掉了怎样找回？",
+    "expected_ids": [
+      "IT-012"
+    ],
+    "answerable": true
+  },
+  {
+    "id": "Q16",
+    "query": "VPN 支持哪些国家的出口节点？",
+    "expected_ids": [],
+    "answerable": false
+  },
+  {
+    "id": "Q17",
+    "query": "邮箱单封邮件最大发送限制是多少？",
+    "expected_ids": [],
+    "answerable": false
+  },
+  {
+    "id": "Q18",
+    "query": "打印机每页收费多少钱？",
+    "expected_ids": [],
+    "answerable": false
+  },
+  {
+    "id": "Q19",
+    "query": "今天食堂菜单是什么？",
+    "expected_ids": [],
+    "answerable": false
+  },
+  {
+    "id": "Q20",
+    "query": "员工年假可以结转几天？",
+    "expected_ids": [],
+    "answerable": false
+  }
+]

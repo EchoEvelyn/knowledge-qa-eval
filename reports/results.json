@@ -1,0 +1,1590 @@
+{
+  "run_at_utc": "2026-11-05T06:01:25.427486+00:00",
+  "base_url": "http://127.0.0.1:8765",
+  "python": "3.12.14",
+  "data_sha256": {
+    "corpus.json": "300ede5a49a4d091cde20884eb5c1424ab75c5bad82b09082c2911246beb792f",
+    "questions.json": "9479903dc3375ba067e424084bc1d04238d751c00ffd4581fbb787481b5cb9c2"
+  },
+  "http_checks": [
+    {
+      "name": "正常检索",
+      "request": {
+        "query": "忘记密码怎么重置",
+        "top_k": 3
+      },
+      "status": 200,
+      "response": {
+        "query": "忘记密码怎么重置",
+        "top_k": 3,
+        "results": [
+          {
+            "id": "IT-001",
+            "title": "账号密码重置",
+            "content": "忘记统一账号密码时，打开自助门户，选择密码重置，用绑定手机验证码验证身份后设置新密码。",
+            "score": 3,
+            "matched_keywords": [
+              "密码",
+              "忘记",
+              "重置"
+            ]
+          },
+          {
+            "id": "IT-002",
+            "title": "账号锁定解锁",
+            "content": "统一账号连续输错密码五次会锁定十五分钟；可等待自动解锁，或向服务台提交解锁工单。",
+            "score": 1,
+            "matched_keywords": [
+              "密码"
+            ]
+          },
+          {
+            "id": "IT-004",
+            "title": "无线网络接入",
+            "content": "办公无线网络名称为 Nebula-Staff，使用统一账号和密码登录；首次接入需安装公司证书。",
+            "score": 1,
+            "matched_keywords": [
+              "密码"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "无匹配",
+      "request": {
+        "query": "量子香蕉星际旅行",
+        "top_k": 3
+      },
+      "status": 200,
+      "response": {
+        "query": "量子香蕉星际旅行",
+        "top_k": 3,
+        "results": []
+      }
+    },
+    {
+      "name": "缺少必填参数",
+      "request": {
+        "top_k": 3
+      },
+      "status": 422,
+      "response": {
+        "detail": [
+          {
+            "type": "missing",
+            "loc": [
+              "body",
+              "query"
+            ],
+            "msg": "Field required",
+            "input": {
+              "top_k": 3
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "空白问题",
+      "request": {
+        "query": "   "
+      },
+      "status": 422,
+      "response": {
+        "detail": [
+          {
+            "type": "value_error",
+            "loc": [
+              "body",
+              "query"
+            ],
+            "msg": "Value error, query must not be blank",
+            "input": "   ",
+            "ctx": {
+              "error": {}
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "非法top_k",
+      "request": {
+        "query": "密码",
+        "top_k": 0
+      },
+      "status": 422,
+      "response": {
+        "detail": [
+          {
+            "type": "greater_than_equal",
+            "loc": [
+              "body",
+              "top_k"
+            ],
+            "msg": "Input should be greater than or equal to 1",
+            "input": 0,
+            "ctx": {
+              "ge": 1
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "summaries": [
+    {
+      "top_k": 3,
+      "answerable": 15,
+      "hits": 14,
+      "missed_ids": [
+        "Q15"
+      ],
+      "unanswerable": 5,
+      "false_returns": 3,
+      "false_return_ids": [
+        "Q16",
+        "Q17",
+        "Q18"
+      ]
+    },
+    {
+      "top_k": 5,
+      "answerable": 15,
+      "hits": 14,
+      "missed_ids": [
+        "Q15"
+      ],
+      "unanswerable": 5,
+      "false_returns": 3,
+      "false_return_ids": [
+        "Q16",
+        "Q17",
+        "Q18"
+      ]
+    }
+  ],
+  "rows": [
+    {
+      "id": "Q01",
+      "query": "忘记统一账号密码，如何重置？",
+      "expected_ids": [
+        "IT-001"
+      ],
+      "answerable": true,
+      "top_k": 3,
+      "returned_ids": [
+        "IT-001",
+        "IT-002",
+        "IT-004"
+      ],
+      "hit": true,
+      "false_return": null,
+      "response": {
+        "query": "忘记统一账号密码，如何重置？",
+        "top_k": 3,
+        "results": [
+          {
+            "id": "IT-001",
+            "title": "账号密码重置",
+            "content": "忘记统一账号密码时，打开自助门户，选择密码重置，用绑定手机验证码验证身份后设置新密码。",
+            "score": 4,
+            "matched_keywords": [
+              "密码",
+              "忘记",
+              "账号",
+              "重置"
+            ]
+          },
+          {
+            "id": "IT-002",
+            "title": "账号锁定解锁",
+            "content": "统一账号连续输错密码五次会锁定十五分钟；可等待自动解锁，或向服务台提交解锁工单。",
+            "score": 2,
+            "matched_keywords": [
+              "密码",
+              "账号"
+            ]
+          },
+          {
+            "id": "IT-004",
+            "title": "无线网络接入",
+            "content": "办公无线网络名称为 Nebula-Staff，使用统一账号和密码登录；首次接入需安装公司证书。",
+            "score": 2,
+            "matched_keywords": [
+              "密码",
+              "账号"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "Q02",
+      "query": "账号连续输错密码被锁定多久？",
+      "expected_ids": [
+        "IT-002"
+      ],
+      "answerable": true,
+      "top_k": 3,
+      "returned_ids": [
+        "IT-002",
+        "IT-001",
+        "IT-004"
+      ],
+      "hit": true,
+      "false_return": null,
+      "response": {
+        "query": "账号连续输错密码被锁定多久？",
+        "top_k": 3,
+        "results": [
+          {
+            "id": "IT-002",
+            "title": "账号锁定解锁",
+            "content": "统一账号连续输错密码五次会锁定十五分钟；可等待自动解锁，或向服务台提交解锁工单。",
+            "score": 3,
+            "matched_keywords": [
+              "密码",
+              "账号",
+              "锁定"
+            ]
+          },
+          {
+            "id": "IT-001",
+            "title": "账号密码重置",
+            "content": "忘记统一账号密码时，打开自助门户，选择密码重置，用绑定手机验证码验证身份后设置新密码。",
+            "score": 2,
+            "matched_keywords": [
+              "密码",
+              "账号"
+            ]
+          },
+          {
+            "id": "IT-004",
+            "title": "无线网络接入",
+            "content": "办公无线网络名称为 Nebula-Staff，使用统一账号和密码登录；首次接入需安装公司证书。",
+            "score": 2,
+            "matched_keywords": [
+              "密码",
+              "账号"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "Q03",
+      "query": "远程办公 VPN 连接失败怎么办？",
+      "expected_ids": [
+        "IT-003"
+      ],
+      "answerable": true,
+      "top_k": 3,
+      "returned_ids": [
+        "IT-003"
+      ],
+      "hit": true,
+      "false_return": null,
+      "response": {
+        "query": "远程办公 VPN 连接失败怎么办？",
+        "top_k": 3,
+        "results": [
+          {
+            "id": "IT-003",
+            "title": "VPN 连接失败",
+            "content": "远程办公 VPN 连接失败时，先确认网络可用，再更新 VPN 客户端并重新登录；仍失败则提交错误码。",
+            "score": 4,
+            "matched_keywords": [
+              "vpn",
+              "失败",
+              "远程",
+              "连接"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "Q04",
+      "query": "办公无线网络叫什么，首次接入需要什么？",
+      "expected_ids": [
+        "IT-004"
+      ],
+      "answerable": true,
+      "top_k": 3,
+      "returned_ids": [
+        "IT-004",
+        "IT-011",
+        "IT-003"
+      ],
+      "hit": true,
+      "false_return": null,
+      "response": {
+        "query": "办公无线网络叫什么，首次接入需要什么？",
+        "top_k": 3,
+        "results": [
+          {
+            "id": "IT-004",
+            "title": "无线网络接入",
+            "content": "办公无线网络名称为 Nebula-Staff，使用统一账号和密码登录；首次接入需安装公司证书。",
+            "score": 2,
+            "matched_keywords": [
+              "无线",
+              "网络"
+            ]
+          },
+          {
+            "id": "IT-011",
+            "title": "会议室投屏",
+            "content": "会议室投屏需连接会议室无线网络，在投屏客户端输入屏幕上的六位连接码；无画面时检查屏幕输入源。",
+            "score": 2,
+            "matched_keywords": [
+              "无线",
+              "网络"
+            ]
+          },
+          {
+            "id": "IT-003",
+            "title": "VPN 连接失败",
+            "content": "远程办公 VPN 连接失败时，先确认网络可用，再更新 VPN 客户端并重新登录；仍失败则提交错误码。",
+            "score": 1,
+            "matched_keywords": [
+              "网络"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "Q05",
+      "query": "邮箱容量是多少，满了如何清理？",
+      "expected_ids": [
+        "IT-005"
+      ],
+      "answerable": true,
+      "top_k": 3,
+      "returned_ids": [
+        "IT-005"
+      ],
+      "hit": true,
+      "false_return": null,
+      "response": {
+        "query": "邮箱容量是多少，满了如何清理？",
+        "top_k": 3,
+        "results": [
+          {
+            "id": "IT-005",
+            "title": "邮箱容量清理",
+            "content": "邮箱容量上限为 5GB。空间不足时清空已删除邮件和垃圾邮件，再将大附件归档到团队网盘。",
+            "score": 2,
+            "matched_keywords": [
+              "容量",
+              "邮箱"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "Q06",
+      "query": "打印机离线应如何处理？",
+      "expected_ids": [
+        "IT-006"
+      ],
+      "answerable": true,
+      "top_k": 3,
+      "returned_ids": [
+        "IT-006"
+      ],
+      "hit": true,
+      "false_return": null,
+      "response": {
+        "query": "打印机离线应如何处理？",
+        "top_k": 3,
+        "results": [
+          {
+            "id": "IT-006",
+            "title": "打印机离线处理",
+            "content": "打印机离线时，检查电源和网线，在系统打印队列中取消脱机使用，仍不可用时重新添加打印机。",
+            "score": 3,
+            "matched_keywords": [
+              "打印",
+              "打印机",
+              "离线"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "Q07",
+      "query": "安装工作软件需要什么审批？",
+      "expected_ids": [
+        "IT-007"
+      ],
+      "answerable": true,
+      "top_k": 3,
+      "returned_ids": [
+        "IT-007",
+        "IT-009"
+      ],
+      "hit": true,
+      "false_return": null,
+      "response": {
+        "query": "安装工作软件需要什么审批？",
+        "top_k": 3,
+        "results": [
+          {
+            "id": "IT-007",
+            "title": "软件安装申请",
+            "content": "安装工作软件须在服务门户提交软件名称、用途和主管审批；审批通过后由 IT 远程安装，禁止自行获取管理员权限。",
+            "score": 3,
+            "matched_keywords": [
+              "安装",
+              "审批",
+              "软件"
+            ]
+          },
+          {
+            "id": "IT-009",
+            "title": "共享文件夹权限",
+            "content": "申请共享文件夹权限需提供目录路径、读写级别及负责人审批。权限由 IT 在审批完成后一个工作日内开通。",
+            "score": 1,
+            "matched_keywords": [
+              "审批"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "Q08",
+      "query": "电脑重复蓝屏如何报修？",
+      "expected_ids": [
+        "IT-008"
+      ],
+      "answerable": true,
+      "top_k": 3,
+      "returned_ids": [
+        "IT-008"
+      ],
+      "hit": true,
+      "false_return": null,
+      "response": {
+        "query": "电脑重复蓝屏如何报修？",
+        "top_k": 3,
+        "results": [
+          {
+            "id": "IT-008",
+            "title": "电脑蓝屏报修",
+            "content": "电脑蓝屏后记录停止代码，拔除新接入的外设并重启；若重复蓝屏，通过服务门户提交报修工单并附照片。",
+            "score": 3,
+            "matched_keywords": [
+              "报修",
+              "电脑",
+              "蓝屏"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "Q09",
+      "query": "共享文件夹权限多久能开通？",
+      "expected_ids": [
+        "IT-009"
+      ],
+      "answerable": true,
+      "top_k": 3,
+      "returned_ids": [
+        "IT-009",
+        "IT-012"
+      ],
+      "hit": true,
+      "false_return": null,
+      "response": {
+        "query": "共享文件夹权限多久能开通？",
+        "top_k": 3,
+        "results": [
+          {
+            "id": "IT-009",
+            "title": "共享文件夹权限",
+            "content": "申请共享文件夹权限需提供目录路径、读写级别及负责人审批。权限由 IT 在审批完成后一个工作日内开通。",
+            "score": 3,
+            "matched_keywords": [
+              "共享",
+              "文件夹",
+              "权限"
+            ]
+          },
+          {
+            "id": "IT-012",
+            "title": "误删文件恢复",
+            "content": "团队网盘误删文件可在回收站恢复，保留期为三十天；超过三十天不保证恢复，请提交工单确认备份。",
+            "score": 1,
+            "matched_keywords": [
+              "文件"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "Q10",
+      "query": "多因素认证更换手机要怎么操作？",
+      "expected_ids": [
+        "IT-010"
+      ],
+      "answerable": true,
+      "top_k": 3,
+      "returned_ids": [
+        "IT-010",
+        "IT-001"
+      ],
+      "hit": true,
+      "false_return": null,
+      "response": {
+        "query": "多因素认证更换手机要怎么操作？",
+        "top_k": 3,
+        "results": [
+          {
+            "id": "IT-010",
+            "title": "多因素认证换机",
+            "content": "更换手机前，在安全中心添加新的多因素认证设备并验证，然后移除旧设备；旧手机丢失时联系服务台核验身份后重绑。",
+            "score": 3,
+            "matched_keywords": [
+              "多因素",
+              "手机",
+              "认证"
+            ]
+          },
+          {
+            "id": "IT-001",
+            "title": "账号密码重置",
+            "content": "忘记统一账号密码时，打开自助门户，选择密码重置，用绑定手机验证码验证身份后设置新密码。",
+            "score": 1,
+            "matched_keywords": [
+              "手机"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "Q11",
+      "query": "会议室投屏的连接码在哪里？",
+      "expected_ids": [
+        "IT-011"
+      ],
+      "answerable": true,
+      "top_k": 3,
+      "returned_ids": [
+        "IT-011",
+        "IT-003"
+      ],
+      "hit": true,
+      "false_return": null,
+      "response": {
+        "query": "会议室投屏的连接码在哪里？",
+        "top_k": 3,
+        "results": [
+          {
+            "id": "IT-011",
+            "title": "会议室投屏",
+            "content": "会议室投屏需连接会议室无线网络，在投屏客户端输入屏幕上的六位连接码；无画面时检查屏幕输入源。",
+            "score": 3,
+            "matched_keywords": [
+              "会议室",
+              "投屏",
+              "连接码"
+            ]
+          },
+          {
+            "id": "IT-003",
+            "title": "VPN 连接失败",
+            "content": "远程办公 VPN 连接失败时，先确认网络可用，再更新 VPN 客户端并重新登录；仍失败则提交错误码。",
+            "score": 1,
+            "matched_keywords": [
+              "连接"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "Q12",
+      "query": "网盘误删文件可以恢复多久以前的？",
+      "expected_ids": [
+        "IT-012"
+      ],
+      "answerable": true,
+      "top_k": 3,
+      "returned_ids": [
+        "IT-012",
+        "IT-005"
+      ],
+      "hit": true,
+      "false_return": null,
+      "response": {
+        "query": "网盘误删文件可以恢复多久以前的？",
+        "top_k": 3,
+        "results": [
+          {
+            "id": "IT-012",
+            "title": "误删文件恢复",
+            "content": "团队网盘误删文件可在回收站恢复，保留期为三十天；超过三十天不保证恢复，请提交工单确认备份。",
+            "score": 4,
+            "matched_keywords": [
+              "恢复",
+              "文件",
+              "网盘",
+              "误删"
+            ]
+          },
+          {
+            "id": "IT-005",
+            "title": "邮箱容量清理",
+            "content": "邮箱容量上限为 5GB。空间不足时清空已删除邮件和垃圾邮件，再将大附件归档到团队网盘。",
+            "score": 1,
+            "matched_keywords": [
+              "网盘"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "Q13",
+      "query": "密码重置用什么验证身份？",
+      "expected_ids": [
+        "IT-001"
+      ],
+      "answerable": true,
+      "top_k": 3,
+      "returned_ids": [
+        "IT-001",
+        "IT-002",
+        "IT-004"
+      ],
+      "hit": true,
+      "false_return": null,
+      "response": {
+        "query": "密码重置用什么验证身份？",
+        "top_k": 3,
+        "results": [
+          {
+            "id": "IT-001",
+            "title": "账号密码重置",
+            "content": "忘记统一账号密码时，打开自助门户，选择密码重置，用绑定手机验证码验证身份后设置新密码。",
+            "score": 2,
+            "matched_keywords": [
+              "密码",
+              "重置"
+            ]
+          },
+          {
+            "id": "IT-002",
+            "title": "账号锁定解锁",
+            "content": "统一账号连续输错密码五次会锁定十五分钟；可等待自动解锁，或向服务台提交解锁工单。",
+            "score": 1,
+            "matched_keywords": [
+              "密码"
+            ]
+          },
+          {
+            "id": "IT-004",
+            "title": "无线网络接入",
+            "content": "办公无线网络名称为 Nebula-Staff，使用统一账号和密码登录；首次接入需安装公司证书。",
+            "score": 1,
+            "matched_keywords": [
+              "密码"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "Q14",
+      "query": "多因素认证的旧手机丢失怎么办？",
+      "expected_ids": [
+        "IT-010"
+      ],
+      "answerable": true,
+      "top_k": 3,
+      "returned_ids": [
+        "IT-010",
+        "IT-001"
+      ],
+      "hit": true,
+      "false_return": null,
+      "response": {
+        "query": "多因素认证的旧手机丢失怎么办？",
+        "top_k": 3,
+        "results": [
+          {
+            "id": "IT-010",
+            "title": "多因素认证换机",
+            "content": "更换手机前，在安全中心添加新的多因素认证设备并验证，然后移除旧设备；旧手机丢失时联系服务台核验身份后重绑。",
+            "score": 4,
+            "matched_keywords": [
+              "丢失",
+              "多因素",
+              "手机",
+              "认证"
+            ]
+          },
+          {
+            "id": "IT-001",
+            "title": "账号密码重置",
+            "content": "忘记统一账号密码时，打开自助门户，选择密码重置，用绑定手机验证码验证身份后设置新密码。",
+            "score": 1,
+            "matched_keywords": [
+              "手机"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "Q15",
+      "query": "文档不小心扔掉了怎样找回？",
+      "expected_ids": [
+        "IT-012"
+      ],
+      "answerable": true,
+      "top_k": 3,
+      "returned_ids": [],
+      "hit": false,
+      "false_return": null,
+      "response": {
+        "query": "文档不小心扔掉了怎样找回？",
+        "top_k": 3,
+        "results": []
+      }
+    },
+    {
+      "id": "Q16",
+      "query": "VPN 支持哪些国家的出口节点？",
+      "expected_ids": [],
+      "answerable": false,
+      "top_k": 3,
+      "returned_ids": [
+        "IT-003"
+      ],
+      "hit": null,
+      "false_return": true,
+      "response": {
+        "query": "VPN 支持哪些国家的出口节点？",
+        "top_k": 3,
+        "results": [
+          {
+            "id": "IT-003",
+            "title": "VPN 连接失败",
+            "content": "远程办公 VPN 连接失败时，先确认网络可用，再更新 VPN 客户端并重新登录；仍失败则提交错误码。",
+            "score": 1,
+            "matched_keywords": [
+              "vpn"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "Q17",
+      "query": "邮箱单封邮件最大发送限制是多少？",
+      "expected_ids": [],
+      "answerable": false,
+      "top_k": 3,
+      "returned_ids": [
+        "IT-005"
+      ],
+      "hit": null,
+      "false_return": true,
+      "response": {
+        "query": "邮箱单封邮件最大发送限制是多少？",
+        "top_k": 3,
+        "results": [
+          {
+            "id": "IT-005",
+            "title": "邮箱容量清理",
+            "content": "邮箱容量上限为 5GB。空间不足时清空已删除邮件和垃圾邮件，再将大附件归档到团队网盘。",
+            "score": 2,
+            "matched_keywords": [
+              "邮件",
+              "邮箱"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "Q18",
+      "query": "打印机每页收费多少钱？",
+      "expected_ids": [],
+      "answerable": false,
+      "top_k": 3,
+      "returned_ids": [
+        "IT-006"
+      ],
+      "hit": null,
+      "false_return": true,
+      "response": {
+        "query": "打印机每页收费多少钱？",
+        "top_k": 3,
+        "results": [
+          {
+            "id": "IT-006",
+            "title": "打印机离线处理",
+            "content": "打印机离线时，检查电源和网线，在系统打印队列中取消脱机使用，仍不可用时重新添加打印机。",
+            "score": 2,
+            "matched_keywords": [
+              "打印",
+              "打印机"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "Q19",
+      "query": "今天食堂菜单是什么？",
+      "expected_ids": [],
+      "answerable": false,
+      "top_k": 3,
+      "returned_ids": [],
+      "hit": null,
+      "false_return": false,
+      "response": {
+        "query": "今天食堂菜单是什么？",
+        "top_k": 3,
+        "results": []
+      }
+    },
+    {
+      "id": "Q20",
+      "query": "员工年假可以结转几天？",
+      "expected_ids": [],
+      "answerable": false,
+      "top_k": 3,
+      "returned_ids": [],
+      "hit": null,
+      "false_return": false,
+      "response": {
+        "query": "员工年假可以结转几天？",
+        "top_k": 3,
+        "results": []
+      }
+    },
+    {
+      "id": "Q01",
+      "query": "忘记统一账号密码，如何重置？",
+      "expected_ids": [
+        "IT-001"
+      ],
+      "answerable": true,
+      "top_k": 5,
+      "returned_ids": [
+        "IT-001",
+        "IT-002",
+        "IT-004"
+      ],
+      "hit": true,
+      "false_return": null,
+      "response": {
+        "query": "忘记统一账号密码，如何重置？",
+        "top_k": 5,
+        "results": [
+          {
+            "id": "IT-001",
+            "title": "账号密码重置",
+            "content": "忘记统一账号密码时，打开自助门户，选择密码重置，用绑定手机验证码验证身份后设置新密码。",
+            "score": 4,
+            "matched_keywords": [
+              "密码",
+              "忘记",
+              "账号",
+              "重置"
+            ]
+          },
+          {
+            "id": "IT-002",
+            "title": "账号锁定解锁",
+            "content": "统一账号连续输错密码五次会锁定十五分钟；可等待自动解锁，或向服务台提交解锁工单。",
+            "score": 2,
+            "matched_keywords": [
+              "密码",
+              "账号"
+            ]
+          },
+          {
+            "id": "IT-004",
+            "title": "无线网络接入",
+            "content": "办公无线网络名称为 Nebula-Staff，使用统一账号和密码登录；首次接入需安装公司证书。",
+            "score": 2,
+            "matched_keywords": [
+              "密码",
+              "账号"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "Q02",
+      "query": "账号连续输错密码被锁定多久？",
+      "expected_ids": [
+        "IT-002"
+      ],
+      "answerable": true,
+      "top_k": 5,
+      "returned_ids": [
+        "IT-002",
+        "IT-001",
+        "IT-004"
+      ],
+      "hit": true,
+      "false_return": null,
+      "response": {
+        "query": "账号连续输错密码被锁定多久？",
+        "top_k": 5,
+        "results": [
+          {
+            "id": "IT-002",
+            "title": "账号锁定解锁",
+            "content": "统一账号连续输错密码五次会锁定十五分钟；可等待自动解锁，或向服务台提交解锁工单。",
+            "score": 3,
+            "matched_keywords": [
+              "密码",
+              "账号",
+              "锁定"
+            ]
+          },
+          {
+            "id": "IT-001",
+            "title": "账号密码重置",
+            "content": "忘记统一账号密码时，打开自助门户，选择密码重置，用绑定手机验证码验证身份后设置新密码。",
+            "score": 2,
+            "matched_keywords": [
+              "密码",
+              "账号"
+            ]
+          },
+          {
+            "id": "IT-004",
+            "title": "无线网络接入",
+            "content": "办公无线网络名称为 Nebula-Staff，使用统一账号和密码登录；首次接入需安装公司证书。",
+            "score": 2,
+            "matched_keywords": [
+              "密码",
+              "账号"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "Q03",
+      "query": "远程办公 VPN 连接失败怎么办？",
+      "expected_ids": [
+        "IT-003"
+      ],
+      "answerable": true,
+      "top_k": 5,
+      "returned_ids": [
+        "IT-003"
+      ],
+      "hit": true,
+      "false_return": null,
+      "response": {
+        "query": "远程办公 VPN 连接失败怎么办？",
+        "top_k": 5,
+        "results": [
+          {
+            "id": "IT-003",
+            "title": "VPN 连接失败",
+            "content": "远程办公 VPN 连接失败时，先确认网络可用，再更新 VPN 客户端并重新登录；仍失败则提交错误码。",
+            "score": 4,
+            "matched_keywords": [
+              "vpn",
+              "失败",
+              "远程",
+              "连接"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "Q04",
+      "query": "办公无线网络叫什么，首次接入需要什么？",
+      "expected_ids": [
+        "IT-004"
+      ],
+      "answerable": true,
+      "top_k": 5,
+      "returned_ids": [
+        "IT-004",
+        "IT-011",
+        "IT-003"
+      ],
+      "hit": true,
+      "false_return": null,
+      "response": {
+        "query": "办公无线网络叫什么，首次接入需要什么？",
+        "top_k": 5,
+        "results": [
+          {
+            "id": "IT-004",
+            "title": "无线网络接入",
+            "content": "办公无线网络名称为 Nebula-Staff，使用统一账号和密码登录；首次接入需安装公司证书。",
+            "score": 2,
+            "matched_keywords": [
+              "无线",
+              "网络"
+            ]
+          },
+          {
+            "id": "IT-011",
+            "title": "会议室投屏",
+            "content": "会议室投屏需连接会议室无线网络，在投屏客户端输入屏幕上的六位连接码；无画面时检查屏幕输入源。",
+            "score": 2,
+            "matched_keywords": [
+              "无线",
+              "网络"
+            ]
+          },
+          {
+            "id": "IT-003",
+            "title": "VPN 连接失败",
+            "content": "远程办公 VPN 连接失败时，先确认网络可用，再更新 VPN 客户端并重新登录；仍失败则提交错误码。",
+            "score": 1,
+            "matched_keywords": [
+              "网络"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "Q05",
+      "query": "邮箱容量是多少，满了如何清理？",
+      "expected_ids": [
+        "IT-005"
+      ],
+      "answerable": true,
+      "top_k": 5,
+      "returned_ids": [
+        "IT-005"
+      ],
+      "hit": true,
+      "false_return": null,
+      "response": {
+        "query": "邮箱容量是多少，满了如何清理？",
+        "top_k": 5,
+        "results": [
+          {
+            "id": "IT-005",
+            "title": "邮箱容量清理",
+            "content": "邮箱容量上限为 5GB。空间不足时清空已删除邮件和垃圾邮件，再将大附件归档到团队网盘。",
+            "score": 2,
+            "matched_keywords": [
+              "容量",
+              "邮箱"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "Q06",
+      "query": "打印机离线应如何处理？",
+      "expected_ids": [
+        "IT-006"
+      ],
+      "answerable": true,
+      "top_k": 5,
+      "returned_ids": [
+        "IT-006"
+      ],
+      "hit": true,
+      "false_return": null,
+      "response": {
+        "query": "打印机离线应如何处理？",
+        "top_k": 5,
+        "results": [
+          {
+            "id": "IT-006",
+            "title": "打印机离线处理",
+            "content": "打印机离线时，检查电源和网线，在系统打印队列中取消脱机使用，仍不可用时重新添加打印机。",
+            "score": 3,
+            "matched_keywords": [
+              "打印",
+              "打印机",
+              "离线"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "Q07",
+      "query": "安装工作软件需要什么审批？",
+      "expected_ids": [
+        "IT-007"
+      ],
+      "answerable": true,
+      "top_k": 5,
+      "returned_ids": [
+        "IT-007",
+        "IT-009"
+      ],
+      "hit": true,
+      "false_return": null,
+      "response": {
+        "query": "安装工作软件需要什么审批？",
+        "top_k": 5,
+        "results": [
+          {
+            "id": "IT-007",
+            "title": "软件安装申请",
+            "content": "安装工作软件须在服务门户提交软件名称、用途和主管审批；审批通过后由 IT 远程安装，禁止自行获取管理员权限。",
+            "score": 3,
+            "matched_keywords": [
+              "安装",
+              "审批",
+              "软件"
+            ]
+          },
+          {
+            "id": "IT-009",
+            "title": "共享文件夹权限",
+            "content": "申请共享文件夹权限需提供目录路径、读写级别及负责人审批。权限由 IT 在审批完成后一个工作日内开通。",
+            "score": 1,
+            "matched_keywords": [
+              "审批"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "Q08",
+      "query": "电脑重复蓝屏如何报修？",
+      "expected_ids": [
+        "IT-008"
+      ],
+      "answerable": true,
+      "top_k": 5,
+      "returned_ids": [
+        "IT-008"
+      ],
+      "hit": true,
+      "false_return": null,
+      "response": {
+        "query": "电脑重复蓝屏如何报修？",
+        "top_k": 5,
+        "results": [
+          {
+            "id": "IT-008",
+            "title": "电脑蓝屏报修",
+            "content": "电脑蓝屏后记录停止代码，拔除新接入的外设并重启；若重复蓝屏，通过服务门户提交报修工单并附照片。",
+            "score": 3,
+            "matched_keywords": [
+              "报修",
+              "电脑",
+              "蓝屏"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "Q09",
+      "query": "共享文件夹权限多久能开通？",
+      "expected_ids": [
+        "IT-009"
+      ],
+      "answerable": true,
+      "top_k": 5,
+      "returned_ids": [
+        "IT-009",
+        "IT-012"
+      ],
+      "hit": true,
+      "false_return": null,
+      "response": {
+        "query": "共享文件夹权限多久能开通？",
+        "top_k": 5,
+        "results": [
+          {
+            "id": "IT-009",
+            "title": "共享文件夹权限",
+            "content": "申请共享文件夹权限需提供目录路径、读写级别及负责人审批。权限由 IT 在审批完成后一个工作日内开通。",
+            "score": 3,
+            "matched_keywords": [
+              "共享",
+              "文件夹",
+              "权限"
+            ]
+          },
+          {
+            "id": "IT-012",
+            "title": "误删文件恢复",
+            "content": "团队网盘误删文件可在回收站恢复，保留期为三十天；超过三十天不保证恢复，请提交工单确认备份。",
+            "score": 1,
+            "matched_keywords": [
+              "文件"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "Q10",
+      "query": "多因素认证更换手机要怎么操作？",
+      "expected_ids": [
+        "IT-010"
+      ],
+      "answerable": true,
+      "top_k": 5,
+      "returned_ids": [
+        "IT-010",
+        "IT-001"
+      ],
+      "hit": true,
+      "false_return": null,
+      "response": {
+        "query": "多因素认证更换手机要怎么操作？",
+        "top_k": 5,
+        "results": [
+          {
+            "id": "IT-010",
+            "title": "多因素认证换机",
+            "content": "更换手机前，在安全中心添加新的多因素认证设备并验证，然后移除旧设备；旧手机丢失时联系服务台核验身份后重绑。",
+            "score": 3,
+            "matched_keywords": [
+              "多因素",
+              "手机",
+              "认证"
+            ]
+          },
+          {
+            "id": "IT-001",
+            "title": "账号密码重置",
+            "content": "忘记统一账号密码时，打开自助门户，选择密码重置，用绑定手机验证码验证身份后设置新密码。",
+            "score": 1,
+            "matched_keywords": [
+              "手机"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "Q11",
+      "query": "会议室投屏的连接码在哪里？",
+      "expected_ids": [
+        "IT-011"
+      ],
+      "answerable": true,
+      "top_k": 5,
+      "returned_ids": [
+        "IT-011",
+        "IT-003"
+      ],
+      "hit": true,
+      "false_return": null,
+      "response": {
+        "query": "会议室投屏的连接码在哪里？",
+        "top_k": 5,
+        "results": [
+          {
+            "id": "IT-011",
+            "title": "会议室投屏",
+            "content": "会议室投屏需连接会议室无线网络，在投屏客户端输入屏幕上的六位连接码；无画面时检查屏幕输入源。",
+            "score": 3,
+            "matched_keywords": [
+              "会议室",
+              "投屏",
+              "连接码"
+            ]
+          },
+          {
+            "id": "IT-003",
+            "title": "VPN 连接失败",
+            "content": "远程办公 VPN 连接失败时，先确认网络可用，再更新 VPN 客户端并重新登录；仍失败则提交错误码。",
+            "score": 1,
+            "matched_keywords": [
+              "连接"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "Q12",
+      "query": "网盘误删文件可以恢复多久以前的？",
+      "expected_ids": [
+        "IT-012"
+      ],
+      "answerable": true,
+      "top_k": 5,
+      "returned_ids": [
+        "IT-012",
+        "IT-005"
+      ],
+      "hit": true,
+      "false_return": null,
+      "response": {
+        "query": "网盘误删文件可以恢复多久以前的？",
+        "top_k": 5,
+        "results": [
+          {
+            "id": "IT-012",
+            "title": "误删文件恢复",
+            "content": "团队网盘误删文件可在回收站恢复，保留期为三十天；超过三十天不保证恢复，请提交工单确认备份。",
+            "score": 4,
+            "matched_keywords": [
+              "恢复",
+              "文件",
+              "网盘",
+              "误删"
+            ]
+          },
+          {
+            "id": "IT-005",
+            "title": "邮箱容量清理",
+            "content": "邮箱容量上限为 5GB。空间不足时清空已删除邮件和垃圾邮件，再将大附件归档到团队网盘。",
+            "score": 1,
+            "matched_keywords": [
+              "网盘"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "Q13",
+      "query": "密码重置用什么验证身份？",
+      "expected_ids": [
+        "IT-001"
+      ],
+      "answerable": true,
+      "top_k": 5,
+      "returned_ids": [
+        "IT-001",
+        "IT-002",
+        "IT-004"
+      ],
+      "hit": true,
+      "false_return": null,
+      "response": {
+        "query": "密码重置用什么验证身份？",
+        "top_k": 5,
+        "results": [
+          {
+            "id": "IT-001",
+            "title": "账号密码重置",
+            "content": "忘记统一账号密码时，打开自助门户，选择密码重置，用绑定手机验证码验证身份后设置新密码。",
+            "score": 2,
+            "matched_keywords": [
+              "密码",
+              "重置"
+            ]
+          },
+          {
+            "id": "IT-002",
+            "title": "账号锁定解锁",
+            "content": "统一账号连续输错密码五次会锁定十五分钟；可等待自动解锁，或向服务台提交解锁工单。",
+            "score": 1,
+            "matched_keywords": [
+              "密码"
+            ]
+          },
+          {
+            "id": "IT-004",
+            "title": "无线网络接入",
+            "content": "办公无线网络名称为 Nebula-Staff，使用统一账号和密码登录；首次接入需安装公司证书。",
+            "score": 1,
+            "matched_keywords": [
+              "密码"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "Q14",
+      "query": "多因素认证的旧手机丢失怎么办？",
+      "expected_ids": [
+        "IT-010"
+      ],
+      "answerable": true,
+      "top_k": 5,
+      "returned_ids": [
+        "IT-010",
+        "IT-001"
+      ],
+      "hit": true,
+      "false_return": null,
+      "response": {
+        "query": "多因素认证的旧手机丢失怎么办？",
+        "top_k": 5,
+        "results": [
+          {
+            "id": "IT-010",
+            "title": "多因素认证换机",
+            "content": "更换手机前，在安全中心添加新的多因素认证设备并验证，然后移除旧设备；旧手机丢失时联系服务台核验身份后重绑。",
+            "score": 4,
+            "matched_keywords": [
+              "丢失",
+              "多因素",
+              "手机",
+              "认证"
+            ]
+          },
+          {
+            "id": "IT-001",
+            "title": "账号密码重置",
+            "content": "忘记统一账号密码时，打开自助门户，选择密码重置，用绑定手机验证码验证身份后设置新密码。",
+            "score": 1,
+            "matched_keywords": [
+              "手机"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "Q15",
+      "query": "文档不小心扔掉了怎样找回？",
+      "expected_ids": [
+        "IT-012"
+      ],
+      "answerable": true,
+      "top_k": 5,
+      "returned_ids": [],
+      "hit": false,
+      "false_return": null,
+      "response": {
+        "query": "文档不小心扔掉了怎样找回？",
+        "top_k": 5,
+        "results": []
+      }
+    },
+    {
+      "id": "Q16",
+      "query": "VPN 支持哪些国家的出口节点？",
+      "expected_ids": [],
+      "answerable": false,
+      "top_k": 5,
+      "returned_ids": [
+        "IT-003"
+      ],
+      "hit": null,
+      "false_return": true,
+      "response": {
+        "query": "VPN 支持哪些国家的出口节点？",
+        "top_k": 5,
+        "results": [
+          {
+            "id": "IT-003",
+            "title": "VPN 连接失败",
+            "content": "远程办公 VPN 连接失败时，先确认网络可用，再更新 VPN 客户端并重新登录；仍失败则提交错误码。",
+            "score": 1,
+            "matched_keywords": [
+              "vpn"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "Q17",
+      "query": "邮箱单封邮件最大发送限制是多少？",
+      "expected_ids": [],
+      "answerable": false,
+      "top_k": 5,
+      "returned_ids": [
+        "IT-005"
+      ],
+      "hit": null,
+      "false_return": true,
+      "response": {
+        "query": "邮箱单封邮件最大发送限制是多少？",
+        "top_k": 5,
+        "results": [
+          {
+            "id": "IT-005",
+            "title": "邮箱容量清理",
+            "content": "邮箱容量上限为 5GB。空间不足时清空已删除邮件和垃圾邮件，再将大附件归档到团队网盘。",
+            "score": 2,
+            "matched_keywords": [
+              "邮件",
+              "邮箱"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "Q18",
+      "query": "打印机每页收费多少钱？",
+      "expected_ids": [],
+      "answerable": false,
+      "top_k": 5,
+      "returned_ids": [
+        "IT-006"
+      ],
+      "hit": null,
+      "false_return": true,
+      "response": {
+        "query": "打印机每页收费多少钱？",
+        "top_k": 5,
+        "results": [
+          {
+            "id": "IT-006",
+            "title": "打印机离线处理",
+            "content": "打印机离线时，检查电源和网线，在系统打印队列中取消脱机使用，仍不可用时重新添加打印机。",
+            "score": 2,
+            "matched_keywords": [
+              "打印",
+              "打印机"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "Q19",
+      "query": "今天食堂菜单是什么？",
+      "expected_ids": [],
+      "answerable": false,
+      "top_k": 5,
+      "returned_ids": [],
+      "hit": null,
+      "false_return": false,
+      "response": {
+        "query": "今天食堂菜单是什么？",
+        "top_k": 5,
+        "results": []
+      }
+    },
+    {
+      "id": "Q20",
+      "query": "员工年假可以结转几天？",
+      "expected_ids": [],
+      "answerable": false,
+      "top_k": 5,
+      "returned_ids": [],
+      "hit": null,
+      "false_return": false,
+      "response": {
+        "query": "员工年假可以结转几天？",
+        "top_k": 5,
+        "results": []
+      }
+    }
+  ]
+}
