@@ -33,9 +33,17 @@ class ParsingTests(unittest.TestCase):
             with self.subTest(raw=raw), self.assertRaises(qa.EvaluationError):
                 qa.parse_answer(raw, [])
 
+    def test_echoed_input_is_rejected_even_when_valid_json(self):
+        echo = {'question': '忘记密码', 'fragments': [{'id': 'IT-001', 'content': '重置'}]}
+        with self.assertRaisesRegex(qa.EvaluationError, '缺少非空 answer'):
+            qa.parse_answer({'done': True, 'message': {'content': json.dumps(echo)}}, [])
+        echo.update(answer='假答案', insufficient=False)
+        with self.assertRaisesRegex(qa.EvaluationError, '非预期字段'):
+            qa.parse_answer({'done': True, 'message': {'content': json.dumps(echo)}}, [])
+
     def test_prompt_never_includes_labels(self):
         value = qa.messages('test', [dict(id='IT-001', title='t', content='c', score=3)])
-        payload = json.loads(value[1]['content'])
+        payload = json.loads(value[1]['content'].split('\n', 1)[1])
         self.assertEqual(set(payload), {'question', 'fragments'})
         self.assertEqual(set(payload['fragments'][0]), {'id', 'title', 'content'})
         self.assertIn('资料不足', value[0]['content'])
@@ -65,7 +73,7 @@ class StubHandler(BaseHTTPRequestHandler):
     def do_POST(self):
         payload = json.loads(self.rfile.read(int(self.headers['Content-Length'])))
         self.requests.append(payload)
-        context = json.loads(payload['messages'][1]['content'])
+        context = json.loads(payload['messages'][1]['content'].split('\n', 1)[1])
         if context['question'] == self.fail_query:
             if self.fail_mode == 'timeout':
                 time.sleep(.15)
@@ -133,7 +141,7 @@ class HTTPPipelineTests(unittest.TestCase):
                 self.assertGreaterEqual(row['total_seconds'], row['retrieval_seconds'])
                 self.assertGreaterEqual(row['total_seconds'], row['generation_seconds'])
                 self.assertIn('ollama_response', row)
-                sent = json.loads(row['messages'][1]['content'])
+                sent = json.loads(row['messages'][1]['content'].split('\n', 1)[1])
                 self.assertEqual([f['id'] for f in sent['fragments']], [f['id'] for f in row['fragments']])
             with patch('builtins.input', side_effect=['n', '测试桩没有实际回答', 'q']):
                 qa.review(SimpleNamespace(run_dir=args.output_dir))
@@ -156,6 +164,7 @@ class HTTPPipelineTests(unittest.TestCase):
             self.assertIs(request['stream'], False)
             self.assertIs(request['think'], False)
             self.assertEqual(request['options']['temperature'], 0)
+            self.assertEqual(request['format'], qa.ANSWER_SCHEMA)
 
     def test_one_generation_failure_saved_and_remaining_questions_continue(self):
         StubHandler.fail_query = '忘记统一账号密码，如何重置？'
@@ -189,6 +198,17 @@ class HTTPPipelineTests(unittest.TestCase):
         finally:
             StubHandler.fail_query = None
             StubHandler.fail_mode = 'http'
+
+    def test_smoke_only_runs_one_question_and_is_not_a_complete_run(self):
+        with tempfile.TemporaryDirectory() as temp, contextlib.redirect_stdout(io.StringIO()):
+            args = self.args(Path(temp) / 'smoke')
+            args.smoke = True
+            self.assertEqual(qa.run(args), 0)
+            report = json.loads((args.output_dir / 'results.json').read_text())
+            self.assertEqual([r['id'] for r in report['rows']], ['Q01'])
+            self.assertEqual(report['summary']['run_state'], 'smoke_completed')
+            self.assertEqual(report['summary']['answer_correct']['unprocessed'], 14)
+            self.assertEqual(report['response_schema']['required'], ['answer', 'insufficient'])
 
     def test_missing_ollama_records_preflight_failure(self):
         with tempfile.TemporaryDirectory() as temp:

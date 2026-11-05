@@ -46,7 +46,7 @@ python qa_eval.py run \
 
 对每题先 HTTP 调用 `/retrieval`，再将返回的至多 3 个片段的 ID、标题、正文交给 `/api/chat`。即使检索为空也调用模型，实际检查它是否说明资料不足。不会把全量语料、正确 ID 标签、参考答案、评分标准传给模型。
 
-系统提示要求回答具体问题、事实后引用 `[IT-001]` 这样的片段 ID；资料不足时明确说“资料不足，无法回答”并说明缺什么。模型返回 JSON `answer` 和 `insufficient`。后者仅是模型自述，不是评分。使用 `stream=false`、`think=false`、`format=json`、`temperature=0`、`seed=42`、`num_predict=2048`；这有助于复现，但不同 Ollama 版本和硬件仍可能产生不同回答。
+系统提示要求回答具体问题、事实后引用 `[IT-001]` 这样的片段 ID；资料不足时明确说“资料不足，无法回答”并说明缺什么。模型返回 JSON `answer` 和 `insufficient`。后者仅是模型自述，不是评分。使用 `stream=false`、`think=false`、`format=ANSWER_SCHEMA`（明确要求 answer 字符串与 insufficient 布尔值，拒绝额外字段）、`temperature=0`、`seed=42`、`num_predict=2048`；这有助于复现，但不同 Ollama 版本和硬件仍可能产生不同回答。
 
 如果旧版 Ollama 不支持 `think=false`，请升级 Ollama，不要用云端模型替代本机 `qwen3:4b`。模型未安装、HTTP 失败、超时、空回答、格式错误、回答截断都会记录为错误，不会当作正确拒答。
 
@@ -96,3 +96,23 @@ Mac 仍需完成：下载并加载真实 `qwen3:4b`，运行 20 道题，验证�
 ```bash
 python -m unittest discover -s tests -v
 ```
+
+
+## 修复旧版“模型 JSON 缺少非空 answer”
+
+Mac 实测中，旧版 format=json 只限制为合法 JSON，qwen3:4b 可能复述 question/fragments，未实际回答。现改用明确的 JSON Schema，并在用户消息强调输入与输出的区别。此修复已完成协议与回归测试，真实模型效果仍需在 Mac 验证。
+
+如果是 ZIP 下载的目录，没有 Git 更新能力，可从 GitHub 打开 qa_eval.py，点击 Raw 下载最新版，替换本地同名文件；无需覆盖 qa 环境和 reports。先保持 FastAPI 与 Ollama 运行，试跑一题：
+
+```bash
+python qa_eval.py run --smoke
+```
+
+单题会显示回答与错误；结果保存到自动生成的新目录，状态为 smoke_completed 或 smoke_with_errors，不当作完整 20 题结果。单题成功后再运行正式评测：
+
+```bash
+python qa_eval.py run --output-dir reports/mac-run-02
+python qa_eval.py review --run-dir reports/mac-run-02
+```
+
+保留旧的 mac-run-01 以便对照。Schema 约束输出结构，不保证答案的事实正确性，仍需要人工评分。若新版 Ollama 请求 Schema 报错，请保留原始错误，不自动退回 json 格式。
