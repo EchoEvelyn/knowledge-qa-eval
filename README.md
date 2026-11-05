@@ -2,7 +2,16 @@
 
 项目包含第一阶段关键词检索评测，以及第二阶段 Mac 本机 Ollama 问答评测。所有 IT 服务台资料均为虚构；暂不接 Dify。
 
-第二阶段使用原接口和原 20 题，固定 top_k=3，调用本机 qwen3:4b。安装、运行、评分及云端验证边界见 [Mac 问答评测说明](docs/phase2-mac.md)。以下保留第一阶段说明。
+第二阶段使用原接口和原 20 题，固定 top_k=3，调用本机 qwen3:4b。安装、运行、评分及云端验证边界见 [Mac 问答评测说明](docs/phase2-mac.md)。推荐从 [统一运行与查看报告](docs/workflow.md) 开始。已完成的 [Mac 真实模型实测归档](reports/mac-run-02/README.md) 包含原始结果、人工评分和耗时。
+
+```bash
+source qa/bin/activate
+python manage.py run
+python manage.py review
+python manage.py report --open
+```
+
+以下保留第一阶段说明。
 
 ## 环境和启动
 

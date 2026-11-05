@@ -1,0 +1,25 @@
+{
+  "origin": "用户上传的 Mac 本机 mac-run-02 实测与人工评分文件；非云端模型运行",
+  "imported_at_utc": "2026-11-05T07:02:49.183225+00:00",
+  "integrity_checks": [
+    "20题与固定题集一致",
+    "题集、语料、评分标准 SHA256 一致",
+    "CSV逐题字段与JSON一致",
+    "汇总与逐题评分一致",
+    "全部题完成且评分完整"
+  ],
+  "files": {
+    "summary.md": {
+      "sha256": "63135b7cdcbb44b95262b28f326ecfd84c677e2ef101ff64fab943b151940848",
+      "bytes": 614
+    },
+    "results.csv": {
+      "sha256": "c72d74c97524a7bcbeaa5f6f57a54cc99d73092c06a27dc0ea1584adb72ded84",
+      "bytes": 6370
+    },
+    "results.json": {
+      "sha256": "148de00e02c3da7c151fa90d64d88797fcf2d05c4071da35972a896786fa71a3",
+      "bytes": 90286
+    }
+  }
+}
