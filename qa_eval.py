@@ -116,7 +116,7 @@ def export(directory, report):
               'model_insufficient', 'citation_valid', 'answer_correct', 'refusal_correct',
               'review_notes', 'retrieval_seconds', 'generation_seconds', 'total_seconds', 'status', 'error']
     with (directory / 'results.csv').open('w', encoding='utf-8-sig', newline='') as stream:
-        writer = csv.DictWriter(stream, fieldnames=fields)
+        writer = csv.DictWriter(stream, fieldnames=fields, lineterminator='\n')
         writer.writeheader()
         for row in rows:
             value = {key: row.get(key) for key in fields}
