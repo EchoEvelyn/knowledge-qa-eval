@@ -1,6 +1,8 @@
 # knowledge-qa-eval
 
-第一阶段：Python + FastAPI 的关键词检索与固定题集 HTTP 评测。所有 IT 服务台资料均为虚构；不接 Dify、Ollama 或其他模型。
+项目包含第一阶段关键词检索评测，以及第二阶段 Mac 本机 Ollama 问答评测。所有 IT 服务台资料均为虚构；暂不接 Dify。
+
+第二阶段使用原接口和原 20 题，固定 top_k=3，调用本机 qwen3:4b。安装、运行、评分及云端验证边界见 [Mac 问答评测说明](docs/phase2-mac.md)。以下保留第一阶段说明。
 
 ## 环境和启动
 

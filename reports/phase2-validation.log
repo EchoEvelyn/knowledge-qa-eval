@@ -1,0 +1,12 @@
+test_all_20_over_real_http_and_manual_review (test_qa_eval.HTTPPipelineTests.test_all_20_over_real_http_and_manual_review) ... ok
+test_generation_timeout_preserves_retrieval_and_continues (test_qa_eval.HTTPPipelineTests.test_generation_timeout_preserves_retrieval_and_continues) ... ok
+test_missing_ollama_records_preflight_failure (test_qa_eval.HTTPPipelineTests.test_missing_ollama_records_preflight_failure) ... ok
+test_one_generation_failure_saved_and_remaining_questions_continue (test_qa_eval.HTTPPipelineTests.test_one_generation_failure_saved_and_remaining_questions_continue) ... ok
+test_nonexistent_citation_is_flagged (test_qa_eval.ParsingTests.test_nonexistent_citation_is_flagged) ... ok
+test_prompt_never_includes_labels (test_qa_eval.ParsingTests.test_prompt_never_includes_labels) ... ok
+test_unfinished_or_invalid_response_is_not_a_success (test_qa_eval.ParsingTests.test_unfinished_or_invalid_response_is_not_a_success) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 2.386s
+
+OK
