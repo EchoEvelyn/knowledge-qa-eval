@@ -9,7 +9,7 @@
 | 1. 检索基线 | FastAPI + 12条JSON资料 + 20题，top_k=3/5 | HTTP验证与两组检索评测完成 |
 | 2. 本地问答 | Python直接调用检索和Ollama qwen3:4b | Mac真实20题生成、人工评分及报告完成 |
 | 3. Dify应用/API | 可导入的对齐工作流、动态query、发布API | Mac真实20题API评测、评分和归档完成 |
-| 4. 文档向量知识库 | 三份TXT入库、bge-m3、Knowledge Retrieval | Mac单题已跑通；新20题与API评测工具已准备，批量实跑待Mac完成 |
+| 4. 文档向量知识库 | 三份TXT入库、bge-m3、Knowledge Retrieval | Mac真实新20题API执行、人工评分和归档完成 |
 
 完整架构、文件说明与当前边界见 [项目总览](docs/project-overview.md)。
 
@@ -46,9 +46,10 @@
 
 - [第二阶段Mac原始结果](reports/mac-run-02/README.md)
 - [第三阶段Dify原始结果与对比](reports/dify-run-01/README.md)
-- [最新文档知识库单题验证记录](reports/knowledge-base-smoke/README.md)
+- [第四阶段新文档20题实测](reports/kb-run-01/README.md)：来源15/15、证据14/15、回答13/15、拒答3/5，客户端平均6.97秒
+- [早期单题验证记录](reports/knowledge-base-smoke/README.md)（历史记录）
 
-原20题与正确片段标签仅针对12条JSON资料，不用于直接评价新文档知识库。第四阶段的截图确认工程连通性，不冒充新的准确率报告。
+原20题与正确片段标签仅针对12条JSON资料，不用于直接评价新文档知识库。第四阶段已使用独立D01–D20完成批量评测；新旧题集与命中定义不同，不直接据分数差判断效果提升。
 
 ## 从哪里开始
 

@@ -1,0 +1,68 @@
+{
+  "dataset": "three_document_dify_kb_D01_D20",
+  "counts": {
+    "source_hit": 15,
+    "retrieval_hit": 14,
+    "answer_correct": 13,
+    "refusal_correct": 3
+  },
+  "denominator": {
+    "source_hit": 15,
+    "retrieval_hit": 15,
+    "answer_correct": 15,
+    "refusal_correct": 5
+  },
+  "missed_evidence_ids": [
+    "D11"
+  ],
+  "wrong_answer_ids": [
+    "D09",
+    "D11"
+  ],
+  "correct_refusal_ids": [
+    "D17",
+    "D19",
+    "D20"
+  ],
+  "wrong_refusal_ids": [
+    "D16",
+    "D18"
+  ],
+  "unanswerable_with_fragments": [
+    "D16",
+    "D17",
+    "D18",
+    "D19",
+    "D20"
+  ],
+  "timings": {
+    "total_seconds": {
+      "count": 20,
+      "mean": 6.9734986,
+      "median": 6.487432,
+      "min": 3.127932,
+      "max": 12.863828,
+      "total": 139.46997199999998,
+      "unit": "seconds"
+    },
+    "api_seconds": {
+      "count": 20,
+      "mean": 6.97270395,
+      "median": 6.486388,
+      "min": 3.126815,
+      "max": 12.863159,
+      "total": 139.454079,
+      "unit": "seconds"
+    },
+    "workflow_elapsed_seconds": {
+      "count": 20,
+      "mean": 6.923396030099866,
+      "median": 6.434827961000337,
+      "min": 3.05008512600034,
+      "max": 12.806620671999553,
+      "total": 138.46792060199732,
+      "unit": "seconds"
+    }
+  },
+  "interpretation": "新旧语料、题目和检索命中定义不同，不能直接把分数差视为语义检索改善；API总耗时非Ollama模型生成耗时。"
+}

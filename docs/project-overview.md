@@ -24,11 +24,12 @@ flowchart TB
     P --> M[Ollama qwen3:4b]
     M --> O[解析JSON与输出答案]
     C[Python评测客户端] --> B
+    C --> N
     O --> A[保存片段/回答/耗时]
     A --> H[人工评分与HTML报告]
 ```
 
-图中评测客户端目前已接通aligned基线API。新文档知识库应用已在Dify中手动单题运行，尚未接入新题集批量评测。
+图中两条API评测路径均已跑通：aligned使用原Q01–Q20，新文档应用使用独立D01–D20，分别保留真实Mac结果与评分。
 
 ## 每个组件做什么
 
@@ -49,7 +50,7 @@ flowchart TB
 1. **检索接口基线完成。** FastAPI POST /retrieval，正常/无匹配/缺参HTTP验证；同20题分别测top_k=3、5，两组均14/15命中，无答案题3/5仍有片段。
 2. **本地问答评测完成。** Mac真实调用qwen3:4b，20题全部完成并人工评分；回答13/15、拒答1/5。单题结果和原始Ollama统计已归档。
 3. **Dify API评测完成。** Docker部署，动态query贯穿检索和生成，提示/资料字段/Schema与本地对齐；20题全部通过API执行和评分，逐题片段、答案及判断与第二阶段相同。
-4. **文档向量知识库单题链路完成。** 三份TXT入库，bge-m3 Embedding，高质量索引、向量检索；User Input → Knowledge Retrieval → 组装提示 → LLM → 解析模型JSON → Output全部节点成功。尚未形成新题集的批量原始记录和语义评测，也没有归档该新应用的导出包。
+4. **文档向量知识库批量闭环完成。** 三份TXT入库，bge-m3 Embedding，高质量索引、向量检索；User Input → Knowledge Retrieval → 组装提示 → LLM → 解析模型JSON → Output全部节点成功。D01–D20已在Mac执行并评分：来源15/15、证据14/15、回答13/15、拒答3/5，客户端平均6.97秒，原始API文件已归档。该新应用的导出包仍未归档。
 
 ## 现有结果与耗时解释
 
@@ -80,9 +81,9 @@ insufficient只是模型对当前资料是否充足的自述，不能直接当�
 
 - 架构/启动：[Demo交付](demo-handoff.md)
 - 新知识库搭建：[文档知识库指南](document-knowledge-base.md)
-- 原始批量证据：[第二阶段](../reports/mac-run-02/README.md)、[第三阶段](../reports/dify-run-01/README.md)
+- 原始批量证据：[第二阶段](../reports/mac-run-02/README.md)、[第三阶段](../reports/dify-run-01/README.md)、[第四阶段](../reports/kb-run-01/README.md)
 - 最新单题证据范围：[知识库验证记录](../reports/knowledge-base-smoke/README.md)
 
-建议的下一步是归档knowledge-qa-docs导出包（不含凭据）、准备新文档对应题集和稳定证据标签，再选择是否接批量API评测或评测台页面。当前不需要为了整理项目重复跑原20题。
+四阶段批量流程已完成。下一步可归档knowledge-qa-docs导出包（不含凭据）、补充稳定document_id/segment_id，再选择评测台页面或真实资料同步。当前不需要重复跑原题。新旧语料不能凭拒答率1/5与3/5的差异声称模型或检索效果提升。
 
 企业应用还需补充权限过滤、文档更新/删除同步、有效版本管理、审计和生产可靠性；本Demo目前没有实现这些功能。

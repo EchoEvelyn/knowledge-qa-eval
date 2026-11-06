@@ -1,0 +1,2718 @@
+{
+  "backend": "dify-document-kb",
+  "stage": 4,
+  "started_at": "2026-11-06T08:21:32.539391+00:00",
+  "smoke": false,
+  "model": "qwen3:4b",
+  "top_k": 3,
+  "api_base": "http://localhost/v1",
+  "python": "3.11.9",
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "retrieval_config_expected": {
+    "embedding_model": "bge-m3",
+    "method": "vector",
+    "top_k": 3
+  },
+  "configuration_provenance": "expected_document_workflow_not_observed_by_api",
+  "input_sha256": {
+    "knowledge-base/eval/questions.json": "c5610f0c357bf8b92a5a36a133390026b413939ceddee17f89f63ef81baf0098",
+    "knowledge-base/it-demo/01-account-and-mfa.txt": "237b848f07aae637d06c4b266b99e9454182fb06c3c5e6668c146abfbdf734c5",
+    "knowledge-base/it-demo/02-network-and-vpn.txt": "dadf88f86ba9cee14ebb0b7545ae512c16c5f0f98c303799ae54427d398e6818",
+    "knowledge-base/it-demo/03-shared-files-and-recovery.txt": "5a1f6fa429036aaabcc35128c508e858d7cdaf5dff924c987bedeeb9e1b9c778"
+  },
+  "source_sha256": {
+    "kb_eval.py": "9958d88aa6f1480e643eb59f7c387bc564102b31fc501ba31e5991fd32ebf947",
+    "dify_eval.py": "56678b8b814fa14e87874aaf47815e973f79ff0b30953ab68a0fbd96e528c666",
+    "qa_eval.py": "9c67b408f84c323852b00e860b7c5bffbf3a5304041e70ee6b3453b6e7614a7a",
+    "manage.py": "dd22a9c0ad45419c64a8f5f3256b2db01576670c04262f09c1a2a25ac6c4ddd2"
+  },
+  "rows": [
+    {
+      "id": "D01",
+      "query": "密码重置的短信验证码多久有效？",
+      "answerable": true,
+      "expected_sources": [
+        "01-account-and-mfa.txt"
+      ],
+      "expected_sections": [
+        "ACC-01"
+      ],
+      "evidence_groups": [
+        [
+          "短信验证码有效期为 5 分钟"
+        ]
+      ],
+      "reference_answer": "验证码有效期为5分钟。",
+      "rubric": "验证码有效期为5分钟。 有答案题需引用本次实际提供且支持回答的KB片段；无答案题需明确资料不足且不编造。",
+      "expected_ids": [
+        "KB-1",
+        "KB-2",
+        "KB-3"
+      ],
+      "fragments": [
+        {
+          "id": "KB-1",
+          "title": "01-account-and-mfa.txt",
+          "content": "新密码至少 12 位，必须同时包含大写字母、小写字母、数字和特殊字符，且不得与最近 5 次使用过的密码相同。短信验证码有效期为 5 分钟。",
+          "source_document": "01-account-and-mfa.txt",
+          "evidence_sha256": "45eea4dde8d913f76537417fcdaca6d4cbb7e0fc7038dd2c10183faf4927c02e"
+        },
+        {
+          "id": "KB-2",
+          "title": "01-account-and-mfa.txt",
+          "content": "员工无法接收绑定手机的验证码时，不得借用其他员工的验证码。应在服务门户选择“人工身份核验”，提交员工编号和可联系时间，由服务台通过已登记的工作联系方式回访。本文不规定人工身份核验完成时限。",
+          "source_document": "01-account-and-mfa.txt",
+          "evidence_sha256": "5d5d58ac68fe9f4eb3e2a51758775a065d3e533dcbccfb239ba9d841514fff18"
+        },
+        {
+          "id": "KB-3",
+          "title": "01-account-and-mfa.txt",
+          "content": "旧手机丢失或损坏、无法完成验证时，联系服务台申请“认证设备重绑”，完成身份核验后由服务台清除旧绑定，再由员工注册新设备。服务台不会要求员工提供密码、短信验证码或认证器动态口令。",
+          "source_document": "01-account-and-mfa.txt",
+          "evidence_sha256": "295700501081ad9f493788647bb9bc35a7529eea8b304e447827c9288672c16c"
+        }
+      ],
+      "retrieval_hit": true,
+      "source_hit": true,
+      "answer": "密码重置的短信验证码有效期为 5 分钟。[KB-1]",
+      "model_insufficient": false,
+      "citation_valid": true,
+      "answer_correct": true,
+      "refusal_correct": null,
+      "review_notes": "正确回答短信验证码有效期为5分钟，引用KB-1直接支持该结论。",
+      "retrieval_seconds": null,
+      "generation_seconds": null,
+      "total_seconds": 3.127932,
+      "status": "ok",
+      "error": null,
+      "dify_request": {
+        "inputs": {
+          "query": "密码重置的短信验证码多久有效？"
+        },
+        "response_mode": "blocking",
+        "user": "knowledge-qa-docs-eval"
+      },
+      "api_seconds": 3.126815,
+      "dify_response": {
+        "task_id": "913beafc-a174-4147-a169-db3f19abe41a",
+        "workflow_run_id": "52e36901-b5c6-4991-9ed5-5d9cdbe9a2f8",
+        "data": {
+          "id": "52e36901-b5c6-4991-9ed5-5d9cdbe9a2f8",
+          "workflow_id": "e79af8cc-e57d-4440-a5b6-6e053511266d",
+          "status": "succeeded",
+          "outputs": {
+            "answer": "密码重置的短信验证码有效期为 5 分钟。[KB-1]",
+            "insufficient": false,
+            "raw_answer": "{\n  \"answer\": \"密码重置的短信验证码有效期为 5 分钟。[KB-1]\",\n  \"insufficient\": false\n}",
+            "retrieval_body": "{\"query\": \"密码重置的短信验证码多久有效？\", \"top_k\": 3, \"results\": [{\"id\": \"KB-1\", \"title\": \"01-account-and-mfa.txt\", \"content\": \"新密码至少 12 位，必须同时包含大写字母、小写字母、数字和特殊字符，且不得与最近 5 次使用过的密码相同。短信验证码有效期为 5 分钟。\"}, {\"id\": \"KB-2\", \"title\": \"01-account-and-mfa.txt\", \"content\": \"员工无法接收绑定手机的验证码时，不得借用其他员工的验证码。应在服务门户选择“人工身份核验”，提交员工编号和可联系时间，由服务台通过已登记的工作联系方式回访。本文不规定人工身份核验完成时限。\"}, {\"id\": \"KB-3\", \"title\": \"01-account-and-mfa.txt\", \"content\": \"旧手机丢失或损坏、无法完成验证时，联系服务台申请“认证设备重绑”，完成身份核验后由服务台清除旧绑定，再由员工注册新设备。服务台不会要求员工提供密码、短信验证码或认证器动态口令。\"}]}"
+          },
+          "error": null,
+          "elapsed_time": 3.05008512600034,
+          "total_tokens": 479,
+          "total_steps": 6,
+          "created_at": 1793953292,
+          "finished_at": 1793953295
+        }
+      },
+      "workflow_run_id": "52e36901-b5c6-4991-9ed5-5d9cdbe9a2f8",
+      "workflow_id": "e79af8cc-e57d-4440-a5b6-6e053511266d",
+      "workflow_status": "succeeded",
+      "workflow_elapsed_seconds": 3.05008512600034,
+      "workflow_total_tokens": 479,
+      "retrieval_response": {
+        "query": "密码重置的短信验证码多久有效？",
+        "top_k": 3,
+        "results": [
+          {
+            "id": "KB-1",
+            "title": "01-account-and-mfa.txt",
+            "content": "新密码至少 12 位，必须同时包含大写字母、小写字母、数字和特殊字符，且不得与最近 5 次使用过的密码相同。短信验证码有效期为 5 分钟。",
+            "source_document": "01-account-and-mfa.txt",
+            "evidence_sha256": "45eea4dde8d913f76537417fcdaca6d4cbb7e0fc7038dd2c10183faf4927c02e"
+          },
+          {
+            "id": "KB-2",
+            "title": "01-account-and-mfa.txt",
+            "content": "员工无法接收绑定手机的验证码时，不得借用其他员工的验证码。应在服务门户选择“人工身份核验”，提交员工编号和可联系时间，由服务台通过已登记的工作联系方式回访。本文不规定人工身份核验完成时限。",
+            "source_document": "01-account-and-mfa.txt",
+            "evidence_sha256": "5d5d58ac68fe9f4eb3e2a51758775a065d3e533dcbccfb239ba9d841514fff18"
+          },
+          {
+            "id": "KB-3",
+            "title": "01-account-and-mfa.txt",
+            "content": "旧手机丢失或损坏、无法完成验证时，联系服务台申请“认证设备重绑”，完成身份核验后由服务台清除旧绑定，再由员工注册新设备。服务台不会要求员工提供密码、短信验证码或认证器动态口令。",
+            "source_document": "01-account-and-mfa.txt",
+            "evidence_sha256": "295700501081ad9f493788647bb9bc35a7529eea8b304e447827c9288672c16c"
+          }
+        ]
+      },
+      "expected_ids_provenance": "per_request_aliases_from_expected_source_not_stable_gold_ids",
+      "evidence_groups_covered": [
+        true
+      ],
+      "cited_ids": [
+        "KB-1"
+      ],
+      "unknown_citations": [],
+      "reviewed_at": "2026-11-06T08:27:20.540513+00:00"
+    },
+    {
+      "id": "D02",
+      "query": "新密码需要满足哪些长度、字符和历史密码要求？",
+      "answerable": true,
+      "expected_sources": [
+        "01-account-and-mfa.txt"
+      ],
+      "expected_sections": [
+        "ACC-01"
+      ],
+      "evidence_groups": [
+        [
+          "至少 12 位"
+        ],
+        [
+          "大写字母"
+        ],
+        [
+          "小写字母"
+        ],
+        [
+          "数字"
+        ],
+        [
+          "特殊字符"
+        ],
+        [
+          "最近 5 次"
+        ]
+      ],
+      "reference_answer": "至少12位，包含大小写字母、数字和特殊字符，不得与最近5次密码相同。",
+      "rubric": "至少12位，包含大小写字母、数字和特殊字符，不得与最近5次密码相同。 有答案题需引用本次实际提供且支持回答的KB片段；无答案题需明确资料不足且不编造。",
+      "expected_ids": [
+        "KB-1",
+        "KB-2",
+        "KB-3"
+      ],
+      "fragments": [
+        {
+          "id": "KB-1",
+          "title": "01-account-and-mfa.txt",
+          "content": "新密码至少 12 位，必须同时包含大写字母、小写字母、数字和特殊字符，且不得与最近 5 次使用过的密码相同。短信验证码有效期为 5 分钟。",
+          "source_document": "01-account-and-mfa.txt",
+          "evidence_sha256": "45eea4dde8d913f76537417fcdaca6d4cbb7e0fc7038dd2c10183faf4927c02e"
+        },
+        {
+          "id": "KB-2",
+          "title": "01-account-and-mfa.txt",
+          "content": "解锁不等于密码重置。员工仍不知道原密码时，应按照 ACC-01 重置密码。",
+          "source_document": "01-account-and-mfa.txt",
+          "evidence_sha256": "4e762be25361910cfe510a7f6df0812a650a8913d37fbcb381cf4b4fa6b572ce"
+        },
+        {
+          "id": "KB-3",
+          "title": "01-account-and-mfa.txt",
+          "content": "ACC-01：忘记密码如何重置",
+          "source_document": "01-account-and-mfa.txt",
+          "evidence_sha256": "66abdda0a4690556aab8864d63ef5c4f839c9b0777bf4d9812f7f9623909be92"
+        }
+      ],
+      "retrieval_hit": true,
+      "source_hit": true,
+      "answer": "新密码至少 12 位，必须同时包含大写字母、小写字母、数字和特殊字符，且不得与最近 5 次使用过的密码相同。[KB-1]",
+      "model_insufficient": false,
+      "citation_valid": true,
+      "answer_correct": true,
+      "refusal_correct": null,
+      "review_notes": "正确说明至少12位、包含大小写字母数字及特殊字符、不得与最近5次密码相同，引用KB-1正确。",
+      "retrieval_seconds": null,
+      "generation_seconds": null,
+      "total_seconds": 7.82345,
+      "status": "ok",
+      "error": null,
+      "dify_request": {
+        "inputs": {
+          "query": "新密码需要满足哪些长度、字符和历史密码要求？"
+        },
+        "response_mode": "blocking",
+        "user": "knowledge-qa-docs-eval"
+      },
+      "api_seconds": 7.822823,
+      "dify_response": {
+        "task_id": "bb3a1a24-1ac7-44ee-a2f8-0c5957c7faee",
+        "workflow_run_id": "32d03032-c563-4390-a586-431bf62c7fcd",
+        "data": {
+          "id": "32d03032-c563-4390-a586-431bf62c7fcd",
+          "workflow_id": "e79af8cc-e57d-4440-a5b6-6e053511266d",
+          "status": "succeeded",
+          "outputs": {
+            "answer": "新密码至少 12 位，必须同时包含大写字母、小写字母、数字和特殊字符，且不得与最近 5 次使用过的密码相同。[KB-1]",
+            "insufficient": false,
+            "raw_answer": "{\n  \"answer\": \"新密码至少 12 位，必须同时包含大写字母、小写字母、数字和特殊字符，且不得与最近 5 次使用过的密码相同。[KB-1]\",\n  \"insufficient\": false\n}",
+            "retrieval_body": "{\"query\": \"新密码需要满足哪些长度、字符和历史密码要求？\", \"top_k\": 3, \"results\": [{\"id\": \"KB-1\", \"title\": \"01-account-and-mfa.txt\", \"content\": \"新密码至少 12 位，必须同时包含大写字母、小写字母、数字和特殊字符，且不得与最近 5 次使用过的密码相同。短信验证码有效期为 5 分钟。\"}, {\"id\": \"KB-2\", \"title\": \"01-account-and-mfa.txt\", \"content\": \"解锁不等于密码重置。员工仍不知道原密码时，应按照 ACC-01 重置密码。\"}, {\"id\": \"KB-3\", \"title\": \"01-account-and-mfa.txt\", \"content\": \"ACC-01：忘记密码如何重置\"}]}"
+          },
+          "error": null,
+          "elapsed_time": 7.787800419999257,
+          "total_tokens": 432,
+          "total_steps": 6,
+          "created_at": 1793953295,
+          "finished_at": 1793953303
+        }
+      },
+      "workflow_run_id": "32d03032-c563-4390-a586-431bf62c7fcd",
+      "workflow_id": "e79af8cc-e57d-4440-a5b6-6e053511266d",
+      "workflow_status": "succeeded",
+      "workflow_elapsed_seconds": 7.787800419999257,
+      "workflow_total_tokens": 432,
+      "retrieval_response": {
+        "query": "新密码需要满足哪些长度、字符和历史密码要求？",
+        "top_k": 3,
+        "results": [
+          {
+            "id": "KB-1",
+            "title": "01-account-and-mfa.txt",
+            "content": "新密码至少 12 位，必须同时包含大写字母、小写字母、数字和特殊字符，且不得与最近 5 次使用过的密码相同。短信验证码有效期为 5 分钟。",
+            "source_document": "01-account-and-mfa.txt",
+            "evidence_sha256": "45eea4dde8d913f76537417fcdaca6d4cbb7e0fc7038dd2c10183faf4927c02e"
+          },
+          {
+            "id": "KB-2",
+            "title": "01-account-and-mfa.txt",
+            "content": "解锁不等于密码重置。员工仍不知道原密码时，应按照 ACC-01 重置密码。",
+            "source_document": "01-account-and-mfa.txt",
+            "evidence_sha256": "4e762be25361910cfe510a7f6df0812a650a8913d37fbcb381cf4b4fa6b572ce"
+          },
+          {
+            "id": "KB-3",
+            "title": "01-account-and-mfa.txt",
+            "content": "ACC-01：忘记密码如何重置",
+            "source_document": "01-account-and-mfa.txt",
+            "evidence_sha256": "66abdda0a4690556aab8864d63ef5c4f839c9b0777bf4d9812f7f9623909be92"
+          }
+        ]
+      },
+      "expected_ids_provenance": "per_request_aliases_from_expected_source_not_stable_gold_ids",
+      "evidence_groups_covered": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "cited_ids": [
+        "KB-1"
+      ],
+      "unknown_citations": [],
+      "reviewed_at": "2026-11-06T08:27:39.652511+00:00"
+    },
+    {
+      "id": "D03",
+      "query": "连续输错几次密码会锁定，锁定多长时间？",
+      "answerable": true,
+      "expected_sources": [
+        "01-account-and-mfa.txt"
+      ],
+      "expected_sections": [
+        "ACC-02"
+      ],
+      "evidence_groups": [
+        [
+          "输错密码 5 次"
+        ],
+        [
+          "锁定 15 分钟"
+        ]
+      ],
+      "reference_answer": "连续输错5次锁定15分钟。",
+      "rubric": "连续输错5次锁定15分钟。 有答案题需引用本次实际提供且支持回答的KB片段；无答案题需明确资料不足且不编造。",
+      "expected_ids": [
+        "KB-1",
+        "KB-2",
+        "KB-3"
+      ],
+      "fragments": [
+        {
+          "id": "KB-1",
+          "title": "01-account-and-mfa.txt",
+          "content": "连续输错密码 5 次，账号会锁定 15 分钟，期间继续尝试登录不会提前解锁。员工可等待自动解锁，或提交“账号解锁”工单，由服务台完成身份核验后处理。",
+          "source_document": "01-account-and-mfa.txt",
+          "evidence_sha256": "0510875f558c848cb6aa430543745f5c126a3a3ae47e478b355e6f898bad2d3b"
+        },
+        {
+          "id": "KB-2",
+          "title": "01-account-and-mfa.txt",
+          "content": "新密码至少 12 位，必须同时包含大写字母、小写字母、数字和特殊字符，且不得与最近 5 次使用过的密码相同。短信验证码有效期为 5 分钟。",
+          "source_document": "01-account-and-mfa.txt",
+          "evidence_sha256": "45eea4dde8d913f76537417fcdaca6d4cbb7e0fc7038dd2c10183faf4927c02e"
+        },
+        {
+          "id": "KB-3",
+          "title": "01-account-and-mfa.txt",
+          "content": "解锁不等于密码重置。员工仍不知道原密码时，应按照 ACC-01 重置密码。",
+          "source_document": "01-account-and-mfa.txt",
+          "evidence_sha256": "4e762be25361910cfe510a7f6df0812a650a8913d37fbcb381cf4b4fa6b572ce"
+        }
+      ],
+      "retrieval_hit": true,
+      "source_hit": true,
+      "answer": "连续输错5次密码会锁定，锁定时间为15分钟。[KB-1]",
+      "model_insufficient": false,
+      "citation_valid": true,
+      "answer_correct": true,
+      "refusal_correct": null,
+      "review_notes": "正确回答连续输错5次会锁定15分钟，引用KB-1直接支持两个数值。",
+      "retrieval_seconds": null,
+      "generation_seconds": null,
+      "total_seconds": 6.160705,
+      "status": "ok",
+      "error": null,
+      "dify_request": {
+        "inputs": {
+          "query": "连续输错几次密码会锁定，锁定多长时间？"
+        },
+        "response_mode": "blocking",
+        "user": "knowledge-qa-docs-eval"
+      },
+      "api_seconds": 6.160058,
+      "dify_response": {
+        "task_id": "d30b8e56-1119-4d49-9461-d5704a0361e4",
+        "workflow_run_id": "6b96de13-3d9c-450a-b7df-aee5f0ccd84d",
+        "data": {
+          "id": "6b96de13-3d9c-450a-b7df-aee5f0ccd84d",
+          "workflow_id": "e79af8cc-e57d-4440-a5b6-6e053511266d",
+          "status": "succeeded",
+          "outputs": {
+            "answer": "连续输错5次密码会锁定，锁定时间为15分钟。[KB-1]",
+            "insufficient": false,
+            "raw_answer": "{\n  \"answer\": \"连续输错5次密码会锁定，锁定时间为15分钟。[KB-1]\",\n  \"insufficient\": false\n}",
+            "retrieval_body": "{\"query\": \"连续输错几次密码会锁定，锁定多长时间？\", \"top_k\": 3, \"results\": [{\"id\": \"KB-1\", \"title\": \"01-account-and-mfa.txt\", \"content\": \"连续输错密码 5 次，账号会锁定 15 分钟，期间继续尝试登录不会提前解锁。员工可等待自动解锁，或提交“账号解锁”工单，由服务台完成身份核验后处理。\"}, {\"id\": \"KB-2\", \"title\": \"01-account-and-mfa.txt\", \"content\": \"新密码至少 12 位，必须同时包含大写字母、小写字母、数字和特殊字符，且不得与最近 5 次使用过的密码相同。短信验证码有效期为 5 分钟。\"}, {\"id\": \"KB-3\", \"title\": \"01-account-and-mfa.txt\", \"content\": \"解锁不等于密码重置。员工仍不知道原密码时，应按照 ACC-01 重置密码。\"}]}"
+          },
+          "error": null,
+          "elapsed_time": 6.1135966689980705,
+          "total_tokens": 449,
+          "total_steps": 6,
+          "created_at": 1793953303,
+          "finished_at": 1793953309
+        }
+      },
+      "workflow_run_id": "6b96de13-3d9c-450a-b7df-aee5f0ccd84d",
+      "workflow_id": "e79af8cc-e57d-4440-a5b6-6e053511266d",
+      "workflow_status": "succeeded",
+      "workflow_elapsed_seconds": 6.1135966689980705,
+      "workflow_total_tokens": 449,
+      "retrieval_response": {
+        "query": "连续输错几次密码会锁定，锁定多长时间？",
+        "top_k": 3,
+        "results": [
+          {
+            "id": "KB-1",
+            "title": "01-account-and-mfa.txt",
+            "content": "连续输错密码 5 次，账号会锁定 15 分钟，期间继续尝试登录不会提前解锁。员工可等待自动解锁，或提交“账号解锁”工单，由服务台完成身份核验后处理。",
+            "source_document": "01-account-and-mfa.txt",
+            "evidence_sha256": "0510875f558c848cb6aa430543745f5c126a3a3ae47e478b355e6f898bad2d3b"
+          },
+          {
+            "id": "KB-2",
+            "title": "01-account-and-mfa.txt",
+            "content": "新密码至少 12 位，必须同时包含大写字母、小写字母、数字和特殊字符，且不得与最近 5 次使用过的密码相同。短信验证码有效期为 5 分钟。",
+            "source_document": "01-account-and-mfa.txt",
+            "evidence_sha256": "45eea4dde8d913f76537417fcdaca6d4cbb7e0fc7038dd2c10183faf4927c02e"
+          },
+          {
+            "id": "KB-3",
+            "title": "01-account-and-mfa.txt",
+            "content": "解锁不等于密码重置。员工仍不知道原密码时，应按照 ACC-01 重置密码。",
+            "source_document": "01-account-and-mfa.txt",
+            "evidence_sha256": "4e762be25361910cfe510a7f6df0812a650a8913d37fbcb381cf4b4fa6b572ce"
+          }
+        ]
+      },
+      "expected_ids_provenance": "per_request_aliases_from_expected_source_not_stable_gold_ids",
+      "evidence_groups_covered": [
+        true,
+        true
+      ],
+      "cited_ids": [
+        "KB-1"
+      ],
+      "unknown_citations": [],
+      "reviewed_at": "2026-11-06T08:28:27.817748+00:00"
+    },
+    {
+      "id": "D04",
+      "query": "旧手机还能用，换认证手机时先删旧设备还是先验证新设备？",
+      "answerable": true,
+      "expected_sources": [
+        "01-account-and-mfa.txt"
+      ],
+      "expected_sections": [
+        "ACC-03"
+      ],
+      "evidence_groups": [
+        [
+          "先验证新设备"
+        ],
+        [
+          "再删除旧设备"
+        ]
+      ],
+      "reference_answer": "先添加并验证新设备，再移除旧设备。",
+      "rubric": "先添加并验证新设备，再移除旧设备。 有答案题需引用本次实际提供且支持回答的KB片段；无答案题需明确资料不足且不编造。",
+      "expected_ids": [
+        "KB-1",
+        "KB-2",
+        "KB-3"
+      ],
+      "fragments": [
+        {
+          "id": "KB-1",
+          "title": "01-account-and-mfa.txt",
+          "content": "旧手机仍可使用时，先打开“安全中心 → 多因素认证 → 添加设备”，在新手机完成绑定并通过一次验证，再移除旧手机。必须先验证新设备，再删除旧设备，避免失去登录方式。",
+          "source_document": "01-account-and-mfa.txt",
+          "evidence_sha256": "20ea08141c99c120efa298e3a251d353801f1529b53d2d61cf7873b54e950472"
+        },
+        {
+          "id": "KB-2",
+          "title": "01-account-and-mfa.txt",
+          "content": "旧手机丢失或损坏、无法完成验证时，联系服务台申请“认证设备重绑”，完成身份核验后由服务台清除旧绑定，再由员工注册新设备。服务台不会要求员工提供密码、短信验证码或认证器动态口令。",
+          "source_document": "01-account-and-mfa.txt",
+          "evidence_sha256": "295700501081ad9f493788647bb9bc35a7529eea8b304e447827c9288672c16c"
+        },
+        {
+          "id": "KB-3",
+          "title": "01-account-and-mfa.txt",
+          "content": "ACC-03：更换多因素认证手机",
+          "source_document": "01-account-and-mfa.txt",
+          "evidence_sha256": "4de3501b82e13c1b81acfdf5e91842df21efe08c8a77855f71ea880007aa5192"
+        }
+      ],
+      "retrieval_hit": true,
+      "source_hit": true,
+      "answer": "旧手机仍可使用时，先打开“安全中心 → 多因素认证 → 添加设备”，在新手机完成绑定并通过一次验证，再移除旧手机。必须先验证新设备，再删除旧设备，避免失去登录方式。[KB-1]",
+      "model_insufficient": false,
+      "citation_valid": true,
+      "answer_correct": true,
+      "refusal_correct": null,
+      "review_notes": "正确说明先添加并验证新设备，再移除旧设备，操作顺序与KB-1一致。",
+      "retrieval_seconds": null,
+      "generation_seconds": null,
+      "total_seconds": 9.267745,
+      "status": "ok",
+      "error": null,
+      "dify_request": {
+        "inputs": {
+          "query": "旧手机还能用，换认证手机时先删旧设备还是先验证新设备？"
+        },
+        "response_mode": "blocking",
+        "user": "knowledge-qa-docs-eval"
+      },
+      "api_seconds": 9.267042,
+      "dify_response": {
+        "task_id": "aba90883-fc6c-476a-8067-c34519f378ae",
+        "workflow_run_id": "7b223a21-98fb-441d-990e-15764fbeb169",
+        "data": {
+          "id": "7b223a21-98fb-441d-990e-15764fbeb169",
+          "workflow_id": "e79af8cc-e57d-4440-a5b6-6e053511266d",
+          "status": "succeeded",
+          "outputs": {
+            "answer": "旧手机仍可使用时，先打开“安全中心 → 多因素认证 → 添加设备”，在新手机完成绑定并通过一次验证，再移除旧手机。必须先验证新设备，再删除旧设备，避免失去登录方式。[KB-1]",
+            "insufficient": false,
+            "raw_answer": "{\n  \"answer\": \"旧手机仍可使用时，先打开“安全中心 → 多因素认证 → 添加设备”，在新手机完成绑定并通过一次验证，再移除旧手机。必须先验证新设备，再删除旧设备，避免失去登录方式。[KB-1]\",\n  \"insufficient\": false\n}",
+            "retrieval_body": "{\"query\": \"旧手机还能用，换认证手机时先删旧设备还是先验证新设备？\", \"top_k\": 3, \"results\": [{\"id\": \"KB-1\", \"title\": \"01-account-and-mfa.txt\", \"content\": \"旧手机仍可使用时，先打开“安全中心 → 多因素认证 → 添加设备”，在新手机完成绑定并通过一次验证，再移除旧手机。必须先验证新设备，再删除旧设备，避免失去登录方式。\"}, {\"id\": \"KB-2\", \"title\": \"01-account-and-mfa.txt\", \"content\": \"旧手机丢失或损坏、无法完成验证时，联系服务台申请“认证设备重绑”，完成身份核验后由服务台清除旧绑定，再由员工注册新设备。服务台不会要求员工提供密码、短信验证码或认证器动态口令。\"}, {\"id\": \"KB-3\", \"title\": \"01-account-and-mfa.txt\", \"content\": \"ACC-03：更换多因素认证手机\"}]}"
+          },
+          "error": null,
+          "elapsed_time": 9.213340212998446,
+          "total_tokens": 487,
+          "total_steps": 6,
+          "created_at": 1793953309,
+          "finished_at": 1793953319
+        }
+      },
+      "workflow_run_id": "7b223a21-98fb-441d-990e-15764fbeb169",
+      "workflow_id": "e79af8cc-e57d-4440-a5b6-6e053511266d",
+      "workflow_status": "succeeded",
+      "workflow_elapsed_seconds": 9.213340212998446,
+      "workflow_total_tokens": 487,
+      "retrieval_response": {
+        "query": "旧手机还能用，换认证手机时先删旧设备还是先验证新设备？",
+        "top_k": 3,
+        "results": [
+          {
+            "id": "KB-1",
+            "title": "01-account-and-mfa.txt",
+            "content": "旧手机仍可使用时，先打开“安全中心 → 多因素认证 → 添加设备”，在新手机完成绑定并通过一次验证，再移除旧手机。必须先验证新设备，再删除旧设备，避免失去登录方式。",
+            "source_document": "01-account-and-mfa.txt",
+            "evidence_sha256": "20ea08141c99c120efa298e3a251d353801f1529b53d2d61cf7873b54e950472"
+          },
+          {
+            "id": "KB-2",
+            "title": "01-account-and-mfa.txt",
+            "content": "旧手机丢失或损坏、无法完成验证时，联系服务台申请“认证设备重绑”，完成身份核验后由服务台清除旧绑定，再由员工注册新设备。服务台不会要求员工提供密码、短信验证码或认证器动态口令。",
+            "source_document": "01-account-and-mfa.txt",
+            "evidence_sha256": "295700501081ad9f493788647bb9bc35a7529eea8b304e447827c9288672c16c"
+          },
+          {
+            "id": "KB-3",
+            "title": "01-account-and-mfa.txt",
+            "content": "ACC-03：更换多因素认证手机",
+            "source_document": "01-account-and-mfa.txt",
+            "evidence_sha256": "4de3501b82e13c1b81acfdf5e91842df21efe08c8a77855f71ea880007aa5192"
+          }
+        ]
+      },
+      "expected_ids_provenance": "per_request_aliases_from_expected_source_not_stable_gold_ids",
+      "evidence_groups_covered": [
+        true,
+        true
+      ],
+      "cited_ids": [
+        "KB-1"
+      ],
+      "unknown_citations": [],
+      "reviewed_at": "2026-11-06T08:29:20.815162+00:00"
+    },
+    {
+      "id": "D05",
+      "query": "旧认证手机丢失后，如何重新绑定？",
+      "answerable": true,
+      "expected_sources": [
+        "01-account-and-mfa.txt"
+      ],
+      "expected_sections": [
+        "ACC-03"
+      ],
+      "evidence_groups": [
+        [
+          "旧手机丢失"
+        ],
+        [
+          "身份核验"
+        ],
+        [
+          "清除旧绑定"
+        ],
+        [
+          "注册新设备"
+        ]
+      ],
+      "reference_answer": "联系服务台完成身份核验，清除旧绑定，再注册新设备。",
+      "rubric": "联系服务台完成身份核验，清除旧绑定，再注册新设备。 有答案题需引用本次实际提供且支持回答的KB片段；无答案题需明确资料不足且不编造。",
+      "expected_ids": [
+        "KB-1",
+        "KB-2",
+        "KB-3"
+      ],
+      "fragments": [
+        {
+          "id": "KB-1",
+          "title": "01-account-and-mfa.txt",
+          "content": "旧手机丢失或损坏、无法完成验证时，联系服务台申请“认证设备重绑”，完成身份核验后由服务台清除旧绑定，再由员工注册新设备。服务台不会要求员工提供密码、短信验证码或认证器动态口令。",
+          "source_document": "01-account-and-mfa.txt",
+          "evidence_sha256": "295700501081ad9f493788647bb9bc35a7529eea8b304e447827c9288672c16c"
+        },
+        {
+          "id": "KB-2",
+          "title": "01-account-and-mfa.txt",
+          "content": "旧手机仍可使用时，先打开“安全中心 → 多因素认证 → 添加设备”，在新手机完成绑定并通过一次验证，再移除旧手机。必须先验证新设备，再删除旧设备，避免失去登录方式。",
+          "source_document": "01-account-and-mfa.txt",
+          "evidence_sha256": "20ea08141c99c120efa298e3a251d353801f1529b53d2d61cf7873b54e950472"
+        },
+        {
+          "id": "KB-3",
+          "title": "01-account-and-mfa.txt",
+          "content": "ACC-03：更换多因素认证手机",
+          "source_document": "01-account-and-mfa.txt",
+          "evidence_sha256": "4de3501b82e13c1b81acfdf5e91842df21efe08c8a77855f71ea880007aa5192"
+        }
+      ],
+      "retrieval_hit": true,
+      "source_hit": true,
+      "answer": "旧认证手机丢失后，联系服务台申请‘认证设备重绑’，完成身份核验后由服务台清除旧绑定，再由员工注册新设备。服务台不会要求员工提供密码、短信验证码或认证器动态口令。[KB-1]",
+      "model_insufficient": false,
+      "citation_valid": true,
+      "answer_correct": true,
+      "refusal_correct": null,
+      "review_notes": "正确说明联系服务台、核验身份、清除旧绑定及注册新设备的流程，补充说明符合资料，引用KB-1正确。",
+      "retrieval_seconds": null,
+      "generation_seconds": null,
+      "total_seconds": 8.955606,
+      "status": "ok",
+      "error": null,
+      "dify_request": {
+        "inputs": {
+          "query": "旧认证手机丢失后，如何重新绑定？"
+        },
+        "response_mode": "blocking",
+        "user": "knowledge-qa-docs-eval"
+      },
+      "api_seconds": 8.955008,
+      "dify_response": {
+        "task_id": "96d9a8b4-6b80-4f6e-b399-665221737e25",
+        "workflow_run_id": "c189d21d-47dc-4ae9-b09a-fdd9b385c086",
+        "data": {
+          "id": "c189d21d-47dc-4ae9-b09a-fdd9b385c086",
+          "workflow_id": "e79af8cc-e57d-4440-a5b6-6e053511266d",
+          "status": "succeeded",
+          "outputs": {
+            "answer": "旧认证手机丢失后，联系服务台申请‘认证设备重绑’，完成身份核验后由服务台清除旧绑定，再由员工注册新设备。服务台不会要求员工提供密码、短信验证码或认证器动态口令。[KB-1]",
+            "insufficient": false,
+            "raw_answer": "{\n  \"answer\": \"旧认证手机丢失后，联系服务台申请‘认证设备重绑’，完成身份核验后由服务台清除旧绑定，再由员工注册新设备。服务台不会要求员工提供密码、短信验证码或认证器动态口令。[KB-1]\",\n  \"insufficient\": false\n}",
+            "retrieval_body": "{\"query\": \"旧认证手机丢失后，如何重新绑定？\", \"top_k\": 3, \"results\": [{\"id\": \"KB-1\", \"title\": \"01-account-and-mfa.txt\", \"content\": \"旧手机丢失或损坏、无法完成验证时，联系服务台申请“认证设备重绑”，完成身份核验后由服务台清除旧绑定，再由员工注册新设备。服务台不会要求员工提供密码、短信验证码或认证器动态口令。\"}, {\"id\": \"KB-2\", \"title\": \"01-account-and-mfa.txt\", \"content\": \"旧手机仍可使用时，先打开“安全中心 → 多因素认证 → 添加设备”，在新手机完成绑定并通过一次验证，再移除旧手机。必须先验证新设备，再删除旧设备，避免失去登录方式。\"}, {\"id\": \"KB-3\", \"title\": \"01-account-and-mfa.txt\", \"content\": \"ACC-03：更换多因素认证手机\"}]}"
+          },
+          "error": null,
+          "elapsed_time": 8.910776754000835,
+          "total_tokens": 479,
+          "total_steps": 6,
+          "created_at": 1793953319,
+          "finished_at": 1793953327
+        }
+      },
+      "workflow_run_id": "c189d21d-47dc-4ae9-b09a-fdd9b385c086",
+      "workflow_id": "e79af8cc-e57d-4440-a5b6-6e053511266d",
+      "workflow_status": "succeeded",
+      "workflow_elapsed_seconds": 8.910776754000835,
+      "workflow_total_tokens": 479,
+      "retrieval_response": {
+        "query": "旧认证手机丢失后，如何重新绑定？",
+        "top_k": 3,
+        "results": [
+          {
+            "id": "KB-1",
+            "title": "01-account-and-mfa.txt",
+            "content": "旧手机丢失或损坏、无法完成验证时，联系服务台申请“认证设备重绑”，完成身份核验后由服务台清除旧绑定，再由员工注册新设备。服务台不会要求员工提供密码、短信验证码或认证器动态口令。",
+            "source_document": "01-account-and-mfa.txt",
+            "evidence_sha256": "295700501081ad9f493788647bb9bc35a7529eea8b304e447827c9288672c16c"
+          },
+          {
+            "id": "KB-2",
+            "title": "01-account-and-mfa.txt",
+            "content": "旧手机仍可使用时，先打开“安全中心 → 多因素认证 → 添加设备”，在新手机完成绑定并通过一次验证，再移除旧手机。必须先验证新设备，再删除旧设备，避免失去登录方式。",
+            "source_document": "01-account-and-mfa.txt",
+            "evidence_sha256": "20ea08141c99c120efa298e3a251d353801f1529b53d2d61cf7873b54e950472"
+          },
+          {
+            "id": "KB-3",
+            "title": "01-account-and-mfa.txt",
+            "content": "ACC-03：更换多因素认证手机",
+            "source_document": "01-account-and-mfa.txt",
+            "evidence_sha256": "4de3501b82e13c1b81acfdf5e91842df21efe08c8a77855f71ea880007aa5192"
+          }
+        ]
+      },
+      "expected_ids_provenance": "per_request_aliases_from_expected_source_not_stable_gold_ids",
+      "evidence_groups_covered": [
+        true,
+        true,
+        true,
+        true
+      ],
+      "cited_ids": [
+        "KB-1"
+      ],
+      "unknown_citations": [],
+      "reviewed_at": "2026-11-06T08:30:19.154158+00:00"
+    },
+    {
+      "id": "D06",
+      "query": "安装工作软件由谁审批，谁负责安装？",
+      "answerable": true,
+      "expected_sources": [
+        "01-account-and-mfa.txt"
+      ],
+      "expected_sections": [
+        "ACC-04"
+      ],
+      "evidence_groups": [
+        [
+          "直属主管审批"
+        ],
+        [
+          "IT 执行安装"
+        ]
+      ],
+      "reference_answer": "直属主管审批业务用途，审批后IT执行安装。",
+      "rubric": "直属主管审批业务用途，审批后IT执行安装。 有答案题需引用本次实际提供且支持回答的KB片段；无答案题需明确资料不足且不编造。",
+      "expected_ids": [
+        "KB-1",
+        "KB-2",
+        "KB-3"
+      ],
+      "fragments": [
+        {
+          "id": "KB-1",
+          "title": "01-account-and-mfa.txt",
+          "content": "安装工作软件前，在“服务门户 → 软件申请”提交软件名称、工作用途和所需版本，由直属主管审批。审批通过后由 IT 执行安装；员工不得自行获取本地管理员权限。",
+          "source_document": "01-account-and-mfa.txt",
+          "evidence_sha256": "f015399a0fe8384694876785fc7dfd40ea6d366bd37b13da9ac8f5d3cf86c5c0"
+        },
+        {
+          "id": "KB-2",
+          "title": "01-account-and-mfa.txt",
+          "content": "直属主管负责审批业务用途，IT 负责安装与技术检查。不能把“IT 执行安装”理解为“IT 代替主管审批”。本文不规定软件申请从提交到安装完成的统一时限。",
+          "source_document": "01-account-and-mfa.txt",
+          "evidence_sha256": "1dc05006269cc763afac3240468299dbde4294729013022bd2c223f4f1d95cc0"
+        },
+        {
+          "id": "KB-3",
+          "title": "01-account-and-mfa.txt",
+          "content": "ACC-04：软件安装与管理员权限",
+          "source_document": "01-account-and-mfa.txt",
+          "evidence_sha256": "eb99386eceb88581725596702e629eb7ac8116f6e4993d72f02ea9c051e08bce"
+        }
+      ],
+      "retrieval_hit": true,
+      "source_hit": true,
+      "answer": "安装工作软件由直属主管审批，IT 负责安装。[KB-1] [KB-2]",
+      "model_insufficient": false,
+      "citation_valid": true,
+      "answer_correct": true,
+      "refusal_correct": null,
+      "review_notes": "正确区分直属主管审批与IT负责安装，引用KB-1和KB-2均有依据。",
+      "retrieval_seconds": null,
+      "generation_seconds": null,
+      "total_seconds": 6.33166,
+      "status": "ok",
+      "error": null,
+      "dify_request": {
+        "inputs": {
+          "query": "安装工作软件由谁审批，谁负责安装？"
+        },
+        "response_mode": "blocking",
+        "user": "knowledge-qa-docs-eval"
+      },
+      "api_seconds": 6.330529,
+      "dify_response": {
+        "task_id": "0a24332b-8f3b-440c-b032-6d5558ceb0b3",
+        "workflow_run_id": "c835e33c-577f-4500-97fa-58a221a5e594",
+        "data": {
+          "id": "c835e33c-577f-4500-97fa-58a221a5e594",
+          "workflow_id": "e79af8cc-e57d-4440-a5b6-6e053511266d",
+          "status": "succeeded",
+          "outputs": {
+            "answer": "安装工作软件由直属主管审批，IT 负责安装。[KB-1] [KB-2]",
+            "insufficient": false,
+            "raw_answer": "{\n  \"answer\": \"安装工作软件由直属主管审批，IT 负责安装。[KB-1] [KB-2]\",\n  \"insufficient\": false\n}",
+            "retrieval_body": "{\"query\": \"安装工作软件由谁审批，谁负责安装？\", \"top_k\": 3, \"results\": [{\"id\": \"KB-1\", \"title\": \"01-account-and-mfa.txt\", \"content\": \"安装工作软件前，在“服务门户 → 软件申请”提交软件名称、工作用途和所需版本，由直属主管审批。审批通过后由 IT 执行安装；员工不得自行获取本地管理员权限。\"}, {\"id\": \"KB-2\", \"title\": \"01-account-and-mfa.txt\", \"content\": \"直属主管负责审批业务用途，IT 负责安装与技术检查。不能把“IT 执行安装”理解为“IT 代替主管审批”。本文不规定软件申请从提交到安装完成的统一时限。\"}, {\"id\": \"KB-3\", \"title\": \"01-account-and-mfa.txt\", \"content\": \"ACC-04：软件安装与管理员权限\"}]}"
+          },
+          "error": null,
+          "elapsed_time": 6.275978087000112,
+          "total_tokens": 433,
+          "total_steps": 6,
+          "created_at": 1793953328,
+          "finished_at": 1793953334
+        }
+      },
+      "workflow_run_id": "c835e33c-577f-4500-97fa-58a221a5e594",
+      "workflow_id": "e79af8cc-e57d-4440-a5b6-6e053511266d",
+      "workflow_status": "succeeded",
+      "workflow_elapsed_seconds": 6.275978087000112,
+      "workflow_total_tokens": 433,
+      "retrieval_response": {
+        "query": "安装工作软件由谁审批，谁负责安装？",
+        "top_k": 3,
+        "results": [
+          {
+            "id": "KB-1",
+            "title": "01-account-and-mfa.txt",
+            "content": "安装工作软件前，在“服务门户 → 软件申请”提交软件名称、工作用途和所需版本，由直属主管审批。审批通过后由 IT 执行安装；员工不得自行获取本地管理员权限。",
+            "source_document": "01-account-and-mfa.txt",
+            "evidence_sha256": "f015399a0fe8384694876785fc7dfd40ea6d366bd37b13da9ac8f5d3cf86c5c0"
+          },
+          {
+            "id": "KB-2",
+            "title": "01-account-and-mfa.txt",
+            "content": "直属主管负责审批业务用途，IT 负责安装与技术检查。不能把“IT 执行安装”理解为“IT 代替主管审批”。本文不规定软件申请从提交到安装完成的统一时限。",
+            "source_document": "01-account-and-mfa.txt",
+            "evidence_sha256": "1dc05006269cc763afac3240468299dbde4294729013022bd2c223f4f1d95cc0"
+          },
+          {
+            "id": "KB-3",
+            "title": "01-account-and-mfa.txt",
+            "content": "ACC-04：软件安装与管理员权限",
+            "source_document": "01-account-and-mfa.txt",
+            "evidence_sha256": "eb99386eceb88581725596702e629eb7ac8116f6e4993d72f02ea9c051e08bce"
+          }
+        ]
+      },
+      "expected_ids_provenance": "per_request_aliases_from_expected_source_not_stable_gold_ids",
+      "evidence_groups_covered": [
+        true,
+        true
+      ],
+      "cited_ids": [
+        "KB-1",
+        "KB-2"
+      ],
+      "unknown_citations": [],
+      "reviewed_at": "2026-11-06T08:34:12.639356+00:00"
+    },
+    {
+      "id": "D07",
+      "query": "员工办公无线网络叫什么，首次连接前要做什么？",
+      "answerable": true,
+      "expected_sources": [
+        "02-network-and-vpn.txt"
+      ],
+      "expected_sections": [
+        "NET-01"
+      ],
+      "evidence_groups": [
+        [
+          "Nebula-Staff"
+        ],
+        [
+          "首次连接前"
+        ],
+        [
+          "安装公司无线网络证书"
+        ]
+      ],
+      "reference_answer": "Nebula-Staff，先通过软件中心安装公司无线网络证书。",
+      "rubric": "Nebula-Staff，先通过软件中心安装公司无线网络证书。 有答案题需引用本次实际提供且支持回答的KB片段；无答案题需明确资料不足且不编造。",
+      "expected_ids": [
+        "KB-1",
+        "KB-2",
+        "KB-3"
+      ],
+      "fragments": [
+        {
+          "id": "KB-1",
+          "title": "02-network-and-vpn.txt",
+          "content": "员工办公无线网络名称为 Nebula-Staff，使用统一账号和密码登录。首次连接前，必须通过“软件中心 → 网络组件”安装公司无线网络证书。",
+          "source_document": "02-network-and-vpn.txt",
+          "evidence_sha256": "a66ef33014986d412a30992c856ac13549751f8b4f8c6f347f82fb5a583e1581"
+        },
+        {
+          "id": "KB-2",
+          "title": "02-network-and-vpn.txt",
+          "content": "NET-01：办公无线网络接入",
+          "source_document": "02-network-and-vpn.txt",
+          "evidence_sha256": "b4488066f774ad8fbb1d5651b5a91080d3e47a424f730979481237e3db6ae955"
+        },
+        {
+          "id": "KB-3",
+          "title": "02-network-and-vpn.txt",
+          "content": "办公网络与远程 VPN 使用指南",
+          "source_document": "02-network-and-vpn.txt",
+          "evidence_sha256": "0f6d27a01e085a3f7826e8810ae54fed701fbb23a74d95134691878697e2891d"
+        }
+      ],
+      "retrieval_hit": true,
+      "source_hit": true,
+      "answer": "员工办公无线网络名称为 Nebula-Staff，首次连接前必须通过‘软件中心 → 网络组件’安装公司无线网络证书。[KB-1]",
+      "model_insufficient": false,
+      "citation_valid": true,
+      "answer_correct": true,
+      "refusal_correct": null,
+      "review_notes": "正确回答网络名称为Nebula-Staff，首次连接前需通过软件中心安装公司无线网络证书，引用KB-1正确。",
+      "retrieval_seconds": null,
+      "generation_seconds": null,
+      "total_seconds": 6.643204,
+      "status": "ok",
+      "error": null,
+      "dify_request": {
+        "inputs": {
+          "query": "员工办公无线网络叫什么，首次连接前要做什么？"
+        },
+        "response_mode": "blocking",
+        "user": "knowledge-qa-docs-eval"
+      },
+      "api_seconds": 6.642247,
+      "dify_response": {
+        "task_id": "2ded4ece-eba3-4192-8313-d23bffe66510",
+        "workflow_run_id": "ac27395f-695d-4e2f-acfb-d7d97e53de2d",
+        "data": {
+          "id": "ac27395f-695d-4e2f-acfb-d7d97e53de2d",
+          "workflow_id": "e79af8cc-e57d-4440-a5b6-6e053511266d",
+          "status": "succeeded",
+          "outputs": {
+            "answer": "员工办公无线网络名称为 Nebula-Staff，首次连接前必须通过‘软件中心 → 网络组件’安装公司无线网络证书。[KB-1]",
+            "insufficient": false,
+            "raw_answer": "{\n  \"answer\": \"员工办公无线网络名称为 Nebula-Staff，首次连接前必须通过‘软件中心 → 网络组件’安装公司无线网络证书。[KB-1]\",\n  \"insufficient\": false\n}",
+            "retrieval_body": "{\"query\": \"员工办公无线网络叫什么，首次连接前要做什么？\", \"top_k\": 3, \"results\": [{\"id\": \"KB-1\", \"title\": \"02-network-and-vpn.txt\", \"content\": \"员工办公无线网络名称为 Nebula-Staff，使用统一账号和密码登录。首次连接前，必须通过“软件中心 → 网络组件”安装公司无线网络证书。\"}, {\"id\": \"KB-2\", \"title\": \"02-network-and-vpn.txt\", \"content\": \"NET-01：办公无线网络接入\"}, {\"id\": \"KB-3\", \"title\": \"02-network-and-vpn.txt\", \"content\": \"办公网络与远程 VPN 使用指南\"}]}"
+          },
+          "error": null,
+          "elapsed_time": 6.5936778350005625,
+          "total_tokens": 398,
+          "total_steps": 6,
+          "created_at": 1793953334,
+          "finished_at": 1793953340
+        }
+      },
+      "workflow_run_id": "ac27395f-695d-4e2f-acfb-d7d97e53de2d",
+      "workflow_id": "e79af8cc-e57d-4440-a5b6-6e053511266d",
+      "workflow_status": "succeeded",
+      "workflow_elapsed_seconds": 6.5936778350005625,
+      "workflow_total_tokens": 398,
+      "retrieval_response": {
+        "query": "员工办公无线网络叫什么，首次连接前要做什么？",
+        "top_k": 3,
+        "results": [
+          {
+            "id": "KB-1",
+            "title": "02-network-and-vpn.txt",
+            "content": "员工办公无线网络名称为 Nebula-Staff，使用统一账号和密码登录。首次连接前，必须通过“软件中心 → 网络组件”安装公司无线网络证书。",
+            "source_document": "02-network-and-vpn.txt",
+            "evidence_sha256": "a66ef33014986d412a30992c856ac13549751f8b4f8c6f347f82fb5a583e1581"
+          },
+          {
+            "id": "KB-2",
+            "title": "02-network-and-vpn.txt",
+            "content": "NET-01：办公无线网络接入",
+            "source_document": "02-network-and-vpn.txt",
+            "evidence_sha256": "b4488066f774ad8fbb1d5651b5a91080d3e47a424f730979481237e3db6ae955"
+          },
+          {
+            "id": "KB-3",
+            "title": "02-network-and-vpn.txt",
+            "content": "办公网络与远程 VPN 使用指南",
+            "source_document": "02-network-and-vpn.txt",
+            "evidence_sha256": "0f6d27a01e085a3f7826e8810ae54fed701fbb23a74d95134691878697e2891d"
+          }
+        ]
+      },
+      "expected_ids_provenance": "per_request_aliases_from_expected_source_not_stable_gold_ids",
+      "evidence_groups_covered": [
+        true,
+        true,
+        true
+      ],
+      "cited_ids": [
+        "KB-1"
+      ],
+      "unknown_citations": [],
+      "reviewed_at": "2026-11-06T08:34:38.358402+00:00"
+    },
+    {
+      "id": "D08",
+      "query": "访客无线网络能访问公司共享文件夹吗？",
+      "answerable": true,
+      "expected_sources": [
+        "02-network-and-vpn.txt"
+      ],
+      "expected_sections": [
+        "NET-01"
+      ],
+      "evidence_groups": [
+        [
+          "访客网络只能访问互联网"
+        ],
+        [
+          "不能访问公司共享文件夹"
+        ]
+      ],
+      "reference_answer": "不能；Nebula-Guest只能访问互联网，不能访问共享文件夹或内部业务系统。",
+      "rubric": "不能；Nebula-Guest只能访问互联网，不能访问共享文件夹或内部业务系统。 有答案题需引用本次实际提供且支持回答的KB片段；无答案题需明确资料不足且不编造。",
+      "expected_ids": [
+        "KB-1"
+      ],
+      "fragments": [
+        {
+          "id": "KB-1",
+          "title": "02-network-and-vpn.txt",
+          "content": "访客无线网络名称为 Nebula-Guest，由会议或接待负责人在前台申请临时连接码。访客网络只能访问互联网，不能访问公司共享文件夹或内部业务系统。员工不得把 Nebula-Staff 的账号凭据提供给访客。",
+          "source_document": "02-network-and-vpn.txt",
+          "evidence_sha256": "502f36192e5967169690a9db2d7096dee286d031392b4f17299499c0011502f8"
+        },
+        {
+          "id": "KB-2",
+          "title": "03-shared-files-and-recovery.txt",
+          "content": "- 适用范围：虚构公司的团队网盘和受管共享文件夹；不适用于个人电脑本地磁盘或私人网盘。",
+          "source_document": "03-shared-files-and-recovery.txt",
+          "evidence_sha256": "dc4b7d09a0fa701e80b0ccf2404e60f49078c764fe64db585f55bd9d68044b0a"
+        },
+        {
+          "id": "KB-3",
+          "title": "03-shared-files-and-recovery.txt",
+          "content": "FILE-01：共享文件夹权限申请",
+          "source_document": "03-shared-files-and-recovery.txt",
+          "evidence_sha256": "a0cb74f363e366fea70caf946843ac429f6f84a98c95e6ed446e640496e30016"
+        }
+      ],
+      "retrieval_hit": true,
+      "source_hit": true,
+      "answer": "访客无线网络不能访问公司共享文件夹。[KB-1]",
+      "model_insufficient": false,
+      "citation_valid": true,
+      "answer_correct": true,
+      "refusal_correct": null,
+      "review_notes": "明确回答访客无线网络不能访问公司共享文件夹，引用KB-1直接支持结论。",
+      "retrieval_seconds": null,
+      "generation_seconds": null,
+      "total_seconds": 5.439494,
+      "status": "ok",
+      "error": null,
+      "dify_request": {
+        "inputs": {
+          "query": "访客无线网络能访问公司共享文件夹吗？"
+        },
+        "response_mode": "blocking",
+        "user": "knowledge-qa-docs-eval"
+      },
+      "api_seconds": 5.43897,
+      "dify_response": {
+        "task_id": "1444e71c-1ea2-4488-9f23-19a7a706ec65",
+        "workflow_run_id": "7e5e746a-aa9b-415a-b800-64b330a9be71",
+        "data": {
+          "id": "7e5e746a-aa9b-415a-b800-64b330a9be71",
+          "workflow_id": "e79af8cc-e57d-4440-a5b6-6e053511266d",
+          "status": "succeeded",
+          "outputs": {
+            "answer": "访客无线网络不能访问公司共享文件夹。[KB-1]",
+            "insufficient": false,
+            "raw_answer": "{\n  \"answer\": \"访客无线网络不能访问公司共享文件夹。[KB-1]\",\n  \"insufficient\": false\n}",
+            "retrieval_body": "{\"query\": \"访客无线网络能访问公司共享文件夹吗？\", \"top_k\": 3, \"results\": [{\"id\": \"KB-1\", \"title\": \"02-network-and-vpn.txt\", \"content\": \"访客无线网络名称为 Nebula-Guest，由会议或接待负责人在前台申请临时连接码。访客网络只能访问互联网，不能访问公司共享文件夹或内部业务系统。员工不得把 Nebula-Staff 的账号凭据提供给访客。\"}, {\"id\": \"KB-2\", \"title\": \"03-shared-files-and-recovery.txt\", \"content\": \"- 适用范围：虚构公司的团队网盘和受管共享文件夹；不适用于个人电脑本地磁盘或私人网盘。\"}, {\"id\": \"KB-3\", \"title\": \"03-shared-files-and-recovery.txt\", \"content\": \"FILE-01：共享文件夹权限申请\"}]}"
+          },
+          "error": null,
+          "elapsed_time": 5.394833377999021,
+          "total_tokens": 417,
+          "total_steps": 6,
+          "created_at": 1793953341,
+          "finished_at": 1793953346
+        }
+      },
+      "workflow_run_id": "7e5e746a-aa9b-415a-b800-64b330a9be71",
+      "workflow_id": "e79af8cc-e57d-4440-a5b6-6e053511266d",
+      "workflow_status": "succeeded",
+      "workflow_elapsed_seconds": 5.394833377999021,
+      "workflow_total_tokens": 417,
+      "retrieval_response": {
+        "query": "访客无线网络能访问公司共享文件夹吗？",
+        "top_k": 3,
+        "results": [
+          {
+            "id": "KB-1",
+            "title": "02-network-and-vpn.txt",
+            "content": "访客无线网络名称为 Nebula-Guest，由会议或接待负责人在前台申请临时连接码。访客网络只能访问互联网，不能访问公司共享文件夹或内部业务系统。员工不得把 Nebula-Staff 的账号凭据提供给访客。",
+            "source_document": "02-network-and-vpn.txt",
+            "evidence_sha256": "502f36192e5967169690a9db2d7096dee286d031392b4f17299499c0011502f8"
+          },
+          {
+            "id": "KB-2",
+            "title": "03-shared-files-and-recovery.txt",
+            "content": "- 适用范围：虚构公司的团队网盘和受管共享文件夹；不适用于个人电脑本地磁盘或私人网盘。",
+            "source_document": "03-shared-files-and-recovery.txt",
+            "evidence_sha256": "dc4b7d09a0fa701e80b0ccf2404e60f49078c764fe64db585f55bd9d68044b0a"
+          },
+          {
+            "id": "KB-3",
+            "title": "03-shared-files-and-recovery.txt",
+            "content": "FILE-01：共享文件夹权限申请",
+            "source_document": "03-shared-files-and-recovery.txt",
+            "evidence_sha256": "a0cb74f363e366fea70caf946843ac429f6f84a98c95e6ed446e640496e30016"
+          }
+        ]
+      },
+      "expected_ids_provenance": "per_request_aliases_from_expected_source_not_stable_gold_ids",
+      "evidence_groups_covered": [
+        true,
+        true
+      ],
+      "cited_ids": [
+        "KB-1"
+      ],
+      "unknown_citations": [],
+      "reviewed_at": "2026-11-06T08:34:57.629791+00:00"
+    },
+    {
+      "id": "D09",
+      "query": "个人电脑可以按本指南接入远程VPN吗，指定客户端叫什么？",
+      "answerable": true,
+      "expected_sources": [
+        "02-network-and-vpn.txt"
+      ],
+      "expected_sections": [
+        "NET-02"
+      ],
+      "evidence_groups": [
+        [
+          "仅允许受管电脑连接"
+        ],
+        [
+          "Nebula Connect"
+        ]
+      ],
+      "reference_answer": "本指南仅允许受管电脑连接，指定客户端为Nebula Connect；不提供个人设备接入办法。",
+      "rubric": "本指南仅允许受管电脑连接，指定客户端为Nebula Connect；不提供个人设备接入办法。 有答案题需引用本次实际提供且支持回答的KB片段；无答案题需明确资料不足且不编造。",
+      "expected_ids": [
+        "KB-1",
+        "KB-2",
+        "KB-3"
+      ],
+      "fragments": [
+        {
+          "id": "KB-1",
+          "title": "02-network-and-vpn.txt",
+          "content": "办公网络与远程 VPN 使用指南",
+          "source_document": "02-network-and-vpn.txt",
+          "evidence_sha256": "0f6d27a01e085a3f7826e8810ae54fed701fbb23a74d95134691878697e2891d"
+        },
+        {
+          "id": "KB-2",
+          "title": "02-network-and-vpn.txt",
+          "content": "远程 VPN 仅允许受管电脑连接。员工先通过软件中心安装 Nebula Connect 客户端，再由直属主管审批远程访问申请；IT 根据批准的访问范围开通权限。",
+          "source_document": "02-network-and-vpn.txt",
+          "evidence_sha256": "cba19395937ae9c8e1410629cfc67f8652587f30a8db754418e066fc497381f8"
+        },
+        {
+          "id": "KB-3",
+          "title": "02-network-and-vpn.txt",
+          "content": "本文没有提供 VPN 出口国家列表、带宽保证值、个人设备 VPN 安装办法或供应商网络接入政策。不得把“允许远程访问”解释为允许访问任何地区或任何内部资源。",
+          "source_document": "02-network-and-vpn.txt",
+          "evidence_sha256": "501300b8eb9147d4382c17ee771910fb68346b9d0cffd470502d0ad75d19cfa9"
+        }
+      ],
+      "retrieval_hit": true,
+      "source_hit": true,
+      "answer": "个人电脑可以按本指南接入远程VPN，指定客户端为Nebula Connect。[KB-2]",
+      "model_insufficient": false,
+      "citation_valid": true,
+      "answer_correct": false,
+      "refusal_correct": null,
+      "review_notes": "客户端Nebula Connect正确，但错误声称个人电脑可以接入；KB-2仅允许受管电脑，KB-3未提供个人设备接入办法。",
+      "retrieval_seconds": null,
+      "generation_seconds": null,
+      "total_seconds": 6.049137,
+      "status": "ok",
+      "error": null,
+      "dify_request": {
+        "inputs": {
+          "query": "个人电脑可以按本指南接入远程VPN吗，指定客户端叫什么？"
+        },
+        "response_mode": "blocking",
+        "user": "knowledge-qa-docs-eval"
+      },
+      "api_seconds": 6.048592,
+      "dify_response": {
+        "task_id": "fa789562-9e2f-4ebc-ab44-e3d3223ac3e0",
+        "workflow_run_id": "d8232413-8731-493b-93fc-2279cb1cbb31",
+        "data": {
+          "id": "d8232413-8731-493b-93fc-2279cb1cbb31",
+          "workflow_id": "e79af8cc-e57d-4440-a5b6-6e053511266d",
+          "status": "succeeded",
+          "outputs": {
+            "answer": "个人电脑可以按本指南接入远程VPN，指定客户端为Nebula Connect。[KB-2]",
+            "insufficient": false,
+            "raw_answer": "{\n  \"answer\": \"个人电脑可以按本指南接入远程VPN，指定客户端为Nebula Connect。[KB-2]\",\n  \"insufficient\": false\n}",
+            "retrieval_body": "{\"query\": \"个人电脑可以按本指南接入远程VPN吗，指定客户端叫什么？\", \"top_k\": 3, \"results\": [{\"id\": \"KB-1\", \"title\": \"02-network-and-vpn.txt\", \"content\": \"办公网络与远程 VPN 使用指南\"}, {\"id\": \"KB-2\", \"title\": \"02-network-and-vpn.txt\", \"content\": \"远程 VPN 仅允许受管电脑连接。员工先通过软件中心安装 Nebula Connect 客户端，再由直属主管审批远程访问申请；IT 根据批准的访问范围开通权限。\"}, {\"id\": \"KB-3\", \"title\": \"02-network-and-vpn.txt\", \"content\": \"本文没有提供 VPN 出口国家列表、带宽保证值、个人设备 VPN 安装办法或供应商网络接入政策。不得把“允许远程访问”解释为允许访问任何地区或任何内部资源。\"}]}"
+          },
+          "error": null,
+          "elapsed_time": 6.006325460999506,
+          "total_tokens": 428,
+          "total_steps": 6,
+          "created_at": 1793953346,
+          "finished_at": 1793953352
+        }
+      },
+      "workflow_run_id": "d8232413-8731-493b-93fc-2279cb1cbb31",
+      "workflow_id": "e79af8cc-e57d-4440-a5b6-6e053511266d",
+      "workflow_status": "succeeded",
+      "workflow_elapsed_seconds": 6.006325460999506,
+      "workflow_total_tokens": 428,
+      "retrieval_response": {
+        "query": "个人电脑可以按本指南接入远程VPN吗，指定客户端叫什么？",
+        "top_k": 3,
+        "results": [
+          {
+            "id": "KB-1",
+            "title": "02-network-and-vpn.txt",
+            "content": "办公网络与远程 VPN 使用指南",
+            "source_document": "02-network-and-vpn.txt",
+            "evidence_sha256": "0f6d27a01e085a3f7826e8810ae54fed701fbb23a74d95134691878697e2891d"
+          },
+          {
+            "id": "KB-2",
+            "title": "02-network-and-vpn.txt",
+            "content": "远程 VPN 仅允许受管电脑连接。员工先通过软件中心安装 Nebula Connect 客户端，再由直属主管审批远程访问申请；IT 根据批准的访问范围开通权限。",
+            "source_document": "02-network-and-vpn.txt",
+            "evidence_sha256": "cba19395937ae9c8e1410629cfc67f8652587f30a8db754418e066fc497381f8"
+          },
+          {
+            "id": "KB-3",
+            "title": "02-network-and-vpn.txt",
+            "content": "本文没有提供 VPN 出口国家列表、带宽保证值、个人设备 VPN 安装办法或供应商网络接入政策。不得把“允许远程访问”解释为允许访问任何地区或任何内部资源。",
+            "source_document": "02-network-and-vpn.txt",
+            "evidence_sha256": "501300b8eb9147d4382c17ee771910fb68346b9d0cffd470502d0ad75d19cfa9"
+          }
+        ]
+      },
+      "expected_ids_provenance": "per_request_aliases_from_expected_source_not_stable_gold_ids",
+      "evidence_groups_covered": [
+        true,
+        true
+      ],
+      "cited_ids": [
+        "KB-2"
+      ],
+      "unknown_citations": [],
+      "reviewed_at": "2026-11-06T08:35:23.595952+00:00"
+    },
+    {
+      "id": "D10",
+      "query": "VPN连上后，是不是所有内部应用和共享目录都有权限？",
+      "answerable": true,
+      "expected_sources": [
+        "02-network-and-vpn.txt"
+      ],
+      "expected_sections": [
+        "NET-02"
+      ],
+      "evidence_groups": [
+        [
+          "不代表自动获得所有内部应用或共享文件夹的权限"
+        ],
+        [
+          "资源权限仍需由对应负责人批准"
+        ]
+      ],
+      "reference_answer": "不是，连接仅限获准网络范围，资源权限仍需负责人批准。",
+      "rubric": "不是，连接仅限获准网络范围，资源权限仍需负责人批准。 有答案题需引用本次实际提供且支持回答的KB片段；无答案题需明确资料不足且不编造。",
+      "expected_ids": [
+        "KB-1",
+        "KB-2"
+      ],
+      "fragments": [
+        {
+          "id": "KB-1",
+          "title": "02-network-and-vpn.txt",
+          "content": "登录 VPN 使用统一账号、密码和多因素认证。连接成功只表示进入获准的网络范围，不代表自动获得所有内部应用或共享文件夹的权限。资源权限仍需由对应负责人批准。",
+          "source_document": "02-network-and-vpn.txt",
+          "evidence_sha256": "a10f7f027c44e313b1b3272377ea510b60de68508e95dab08da2a6cc39511b86"
+        },
+        {
+          "id": "KB-2",
+          "title": "02-network-and-vpn.txt",
+          "content": "若 VPN 显示已连接但共享目录提示“无权限”，应核查共享文件夹授权，不应仅因该提示重复重装 VPN。",
+          "source_document": "02-network-and-vpn.txt",
+          "evidence_sha256": "f28ad64f2db64b1ea614c69298c9198993515b59ff152e6d968b9e7d2be6e6a3"
+        },
+        {
+          "id": "KB-3",
+          "title": "03-shared-files-and-recovery.txt",
+          "content": "IT 负责执行授权，不代替业务负责人审批。直属主管批准 VPN 访问，也不自动等于文件夹业务负责人批准共享权限。",
+          "source_document": "03-shared-files-and-recovery.txt",
+          "evidence_sha256": "357a2e31045aeeaa604fb648786810d20094d8c1acbec34bb1867754db75ebbb"
+        }
+      ],
+      "retrieval_hit": true,
+      "source_hit": true,
+      "answer": "VPN连上后，不是所有内部应用和共享目录都有权限。连接成功只表示进入获准的网络范围，资源权限仍需由对应负责人批准。[KB-1] IT负责执行授权，不代替业务负责人审批。直属主管批准VPN访问，也不自动等于文件夹业务负责人批准共享权限。[KB-3]",
+      "model_insufficient": false,
+      "citation_valid": true,
+      "answer_correct": true,
+      "refusal_correct": null,
+      "review_notes": "正确说明VPN连接不自动授予全部资源权限，仍需负责人批准；引用KB-1和KB-3均支持回答。",
+      "retrieval_seconds": null,
+      "generation_seconds": null,
+      "total_seconds": 10.331544,
+      "status": "ok",
+      "error": null,
+      "dify_request": {
+        "inputs": {
+          "query": "VPN连上后，是不是所有内部应用和共享目录都有权限？"
+        },
+        "response_mode": "blocking",
+        "user": "knowledge-qa-docs-eval"
+      },
+      "api_seconds": 10.330522,
+      "dify_response": {
+        "task_id": "677ff8fb-374d-4d02-8e45-4a8985dcb50d",
+        "workflow_run_id": "15b108c8-eaf0-404a-9c7d-4aaf0fc8201b",
+        "data": {
+          "id": "15b108c8-eaf0-404a-9c7d-4aaf0fc8201b",
+          "workflow_id": "e79af8cc-e57d-4440-a5b6-6e053511266d",
+          "status": "succeeded",
+          "outputs": {
+            "answer": "VPN连上后，不是所有内部应用和共享目录都有权限。连接成功只表示进入获准的网络范围，资源权限仍需由对应负责人批准。[KB-1] IT负责执行授权，不代替业务负责人审批。直属主管批准VPN访问，也不自动等于文件夹业务负责人批准共享权限。[KB-3]",
+            "insufficient": false,
+            "raw_answer": "{\n  \"answer\": \"VPN连上后，不是所有内部应用和共享目录都有权限。连接成功只表示进入获准的网络范围，资源权限仍需由对应负责人批准。[KB-1] IT负责执行授权，不代替业务负责人审批。直属主管批准VPN访问，也不自动等于文件夹业务负责人批准共享权限。[KB-3]\",\n  \"insufficient\": false\n}",
+            "retrieval_body": "{\"query\": \"VPN连上后，是不是所有内部应用和共享目录都有权限？\", \"top_k\": 3, \"results\": [{\"id\": \"KB-1\", \"title\": \"02-network-and-vpn.txt\", \"content\": \"登录 VPN 使用统一账号、密码和多因素认证。连接成功只表示进入获准的网络范围，不代表自动获得所有内部应用或共享文件夹的权限。资源权限仍需由对应负责人批准。\"}, {\"id\": \"KB-2\", \"title\": \"02-network-and-vpn.txt\", \"content\": \"若 VPN 显示已连接但共享目录提示“无权限”，应核查共享文件夹授权，不应仅因该提示重复重装 VPN。\"}, {\"id\": \"KB-3\", \"title\": \"03-shared-files-and-recovery.txt\", \"content\": \"IT 负责执行授权，不代替业务负责人审批。直属主管批准 VPN 访问，也不自动等于文件夹业务负责人批准共享权限。\"}]}"
+          },
+          "error": null,
+          "elapsed_time": 10.285206255000958,
+          "total_tokens": 490,
+          "total_steps": 6,
+          "created_at": 1793953352,
+          "finished_at": 1793953362
+        }
+      },
+      "workflow_run_id": "15b108c8-eaf0-404a-9c7d-4aaf0fc8201b",
+      "workflow_id": "e79af8cc-e57d-4440-a5b6-6e053511266d",
+      "workflow_status": "succeeded",
+      "workflow_elapsed_seconds": 10.285206255000958,
+      "workflow_total_tokens": 490,
+      "retrieval_response": {
+        "query": "VPN连上后，是不是所有内部应用和共享目录都有权限？",
+        "top_k": 3,
+        "results": [
+          {
+            "id": "KB-1",
+            "title": "02-network-and-vpn.txt",
+            "content": "登录 VPN 使用统一账号、密码和多因素认证。连接成功只表示进入获准的网络范围，不代表自动获得所有内部应用或共享文件夹的权限。资源权限仍需由对应负责人批准。",
+            "source_document": "02-network-and-vpn.txt",
+            "evidence_sha256": "a10f7f027c44e313b1b3272377ea510b60de68508e95dab08da2a6cc39511b86"
+          },
+          {
+            "id": "KB-2",
+            "title": "02-network-and-vpn.txt",
+            "content": "若 VPN 显示已连接但共享目录提示“无权限”，应核查共享文件夹授权，不应仅因该提示重复重装 VPN。",
+            "source_document": "02-network-and-vpn.txt",
+            "evidence_sha256": "f28ad64f2db64b1ea614c69298c9198993515b59ff152e6d968b9e7d2be6e6a3"
+          },
+          {
+            "id": "KB-3",
+            "title": "03-shared-files-and-recovery.txt",
+            "content": "IT 负责执行授权，不代替业务负责人审批。直属主管批准 VPN 访问，也不自动等于文件夹业务负责人批准共享权限。",
+            "source_document": "03-shared-files-and-recovery.txt",
+            "evidence_sha256": "357a2e31045aeeaa604fb648786810d20094d8c1acbec34bb1867754db75ebbb"
+          }
+        ]
+      },
+      "expected_ids_provenance": "per_request_aliases_from_expected_source_not_stable_gold_ids",
+      "evidence_groups_covered": [
+        true,
+        true
+      ],
+      "cited_ids": [
+        "KB-1",
+        "KB-3"
+      ],
+      "unknown_citations": [],
+      "reviewed_at": "2026-11-06T08:36:01.546019+00:00"
+    },
+    {
+      "id": "D11",
+      "query": "VPN仍无法连接时，报障要附哪些信息？",
+      "answerable": true,
+      "expected_sources": [
+        "02-network-and-vpn.txt"
+      ],
+      "expected_sections": [
+        "NET-03"
+      ],
+      "evidence_groups": [
+        [
+          "错误码"
+        ],
+        [
+          "发生时间"
+        ],
+        [
+          "客户端版本"
+        ]
+      ],
+      "reference_answer": "提交远程网络故障工单，附错误码、发生时间和客户端版本，不提供密码或验证码。",
+      "rubric": "提交远程网络故障工单，附错误码、发生时间和客户端版本，不提供密码或验证码。 有答案题需引用本次实际提供且支持回答的KB片段；无答案题需明确资料不足且不编造。",
+      "expected_ids": [
+        "KB-1",
+        "KB-2",
+        "KB-3"
+      ],
+      "fragments": [
+        {
+          "id": "KB-1",
+          "title": "02-network-and-vpn.txt",
+          "content": "NET-03：VPN 连接失败的处理顺序",
+          "source_document": "02-network-and-vpn.txt",
+          "evidence_sha256": "0a2537df766ffceff6749f0aa89c6ab361a8e662b9dd134900e77e537c524a7c"
+        },
+        {
+          "id": "KB-2",
+          "title": "02-network-and-vpn.txt",
+          "content": "若 VPN 显示已连接但共享目录提示“无权限”，应核查共享文件夹授权，不应仅因该提示重复重装 VPN。",
+          "source_document": "02-network-and-vpn.txt",
+          "evidence_sha256": "f28ad64f2db64b1ea614c69298c9198993515b59ff152e6d968b9e7d2be6e6a3"
+        },
+        {
+          "id": "KB-3",
+          "title": "02-network-and-vpn.txt",
+          "content": "NET-04：VPN 已连接但无法打开内部站点",
+          "source_document": "02-network-and-vpn.txt",
+          "evidence_sha256": "c1d076cfc68e8a15f0c1b9b7a448f061016c84ff60652d6c540793fe788c723b"
+        }
+      ],
+      "retrieval_hit": false,
+      "source_hit": true,
+      "answer": "中文回答，包含引用或明确资料不足",
+      "model_insufficient": true,
+      "citation_valid": false,
+      "answer_correct": false,
+      "refusal_correct": null,
+      "review_notes": "检索未返回错误码、发生时间和客户端版本的证据；回答为模板占位文字，未实际作答且没有有效引用。",
+      "retrieval_seconds": null,
+      "generation_seconds": null,
+      "total_seconds": 4.517873,
+      "status": "ok",
+      "error": null,
+      "dify_request": {
+        "inputs": {
+          "query": "VPN仍无法连接时，报障要附哪些信息？"
+        },
+        "response_mode": "blocking",
+        "user": "knowledge-qa-docs-eval"
+      },
+      "api_seconds": 4.517057,
+      "dify_response": {
+        "task_id": "0eb6473e-a6de-44b3-968e-84b355285d1a",
+        "workflow_run_id": "f9851952-534d-43f7-a4dd-9d2e31f7ceb3",
+        "data": {
+          "id": "f9851952-534d-43f7-a4dd-9d2e31f7ceb3",
+          "workflow_id": "e79af8cc-e57d-4440-a5b6-6e053511266d",
+          "status": "succeeded",
+          "outputs": {
+            "answer": "中文回答，包含引用或明确资料不足",
+            "insufficient": true,
+            "raw_answer": "{\n  \"answer\": \"中文回答，包含引用或明确资料不足\",\n  \"insufficient\": true\n}",
+            "retrieval_body": "{\"query\": \"VPN仍无法连接时，报障要附哪些信息？\", \"top_k\": 3, \"results\": [{\"id\": \"KB-1\", \"title\": \"02-network-and-vpn.txt\", \"content\": \"NET-03：VPN 连接失败的处理顺序\"}, {\"id\": \"KB-2\", \"title\": \"02-network-and-vpn.txt\", \"content\": \"若 VPN 显示已连接但共享目录提示“无权限”，应核查共享文件夹授权，不应仅因该提示重复重装 VPN。\"}, {\"id\": \"KB-3\", \"title\": \"02-network-and-vpn.txt\", \"content\": \"NET-04：VPN 已连接但无法打开内部站点\"}]}"
+          },
+          "error": null,
+          "elapsed_time": 4.443823960998998,
+          "total_tokens": 373,
+          "total_steps": 6,
+          "created_at": 1793953362,
+          "finished_at": 1793953367
+        }
+      },
+      "workflow_run_id": "f9851952-534d-43f7-a4dd-9d2e31f7ceb3",
+      "workflow_id": "e79af8cc-e57d-4440-a5b6-6e053511266d",
+      "workflow_status": "succeeded",
+      "workflow_elapsed_seconds": 4.443823960998998,
+      "workflow_total_tokens": 373,
+      "retrieval_response": {
+        "query": "VPN仍无法连接时，报障要附哪些信息？",
+        "top_k": 3,
+        "results": [
+          {
+            "id": "KB-1",
+            "title": "02-network-and-vpn.txt",
+            "content": "NET-03：VPN 连接失败的处理顺序",
+            "source_document": "02-network-and-vpn.txt",
+            "evidence_sha256": "0a2537df766ffceff6749f0aa89c6ab361a8e662b9dd134900e77e537c524a7c"
+          },
+          {
+            "id": "KB-2",
+            "title": "02-network-and-vpn.txt",
+            "content": "若 VPN 显示已连接但共享目录提示“无权限”，应核查共享文件夹授权，不应仅因该提示重复重装 VPN。",
+            "source_document": "02-network-and-vpn.txt",
+            "evidence_sha256": "f28ad64f2db64b1ea614c69298c9198993515b59ff152e6d968b9e7d2be6e6a3"
+          },
+          {
+            "id": "KB-3",
+            "title": "02-network-and-vpn.txt",
+            "content": "NET-04：VPN 已连接但无法打开内部站点",
+            "source_document": "02-network-and-vpn.txt",
+            "evidence_sha256": "c1d076cfc68e8a15f0c1b9b7a448f061016c84ff60652d6c540793fe788c723b"
+          }
+        ]
+      },
+      "expected_ids_provenance": "per_request_aliases_from_expected_source_not_stable_gold_ids",
+      "evidence_groups_covered": [
+        false,
+        false,
+        false
+      ],
+      "cited_ids": [],
+      "unknown_citations": [],
+      "reviewed_at": "2026-11-06T08:36:20.127991+00:00"
+    },
+    {
+      "id": "D12",
+      "query": "共享文件夹权限由谁审批，一个工作日从什么时候开始算？",
+      "answerable": true,
+      "expected_sources": [
+        "03-shared-files-and-recovery.txt"
+      ],
+      "expected_sections": [
+        "FILE-01"
+      ],
+      "evidence_groups": [
+        [
+          "审批人为该文件夹的业务负责人"
+        ],
+        [
+          "1 个工作日"
+        ],
+        [
+          "从业务负责人审批完成时开始计算"
+        ]
+      ],
+      "reference_answer": "文件夹业务负责人审批，由IT在审批完成后1个工作日内开通，不从提交申请算。",
+      "rubric": "文件夹业务负责人审批，由IT在审批完成后1个工作日内开通，不从提交申请算。 有答案题需引用本次实际提供且支持回答的KB片段；无答案题需明确资料不足且不编造。",
+      "expected_ids": [
+        "KB-1",
+        "KB-2",
+        "KB-3"
+      ],
+      "fragments": [
+        {
+          "id": "KB-1",
+          "title": "03-shared-files-and-recovery.txt",
+          "content": "审批人为该文件夹的业务负责人。审批通过后，由 IT 在 1 个工作日内开通。这个时限从业务负责人审批完成时开始计算，不从员工提交申请时计算。",
+          "source_document": "03-shared-files-and-recovery.txt",
+          "evidence_sha256": "e48774d486506a79b6ad4604c11446d8c1cae3cf8adc01d6d62b69dd25d4e0d4"
+        },
+        {
+          "id": "KB-2",
+          "title": "03-shared-files-and-recovery.txt",
+          "content": "FILE-01：共享文件夹权限申请",
+          "source_document": "03-shared-files-and-recovery.txt",
+          "evidence_sha256": "a0cb74f363e366fea70caf946843ac429f6f84a98c95e6ed446e640496e30016"
+        },
+        {
+          "id": "KB-3",
+          "title": "03-shared-files-and-recovery.txt",
+          "content": "申请共享文件夹权限时，在“服务门户 → 存储服务 → 共享权限”提交完整目录路径、申请原因、只读或读写级别，以及需要访问的人员名单。",
+          "source_document": "03-shared-files-and-recovery.txt",
+          "evidence_sha256": "766c8b7f4ce7ea3cb8b2d4f3a4d735d94344e7b975638cdc7c11214fdfe97e86"
+        }
+      ],
+      "retrieval_hit": true,
+      "source_hit": true,
+      "answer": "共享文件夹权限由业务负责人审批，一个工作日从业务负责人审批完成时开始计算。[KB-1]",
+      "model_insufficient": false,
+      "citation_valid": true,
+      "answer_correct": true,
+      "refusal_correct": null,
+      "review_notes": "正确说明由文件夹业务负责人审批，时限从审批完成时开始计算，引用KB-1正确。",
+      "retrieval_seconds": null,
+      "generation_seconds": null,
+      "total_seconds": 6.241223,
+      "status": "ok",
+      "error": null,
+      "dify_request": {
+        "inputs": {
+          "query": "共享文件夹权限由谁审批，一个工作日从什么时候开始算？"
+        },
+        "response_mode": "blocking",
+        "user": "knowledge-qa-docs-eval"
+      },
+      "api_seconds": 6.240068,
+      "dify_response": {
+        "task_id": "ea67cbae-7907-449a-b00f-ba8cdd9c8dd6",
+        "workflow_run_id": "cd7209d6-99be-4063-a86c-0d14a1069406",
+        "data": {
+          "id": "cd7209d6-99be-4063-a86c-0d14a1069406",
+          "workflow_id": "e79af8cc-e57d-4440-a5b6-6e053511266d",
+          "status": "succeeded",
+          "outputs": {
+            "answer": "共享文件夹权限由业务负责人审批，一个工作日从业务负责人审批完成时开始计算。[KB-1]",
+            "insufficient": false,
+            "raw_answer": "{\n  \"answer\": \"共享文件夹权限由业务负责人审批，一个工作日从业务负责人审批完成时开始计算。[KB-1]\",\n  \"insufficient\": false\n}",
+            "retrieval_body": "{\"query\": \"共享文件夹权限由谁审批，一个工作日从什么时候开始算？\", \"top_k\": 3, \"results\": [{\"id\": \"KB-1\", \"title\": \"03-shared-files-and-recovery.txt\", \"content\": \"审批人为该文件夹的业务负责人。审批通过后，由 IT 在 1 个工作日内开通。这个时限从业务负责人审批完成时开始计算，不从员工提交申请时计算。\"}, {\"id\": \"KB-2\", \"title\": \"03-shared-files-and-recovery.txt\", \"content\": \"FILE-01：共享文件夹权限申请\"}, {\"id\": \"KB-3\", \"title\": \"03-shared-files-and-recovery.txt\", \"content\": \"申请共享文件夹权限时，在“服务门户 → 存储服务 → 共享权限”提交完整目录路径、申请原因、只读或读写级别，以及需要访问的人员名单。\"}]}"
+          },
+          "error": null,
+          "elapsed_time": 6.205370126997877,
+          "total_tokens": 432,
+          "total_steps": 6,
+          "created_at": 1793953367,
+          "finished_at": 1793953373
+        }
+      },
+      "workflow_run_id": "cd7209d6-99be-4063-a86c-0d14a1069406",
+      "workflow_id": "e79af8cc-e57d-4440-a5b6-6e053511266d",
+      "workflow_status": "succeeded",
+      "workflow_elapsed_seconds": 6.205370126997877,
+      "workflow_total_tokens": 432,
+      "retrieval_response": {
+        "query": "共享文件夹权限由谁审批，一个工作日从什么时候开始算？",
+        "top_k": 3,
+        "results": [
+          {
+            "id": "KB-1",
+            "title": "03-shared-files-and-recovery.txt",
+            "content": "审批人为该文件夹的业务负责人。审批通过后，由 IT 在 1 个工作日内开通。这个时限从业务负责人审批完成时开始计算，不从员工提交申请时计算。",
+            "source_document": "03-shared-files-and-recovery.txt",
+            "evidence_sha256": "e48774d486506a79b6ad4604c11446d8c1cae3cf8adc01d6d62b69dd25d4e0d4"
+          },
+          {
+            "id": "KB-2",
+            "title": "03-shared-files-and-recovery.txt",
+            "content": "FILE-01：共享文件夹权限申请",
+            "source_document": "03-shared-files-and-recovery.txt",
+            "evidence_sha256": "a0cb74f363e366fea70caf946843ac429f6f84a98c95e6ed446e640496e30016"
+          },
+          {
+            "id": "KB-3",
+            "title": "03-shared-files-and-recovery.txt",
+            "content": "申请共享文件夹权限时，在“服务门户 → 存储服务 → 共享权限”提交完整目录路径、申请原因、只读或读写级别，以及需要访问的人员名单。",
+            "source_document": "03-shared-files-and-recovery.txt",
+            "evidence_sha256": "766c8b7f4ce7ea3cb8b2d4f3a4d735d94344e7b975638cdc7c11214fdfe97e86"
+          }
+        ]
+      },
+      "expected_ids_provenance": "per_request_aliases_from_expected_source_not_stable_gold_ids",
+      "evidence_groups_covered": [
+        true,
+        true,
+        true
+      ],
+      "cited_ids": [
+        "KB-1"
+      ],
+      "unknown_citations": [],
+      "reviewed_at": "2026-11-06T08:36:43.587983+00:00"
+    },
+    {
+      "id": "D13",
+      "query": "共享文件夹只有只读权限，可以上传、修改或删除文件吗？",
+      "answerable": true,
+      "expected_sources": [
+        "03-shared-files-and-recovery.txt"
+      ],
+      "expected_sections": [
+        "FILE-02"
+      ],
+      "evidence_groups": [
+        [
+          "只读权限允许查看和下载文件"
+        ],
+        [
+          "不允许修改、上传或删除"
+        ]
+      ],
+      "reference_answer": "不可以，只读只允许查看和下载。",
+      "rubric": "不可以，只读只允许查看和下载。 有答案题需引用本次实际提供且支持回答的KB片段；无答案题需明确资料不足且不编造。",
+      "expected_ids": [
+        "KB-1",
+        "KB-2",
+        "KB-3"
+      ],
+      "fragments": [
+        {
+          "id": "KB-1",
+          "title": "03-shared-files-and-recovery.txt",
+          "content": "只读权限允许查看和下载文件，不允许修改、上传或删除。读写权限允许在授权目录中创建和修改文件，并按该目录策略执行删除。",
+          "source_document": "03-shared-files-and-recovery.txt",
+          "evidence_sha256": "8d9d05b646d61b3988d292e3993605910dac572db3f4bedd4d8e49806f5e446a"
+        },
+        {
+          "id": "KB-2",
+          "title": "03-shared-files-and-recovery.txt",
+          "content": "FILE-02：只读与读写权限",
+          "source_document": "03-shared-files-and-recovery.txt",
+          "evidence_sha256": "7eb1b8fd86cdbba8c63a8ae191ac00d4d4e53368168a6e4361b555e58eb68a38"
+        },
+        {
+          "id": "KB-3",
+          "title": "03-shared-files-and-recovery.txt",
+          "content": "需要扩大权限范围或从只读改成读写时，必须重新提交申请。权限不随文件链接转发而转移；没有授权的员工即使收到链接，也应被拒绝访问。",
+          "source_document": "03-shared-files-and-recovery.txt",
+          "evidence_sha256": "0dd6097611539c65bb2998e5bf168600fae37893f789ea8d2dfa856716eb1a1d"
+        }
+      ],
+      "retrieval_hit": true,
+      "source_hit": true,
+      "answer": "共享文件夹只有只读权限时，不允许上传、修改或删除文件。只读权限允许查看和下载文件，但不允许修改、上传或删除。[KB-1]",
+      "model_insufficient": false,
+      "citation_valid": true,
+      "answer_correct": true,
+      "refusal_correct": null,
+      "review_notes": "正确说明只读权限仅允许查看和下载，不允许上传、修改或删除，引用KB-1正确。",
+      "retrieval_seconds": null,
+      "generation_seconds": null,
+      "total_seconds": 7.425567,
+      "status": "ok",
+      "error": null,
+      "dify_request": {
+        "inputs": {
+          "query": "共享文件夹只有只读权限，可以上传、修改或删除文件吗？"
+        },
+        "response_mode": "blocking",
+        "user": "knowledge-qa-docs-eval"
+      },
+      "api_seconds": 7.424277,
+      "dify_response": {
+        "task_id": "96415b8e-7237-44a9-9603-f2451c5dff30",
+        "workflow_run_id": "07ec322c-b693-4967-bc3e-7937e6508175",
+        "data": {
+          "id": "07ec322c-b693-4967-bc3e-7937e6508175",
+          "workflow_id": "e79af8cc-e57d-4440-a5b6-6e053511266d",
+          "status": "succeeded",
+          "outputs": {
+            "answer": "共享文件夹只有只读权限时，不允许上传、修改或删除文件。只读权限允许查看和下载文件，但不允许修改、上传或删除。[KB-1]",
+            "insufficient": false,
+            "raw_answer": "{\n  \"answer\": \"共享文件夹只有只读权限时，不允许上传、修改或删除文件。只读权限允许查看和下载文件，但不允许修改、上传或删除。[KB-1]\",\n  \"insufficient\": false\n}",
+            "retrieval_body": "{\"query\": \"共享文件夹只有只读权限，可以上传、修改或删除文件吗？\", \"top_k\": 3, \"results\": [{\"id\": \"KB-1\", \"title\": \"03-shared-files-and-recovery.txt\", \"content\": \"只读权限允许查看和下载文件，不允许修改、上传或删除。读写权限允许在授权目录中创建和修改文件，并按该目录策略执行删除。\"}, {\"id\": \"KB-2\", \"title\": \"03-shared-files-and-recovery.txt\", \"content\": \"FILE-02：只读与读写权限\"}, {\"id\": \"KB-3\", \"title\": \"03-shared-files-and-recovery.txt\", \"content\": \"需要扩大权限范围或从只读改成读写时，必须重新提交申请。权限不随文件链接转发而转移；没有授权的员工即使收到链接，也应被拒绝访问。\"}]}"
+          },
+          "error": null,
+          "elapsed_time": 7.3767308780006715,
+          "total_tokens": 439,
+          "total_steps": 6,
+          "created_at": 1793953373,
+          "finished_at": 1793953381
+        }
+      },
+      "workflow_run_id": "07ec322c-b693-4967-bc3e-7937e6508175",
+      "workflow_id": "e79af8cc-e57d-4440-a5b6-6e053511266d",
+      "workflow_status": "succeeded",
+      "workflow_elapsed_seconds": 7.3767308780006715,
+      "workflow_total_tokens": 439,
+      "retrieval_response": {
+        "query": "共享文件夹只有只读权限，可以上传、修改或删除文件吗？",
+        "top_k": 3,
+        "results": [
+          {
+            "id": "KB-1",
+            "title": "03-shared-files-and-recovery.txt",
+            "content": "只读权限允许查看和下载文件，不允许修改、上传或删除。读写权限允许在授权目录中创建和修改文件，并按该目录策略执行删除。",
+            "source_document": "03-shared-files-and-recovery.txt",
+            "evidence_sha256": "8d9d05b646d61b3988d292e3993605910dac572db3f4bedd4d8e49806f5e446a"
+          },
+          {
+            "id": "KB-2",
+            "title": "03-shared-files-and-recovery.txt",
+            "content": "FILE-02：只读与读写权限",
+            "source_document": "03-shared-files-and-recovery.txt",
+            "evidence_sha256": "7eb1b8fd86cdbba8c63a8ae191ac00d4d4e53368168a6e4361b555e58eb68a38"
+          },
+          {
+            "id": "KB-3",
+            "title": "03-shared-files-and-recovery.txt",
+            "content": "需要扩大权限范围或从只读改成读写时，必须重新提交申请。权限不随文件链接转发而转移；没有授权的员工即使收到链接，也应被拒绝访问。",
+            "source_document": "03-shared-files-and-recovery.txt",
+            "evidence_sha256": "0dd6097611539c65bb2998e5bf168600fae37893f789ea8d2dfa856716eb1a1d"
+          }
+        ]
+      },
+      "expected_ids_provenance": "per_request_aliases_from_expected_source_not_stable_gold_ids",
+      "evidence_groups_covered": [
+        true,
+        true
+      ],
+      "cited_ids": [
+        "KB-1"
+      ],
+      "unknown_citations": [],
+      "reviewed_at": "2026-11-06T08:37:04.765960+00:00"
+    },
+    {
+      "id": "D14",
+      "query": "文件删了超过30天、还没到90天，是否保证可以恢复？",
+      "answerable": true,
+      "expected_sources": [
+        "03-shared-files-and-recovery.txt"
+      ],
+      "expected_sections": [
+        "FILE-03"
+      ],
+      "evidence_groups": [
+        [
+          "保留期为 90 天"
+        ],
+        [
+          "不代表任何文件在 90 天内都一定可以恢复"
+        ],
+        [
+          "不同机制"
+        ]
+      ],
+      "reference_answer": "不保证。回收站30天、备份90天是不同机制，备份中可能没有该文件或版本。",
+      "rubric": "不保证。回收站30天、备份90天是不同机制，备份中可能没有该文件或版本。 有答案题需引用本次实际提供且支持回答的KB片段；无答案题需明确资料不足且不编造。",
+      "expected_ids": [
+        "KB-1",
+        "KB-2",
+        "KB-3"
+      ],
+      "fragments": [
+        {
+          "id": "KB-1",
+          "title": "03-shared-files-and-recovery.txt",
+          "content": "文件已从回收站清空或删除超过 30 天时，不能保证自助恢复。应提交“文件恢复”工单，提供原目录、文件名和大致删除时间，由 IT 检查是否存在可用备份。",
+          "source_document": "03-shared-files-and-recovery.txt",
+          "evidence_sha256": "9ec1fa81e230f66e868cb69584942264fc6029ceafb6fa8510661e17673cfeb4"
+        },
+        {
+          "id": "KB-2",
+          "title": "03-shared-files-and-recovery.txt",
+          "content": "常规备份保留期为 90 天，但这不代表任何文件在 90 天内都一定可以恢复：备份中可能没有该文件，或该版本未被成功备份。回收站 30 天保留期与备份 90 天保留期是不同机制。",
+          "source_document": "03-shared-files-and-recovery.txt",
+          "evidence_sha256": "2c2727182a56e8168fbc4c95ff858374576c5e6992fd1b41a435fc1b374bf7e5"
+        },
+        {
+          "id": "KB-3",
+          "title": "03-shared-files-and-recovery.txt",
+          "content": "团队网盘文件删除后进入回收站，自删除时间起保留 30 天。员工可在“团队网盘 → 回收站”找到文件并恢复。这里的 30 天是自然日，不是工作日。",
+          "source_document": "03-shared-files-and-recovery.txt",
+          "evidence_sha256": "77d28469b51e445cc714c732338d9f01e7fa7a47f1d11a67eeaccc3192bb5dcc"
+        }
+      ],
+      "retrieval_hit": true,
+      "source_hit": true,
+      "answer": "文件删了超过30天、还没到90天，不能保证可以恢复。根据资料，文件已从回收站清空或删除超过30天时，不能保证自助恢复，应提交‘文件恢复’工单；常规备份保留期为90天，但备份中可能没有该文件或该版本未被成功备份，因此即使在90天内也不能保证恢复。[KB-1][KB-2]",
+      "model_insufficient": false,
+      "citation_valid": true,
+      "answer_correct": true,
+      "refusal_correct": null,
+      "review_notes": "正确说明超过30天但未满90天也不保证恢复，并解释回收站与备份的区别及备份可能缺失，引用KB-1和KB-2正确。",
+      "retrieval_seconds": null,
+      "generation_seconds": null,
+      "total_seconds": 12.863828,
+      "status": "ok",
+      "error": null,
+      "dify_request": {
+        "inputs": {
+          "query": "文件删了超过30天、还没到90天，是否保证可以恢复？"
+        },
+        "response_mode": "blocking",
+        "user": "knowledge-qa-docs-eval"
+      },
+      "api_seconds": 12.863159,
+      "dify_response": {
+        "task_id": "924281f5-c4f8-4b5b-acd5-eb3d5756488c",
+        "workflow_run_id": "741c8f35-2811-4d6a-950f-f970a0dc6947",
+        "data": {
+          "id": "741c8f35-2811-4d6a-950f-f970a0dc6947",
+          "workflow_id": "e79af8cc-e57d-4440-a5b6-6e053511266d",
+          "status": "succeeded",
+          "outputs": {
+            "answer": "文件删了超过30天、还没到90天，不能保证可以恢复。根据资料，文件已从回收站清空或删除超过30天时，不能保证自助恢复，应提交‘文件恢复’工单；常规备份保留期为90天，但备份中可能没有该文件或该版本未被成功备份，因此即使在90天内也不能保证恢复。[KB-1][KB-2]",
+            "insufficient": false,
+            "raw_answer": "{\n  \"answer\": \"文件删了超过30天、还没到90天，不能保证可以恢复。根据资料，文件已从回收站清空或删除超过30天时，不能保证自助恢复，应提交‘文件恢复’工单；常规备份保留期为90天，但备份中可能没有该文件或该版本未被成功备份，因此即使在90天内也不能保证恢复。[KB-1][KB-2]\",\n  \"insufficient\": false\n}",
+            "retrieval_body": "{\"query\": \"文件删了超过30天、还没到90天，是否保证可以恢复？\", \"top_k\": 3, \"results\": [{\"id\": \"KB-1\", \"title\": \"03-shared-files-and-recovery.txt\", \"content\": \"文件已从回收站清空或删除超过 30 天时，不能保证自助恢复。应提交“文件恢复”工单，提供原目录、文件名和大致删除时间，由 IT 检查是否存在可用备份。\"}, {\"id\": \"KB-2\", \"title\": \"03-shared-files-and-recovery.txt\", \"content\": \"常规备份保留期为 90 天，但这不代表任何文件在 90 天内都一定可以恢复：备份中可能没有该文件，或该版本未被成功备份。回收站 30 天保留期与备份 90 天保留期是不同机制。\"}, {\"id\": \"KB-3\", \"title\": \"03-shared-files-and-recovery.txt\", \"content\": \"团队网盘文件删除后进入回收站，自删除时间起保留 30 天。员工可在“团队网盘 → 回收站”找到文件并恢复。这里的 30 天是自然日，不是工作日。\"}]}"
+          },
+          "error": null,
+          "elapsed_time": 12.806620671999553,
+          "total_tokens": 577,
+          "total_steps": 6,
+          "created_at": 1793953381,
+          "finished_at": 1793953393
+        }
+      },
+      "workflow_run_id": "741c8f35-2811-4d6a-950f-f970a0dc6947",
+      "workflow_id": "e79af8cc-e57d-4440-a5b6-6e053511266d",
+      "workflow_status": "succeeded",
+      "workflow_elapsed_seconds": 12.806620671999553,
+      "workflow_total_tokens": 577,
+      "retrieval_response": {
+        "query": "文件删了超过30天、还没到90天，是否保证可以恢复？",
+        "top_k": 3,
+        "results": [
+          {
+            "id": "KB-1",
+            "title": "03-shared-files-and-recovery.txt",
+            "content": "文件已从回收站清空或删除超过 30 天时，不能保证自助恢复。应提交“文件恢复”工单，提供原目录、文件名和大致删除时间，由 IT 检查是否存在可用备份。",
+            "source_document": "03-shared-files-and-recovery.txt",
+            "evidence_sha256": "9ec1fa81e230f66e868cb69584942264fc6029ceafb6fa8510661e17673cfeb4"
+          },
+          {
+            "id": "KB-2",
+            "title": "03-shared-files-and-recovery.txt",
+            "content": "常规备份保留期为 90 天，但这不代表任何文件在 90 天内都一定可以恢复：备份中可能没有该文件，或该版本未被成功备份。回收站 30 天保留期与备份 90 天保留期是不同机制。",
+            "source_document": "03-shared-files-and-recovery.txt",
+            "evidence_sha256": "2c2727182a56e8168fbc4c95ff858374576c5e6992fd1b41a435fc1b374bf7e5"
+          },
+          {
+            "id": "KB-3",
+            "title": "03-shared-files-and-recovery.txt",
+            "content": "团队网盘文件删除后进入回收站，自删除时间起保留 30 天。员工可在“团队网盘 → 回收站”找到文件并恢复。这里的 30 天是自然日，不是工作日。",
+            "source_document": "03-shared-files-and-recovery.txt",
+            "evidence_sha256": "77d28469b51e445cc714c732338d9f01e7fa7a47f1d11a67eeaccc3192bb5dcc"
+          }
+        ]
+      },
+      "expected_ids_provenance": "per_request_aliases_from_expected_source_not_stable_gold_ids",
+      "evidence_groups_covered": [
+        true,
+        true,
+        true
+      ],
+      "cited_ids": [
+        "KB-1",
+        "KB-2"
+      ],
+      "unknown_citations": [],
+      "reviewed_at": "2026-11-06T08:37:27.932988+00:00"
+    },
+    {
+      "id": "D15",
+      "query": "保留最近20个文件历史版本，等于能恢复最近20天的文件吗？",
+      "answerable": true,
+      "expected_sources": [
+        "03-shared-files-and-recovery.txt"
+      ],
+      "expected_sections": [
+        "FILE-04"
+      ],
+      "evidence_groups": [
+        [
+          "最近 20 个历史版本"
+        ],
+        [
+          "版本数量上限不等于固定天数"
+        ]
+      ],
+      "reference_answer": "不等于。限制是最近20个历史版本，不是固定天数，只能恢复已有版本。",
+      "rubric": "不等于。限制是最近20个历史版本，不是固定天数，只能恢复已有版本。 有答案题需引用本次实际提供且支持回答的KB片段；无答案题需明确资料不足且不编造。",
+      "expected_ids": [
+        "KB-1",
+        "KB-2",
+        "KB-3"
+      ],
+      "fragments": [
+        {
+          "id": "KB-1",
+          "title": "03-shared-files-and-recovery.txt",
+          "content": "团队网盘可保留最近 20 个历史版本。员工可在文件详情中的“版本历史”查看并恢复已有版本。版本数量上限不等于固定天数，不能据此推断“可恢复最近 20 天”。",
+          "source_document": "03-shared-files-and-recovery.txt",
+          "evidence_sha256": "653e5307a1222af75eb513ef00051a33138f9c3e25c71f9bde1bcbe24b1a3d1b"
+        },
+        {
+          "id": "KB-2",
+          "title": "03-shared-files-and-recovery.txt",
+          "content": "恢复历史版本前应通知正在协作的同事。没有出现在版本历史中的版本，不能承诺可以自助找回。",
+          "source_document": "03-shared-files-and-recovery.txt",
+          "evidence_sha256": "6ce68a9226b944ba6aa13e24760c32ce955bcdbc8d29e733d93fa8630c9fb324"
+        },
+        {
+          "id": "KB-3",
+          "title": "03-shared-files-and-recovery.txt",
+          "content": "FILE-04：文件版本恢复",
+          "source_document": "03-shared-files-and-recovery.txt",
+          "evidence_sha256": "1970ed1aa7c9d5cc50f6895c66f97450438205298e14f44936060583b50f056f"
+        }
+      ],
+      "retrieval_hit": true,
+      "source_hit": true,
+      "answer": "保留最近20个文件历史版本不等于能恢复最近20天的文件。根据资料，团队网盘可保留最近20个历史版本，但版本数量上限不等于固定天数，不能据此推断可恢复最近20天。[KB-1]",
+      "model_insufficient": false,
+      "citation_valid": true,
+      "answer_correct": true,
+      "refusal_correct": null,
+      "review_notes": "正确区分20个历史版本与20天，说明版本数量不代表固定恢复天数，引用KB-1正确。",
+      "retrieval_seconds": null,
+      "generation_seconds": null,
+      "total_seconds": 9.278916,
+      "status": "ok",
+      "error": null,
+      "dify_request": {
+        "inputs": {
+          "query": "保留最近20个文件历史版本，等于能恢复最近20天的文件吗？"
+        },
+        "response_mode": "blocking",
+        "user": "knowledge-qa-docs-eval"
+      },
+      "api_seconds": 9.277477,
+      "dify_response": {
+        "task_id": "e4a55327-e1c6-4625-ab68-de926cf4c851",
+        "workflow_run_id": "caf61173-44db-4065-99ba-f2cbe375fbd4",
+        "data": {
+          "id": "caf61173-44db-4065-99ba-f2cbe375fbd4",
+          "workflow_id": "e79af8cc-e57d-4440-a5b6-6e053511266d",
+          "status": "succeeded",
+          "outputs": {
+            "answer": "保留最近20个文件历史版本不等于能恢复最近20天的文件。根据资料，团队网盘可保留最近20个历史版本，但版本数量上限不等于固定天数，不能据此推断可恢复最近20天。[KB-1]",
+            "insufficient": false,
+            "raw_answer": "{\n  \"answer\": \"保留最近20个文件历史版本不等于能恢复最近20天的文件。根据资料，团队网盘可保留最近20个历史版本，但版本数量上限不等于固定天数，不能据此推断可恢复最近20天。[KB-1]\",\n  \"insufficient\": false\n}",
+            "retrieval_body": "{\"query\": \"保留最近20个文件历史版本，等于能恢复最近20天的文件吗？\", \"top_k\": 3, \"results\": [{\"id\": \"KB-1\", \"title\": \"03-shared-files-and-recovery.txt\", \"content\": \"团队网盘可保留最近 20 个历史版本。员工可在文件详情中的“版本历史”查看并恢复已有版本。版本数量上限不等于固定天数，不能据此推断“可恢复最近 20 天”。\"}, {\"id\": \"KB-2\", \"title\": \"03-shared-files-and-recovery.txt\", \"content\": \"恢复历史版本前应通知正在协作的同事。没有出现在版本历史中的版本，不能承诺可以自助找回。\"}, {\"id\": \"KB-3\", \"title\": \"03-shared-files-and-recovery.txt\", \"content\": \"FILE-04：文件版本恢复\"}]}"
+          },
+          "error": null,
+          "elapsed_time": 9.218501629002276,
+          "total_tokens": 459,
+          "total_steps": 6,
+          "created_at": 1793953393,
+          "finished_at": 1793953403
+        }
+      },
+      "workflow_run_id": "caf61173-44db-4065-99ba-f2cbe375fbd4",
+      "workflow_id": "e79af8cc-e57d-4440-a5b6-6e053511266d",
+      "workflow_status": "succeeded",
+      "workflow_elapsed_seconds": 9.218501629002276,
+      "workflow_total_tokens": 459,
+      "retrieval_response": {
+        "query": "保留最近20个文件历史版本，等于能恢复最近20天的文件吗？",
+        "top_k": 3,
+        "results": [
+          {
+            "id": "KB-1",
+            "title": "03-shared-files-and-recovery.txt",
+            "content": "团队网盘可保留最近 20 个历史版本。员工可在文件详情中的“版本历史”查看并恢复已有版本。版本数量上限不等于固定天数，不能据此推断“可恢复最近 20 天”。",
+            "source_document": "03-shared-files-and-recovery.txt",
+            "evidence_sha256": "653e5307a1222af75eb513ef00051a33138f9c3e25c71f9bde1bcbe24b1a3d1b"
+          },
+          {
+            "id": "KB-2",
+            "title": "03-shared-files-and-recovery.txt",
+            "content": "恢复历史版本前应通知正在协作的同事。没有出现在版本历史中的版本，不能承诺可以自助找回。",
+            "source_document": "03-shared-files-and-recovery.txt",
+            "evidence_sha256": "6ce68a9226b944ba6aa13e24760c32ce955bcdbc8d29e733d93fa8630c9fb324"
+          },
+          {
+            "id": "KB-3",
+            "title": "03-shared-files-and-recovery.txt",
+            "content": "FILE-04：文件版本恢复",
+            "source_document": "03-shared-files-and-recovery.txt",
+            "evidence_sha256": "1970ed1aa7c9d5cc50f6895c66f97450438205298e14f44936060583b50f056f"
+          }
+        ]
+      },
+      "expected_ids_provenance": "per_request_aliases_from_expected_source_not_stable_gold_ids",
+      "evidence_groups_covered": [
+        true,
+        true
+      ],
+      "cited_ids": [
+        "KB-1"
+      ],
+      "unknown_citations": [],
+      "reviewed_at": "2026-11-06T08:37:46.339968+00:00"
+    },
+    {
+      "id": "D16",
+      "query": "公司VPN提供哪些国家的出口节点？",
+      "answerable": false,
+      "expected_sources": [],
+      "expected_sections": [],
+      "evidence_groups": [],
+      "reference_answer": "资料未提供出口国家列表，应明确资料不足，不得猜测。",
+      "rubric": "资料未提供出口国家列表，应明确资料不足，不得猜测。 有答案题需引用本次实际提供且支持回答的KB片段；无答案题需明确资料不足且不编造。",
+      "expected_ids": [],
+      "fragments": [
+        {
+          "id": "KB-1",
+          "title": "02-network-and-vpn.txt",
+          "content": "本文没有提供 VPN 出口国家列表、带宽保证值、个人设备 VPN 安装办法或供应商网络接入政策。不得把“允许远程访问”解释为允许访问任何地区或任何内部资源。",
+          "source_document": "02-network-and-vpn.txt",
+          "evidence_sha256": "501300b8eb9147d4382c17ee771910fb68346b9d0cffd470502d0ad75d19cfa9"
+        },
+        {
+          "id": "KB-2",
+          "title": "02-network-and-vpn.txt",
+          "content": "办公网络与远程 VPN 使用指南",
+          "source_document": "02-network-and-vpn.txt",
+          "evidence_sha256": "0f6d27a01e085a3f7826e8810ae54fed701fbb23a74d95134691878697e2891d"
+        },
+        {
+          "id": "KB-3",
+          "title": "02-network-and-vpn.txt",
+          "content": "NET-04：VPN 已连接但无法打开内部站点",
+          "source_document": "02-network-and-vpn.txt",
+          "evidence_sha256": "c1d076cfc68e8a15f0c1b9b7a448f061016c84ff60652d6c540793fe788c723b"
+        }
+      ],
+      "retrieval_hit": null,
+      "source_hit": null,
+      "answer": "公司VPN提供哪些国家的出口节点？",
+      "model_insufficient": true,
+      "citation_valid": false,
+      "answer_correct": null,
+      "refusal_correct": false,
+      "review_notes": "KB-1明确未提供VPN出口国家列表，但模型仅重复问题，未明确说明资料不足，拒答不合格。",
+      "retrieval_seconds": null,
+      "generation_seconds": null,
+      "total_seconds": 4.764048,
+      "status": "ok",
+      "error": null,
+      "dify_request": {
+        "inputs": {
+          "query": "公司VPN提供哪些国家的出口节点？"
+        },
+        "response_mode": "blocking",
+        "user": "knowledge-qa-docs-eval"
+      },
+      "api_seconds": 4.763532,
+      "dify_response": {
+        "task_id": "2833eca3-46fe-47d5-a004-3dc2a44d5514",
+        "workflow_run_id": "fa25e3b5-0166-4433-b8cd-2acd6b752787",
+        "data": {
+          "id": "fa25e3b5-0166-4433-b8cd-2acd6b752787",
+          "workflow_id": "e79af8cc-e57d-4440-a5b6-6e053511266d",
+          "status": "succeeded",
+          "outputs": {
+            "answer": "公司VPN提供哪些国家的出口节点？",
+            "insufficient": true,
+            "raw_answer": "{\n  \"answer\": \"公司VPN提供哪些国家的出口节点？\",\n  \"insufficient\": true\n}",
+            "retrieval_body": "{\"query\": \"公司VPN提供哪些国家的出口节点？\", \"top_k\": 3, \"results\": [{\"id\": \"KB-1\", \"title\": \"02-network-and-vpn.txt\", \"content\": \"本文没有提供 VPN 出口国家列表、带宽保证值、个人设备 VPN 安装办法或供应商网络接入政策。不得把“允许远程访问”解释为允许访问任何地区或任何内部资源。\"}, {\"id\": \"KB-2\", \"title\": \"02-network-and-vpn.txt\", \"content\": \"办公网络与远程 VPN 使用指南\"}, {\"id\": \"KB-3\", \"title\": \"02-network-and-vpn.txt\", \"content\": \"NET-04：VPN 已连接但无法打开内部站点\"}]}"
+          },
+          "error": null,
+          "elapsed_time": 4.711243584999465,
+          "total_tokens": 378,
+          "total_steps": 6,
+          "created_at": 1793953403,
+          "finished_at": 1793953407
+        }
+      },
+      "workflow_run_id": "fa25e3b5-0166-4433-b8cd-2acd6b752787",
+      "workflow_id": "e79af8cc-e57d-4440-a5b6-6e053511266d",
+      "workflow_status": "succeeded",
+      "workflow_elapsed_seconds": 4.711243584999465,
+      "workflow_total_tokens": 378,
+      "retrieval_response": {
+        "query": "公司VPN提供哪些国家的出口节点？",
+        "top_k": 3,
+        "results": [
+          {
+            "id": "KB-1",
+            "title": "02-network-and-vpn.txt",
+            "content": "本文没有提供 VPN 出口国家列表、带宽保证值、个人设备 VPN 安装办法或供应商网络接入政策。不得把“允许远程访问”解释为允许访问任何地区或任何内部资源。",
+            "source_document": "02-network-and-vpn.txt",
+            "evidence_sha256": "501300b8eb9147d4382c17ee771910fb68346b9d0cffd470502d0ad75d19cfa9"
+          },
+          {
+            "id": "KB-2",
+            "title": "02-network-and-vpn.txt",
+            "content": "办公网络与远程 VPN 使用指南",
+            "source_document": "02-network-and-vpn.txt",
+            "evidence_sha256": "0f6d27a01e085a3f7826e8810ae54fed701fbb23a74d95134691878697e2891d"
+          },
+          {
+            "id": "KB-3",
+            "title": "02-network-and-vpn.txt",
+            "content": "NET-04：VPN 已连接但无法打开内部站点",
+            "source_document": "02-network-and-vpn.txt",
+            "evidence_sha256": "c1d076cfc68e8a15f0c1b9b7a448f061016c84ff60652d6c540793fe788c723b"
+          }
+        ]
+      },
+      "expected_ids_provenance": "per_request_aliases_from_expected_source_not_stable_gold_ids",
+      "evidence_groups_covered": [],
+      "cited_ids": [],
+      "unknown_citations": [],
+      "reviewed_at": "2026-11-06T08:38:04.198590+00:00"
+    },
+    {
+      "id": "D17",
+      "query": "公司邮箱一封邮件最多能发送多大？",
+      "answerable": false,
+      "expected_sources": [],
+      "expected_sections": [],
+      "evidence_groups": [],
+      "reference_answer": "资料未提供单封发送限制；不能把总容量5GB当作单封限制。",
+      "rubric": "资料未提供单封发送限制；不能把总容量5GB当作单封限制。 有答案题需引用本次实际提供且支持回答的KB片段；无答案题需明确资料不足且不编造。",
+      "expected_ids": [],
+      "fragments": [
+        {
+          "id": "KB-1",
+          "title": "03-shared-files-and-recovery.txt",
+          "content": "统一邮箱容量上限为 5GB。邮箱空间不足时，可清空已删除邮件和垃圾邮件，并将需要留存的大附件归档到有权限的团队网盘目录。",
+          "source_document": "03-shared-files-and-recovery.txt",
+          "evidence_sha256": "63284d1fdc3580d49a44029697a85bbf99fc5f3f6d072118779e87bb942268c2"
+        },
+        {
+          "id": "KB-2",
+          "title": "03-shared-files-and-recovery.txt",
+          "content": "5GB 指邮箱总容量，不是单封邮件或单个附件的最大发送限制。本文没有提供单封邮件发送限制，不得根据总容量推算。",
+          "source_document": "03-shared-files-and-recovery.txt",
+          "evidence_sha256": "b835bae140c6bd833d8fb020dc404e6e3b93194c0e494736c28336036fbdbdc4"
+        },
+        {
+          "id": "KB-3",
+          "title": "03-shared-files-and-recovery.txt",
+          "content": "FILE-05：邮箱大附件归档",
+          "source_document": "03-shared-files-and-recovery.txt",
+          "evidence_sha256": "cc6abc261c7e04a5c4344d7c17ff90f37783886fcd90657e1c7d5083f391ef57"
+        }
+      ],
+      "retrieval_hit": null,
+      "source_hit": null,
+      "answer": "公司邮箱单封邮件发送限制未在资料中明确说明。根据资料，统一邮箱容量上限为5GB，但5GB指邮箱总容量，不是单封邮件或单个附件的最大发送限制。资料中未提供单封邮件发送限制的具体数值。",
+      "model_insufficient": true,
+      "citation_valid": false,
+      "answer_correct": null,
+      "refusal_correct": true,
+      "review_notes": "明确说明资料缺少单封邮件发送限制，正确区分5GB总容量与单封限制，未编造数值，拒答正确。",
+      "retrieval_seconds": null,
+      "generation_seconds": null,
+      "total_seconds": 8.501156,
+      "status": "ok",
+      "error": null,
+      "dify_request": {
+        "inputs": {
+          "query": "公司邮箱一封邮件最多能发送多大？"
+        },
+        "response_mode": "blocking",
+        "user": "knowledge-qa-docs-eval"
+      },
+      "api_seconds": 8.500642,
+      "dify_response": {
+        "task_id": "7d53c575-74d9-4fd5-b1fc-afa2ddc4f89a",
+        "workflow_run_id": "02fdb5d7-afc1-4430-97d8-ec0922cac44c",
+        "data": {
+          "id": "02fdb5d7-afc1-4430-97d8-ec0922cac44c",
+          "workflow_id": "e79af8cc-e57d-4440-a5b6-6e053511266d",
+          "status": "succeeded",
+          "outputs": {
+            "answer": "公司邮箱单封邮件发送限制未在资料中明确说明。根据资料，统一邮箱容量上限为5GB，但5GB指邮箱总容量，不是单封邮件或单个附件的最大发送限制。资料中未提供单封邮件发送限制的具体数值。",
+            "insufficient": true,
+            "raw_answer": "{\n  \"answer\": \"公司邮箱单封邮件发送限制未在资料中明确说明。根据资料，统一邮箱容量上限为5GB，但5GB指邮箱总容量，不是单封邮件或单个附件的最大发送限制。资料中未提供单封邮件发送限制的具体数值。\",\n  \"insufficient\": true\n}",
+            "retrieval_body": "{\"query\": \"公司邮箱一封邮件最多能发送多大？\", \"top_k\": 3, \"results\": [{\"id\": \"KB-1\", \"title\": \"03-shared-files-and-recovery.txt\", \"content\": \"统一邮箱容量上限为 5GB。邮箱空间不足时，可清空已删除邮件和垃圾邮件，并将需要留存的大附件归档到有权限的团队网盘目录。\"}, {\"id\": \"KB-2\", \"title\": \"03-shared-files-and-recovery.txt\", \"content\": \"5GB 指邮箱总容量，不是单封邮件或单个附件的最大发送限制。本文没有提供单封邮件发送限制，不得根据总容量推算。\"}, {\"id\": \"KB-3\", \"title\": \"03-shared-files-and-recovery.txt\", \"content\": \"FILE-05：邮箱大附件归档\"}]}"
+          },
+          "error": null,
+          "elapsed_time": 8.469279128999915,
+          "total_tokens": 449,
+          "total_steps": 6,
+          "created_at": 1793953408,
+          "finished_at": 1793953416
+        }
+      },
+      "workflow_run_id": "02fdb5d7-afc1-4430-97d8-ec0922cac44c",
+      "workflow_id": "e79af8cc-e57d-4440-a5b6-6e053511266d",
+      "workflow_status": "succeeded",
+      "workflow_elapsed_seconds": 8.469279128999915,
+      "workflow_total_tokens": 449,
+      "retrieval_response": {
+        "query": "公司邮箱一封邮件最多能发送多大？",
+        "top_k": 3,
+        "results": [
+          {
+            "id": "KB-1",
+            "title": "03-shared-files-and-recovery.txt",
+            "content": "统一邮箱容量上限为 5GB。邮箱空间不足时，可清空已删除邮件和垃圾邮件，并将需要留存的大附件归档到有权限的团队网盘目录。",
+            "source_document": "03-shared-files-and-recovery.txt",
+            "evidence_sha256": "63284d1fdc3580d49a44029697a85bbf99fc5f3f6d072118779e87bb942268c2"
+          },
+          {
+            "id": "KB-2",
+            "title": "03-shared-files-and-recovery.txt",
+            "content": "5GB 指邮箱总容量，不是单封邮件或单个附件的最大发送限制。本文没有提供单封邮件发送限制，不得根据总容量推算。",
+            "source_document": "03-shared-files-and-recovery.txt",
+            "evidence_sha256": "b835bae140c6bd833d8fb020dc404e6e3b93194c0e494736c28336036fbdbdc4"
+          },
+          {
+            "id": "KB-3",
+            "title": "03-shared-files-and-recovery.txt",
+            "content": "FILE-05：邮箱大附件归档",
+            "source_document": "03-shared-files-and-recovery.txt",
+            "evidence_sha256": "cc6abc261c7e04a5c4344d7c17ff90f37783886fcd90657e1c7d5083f391ef57"
+          }
+        ]
+      },
+      "expected_ids_provenance": "per_request_aliases_from_expected_source_not_stable_gold_ids",
+      "evidence_groups_covered": [],
+      "cited_ids": [],
+      "unknown_citations": [],
+      "reviewed_at": "2026-11-06T08:38:21.251022+00:00"
+    },
+    {
+      "id": "D18",
+      "query": "公司打印机打印一页收费多少钱？",
+      "answerable": false,
+      "expected_sources": [],
+      "expected_sections": [],
+      "evidence_groups": [],
+      "reference_answer": "三份资料没有打印收费，需明确资料不足，不得猜测金额或免费。",
+      "rubric": "三份资料没有打印收费，需明确资料不足，不得猜测金额或免费。 有答案题需引用本次实际提供且支持回答的KB片段；无答案题需明确资料不足且不编造。",
+      "expected_ids": [],
+      "fragments": [
+        {
+          "id": "KB-1",
+          "title": "03-shared-files-and-recovery.txt",
+          "content": "本文不规定本地磁盘误删恢复成功率、个人网盘恢复政策、打印收费或离职人员数据保留期限。遇到这些问题应明确资料未覆盖。",
+          "source_document": "03-shared-files-and-recovery.txt",
+          "evidence_sha256": "92212137cdbe7e70aa7f962082bbc3b48dfafe7c8b639f319897bed5422f70e3"
+        },
+        {
+          "id": "KB-2",
+          "title": "02-network-and-vpn.txt",
+          "content": "员工办公无线网络名称为 Nebula-Staff，使用统一账号和密码登录。首次连接前，必须通过“软件中心 → 网络组件”安装公司无线网络证书。",
+          "source_document": "02-network-and-vpn.txt",
+          "evidence_sha256": "a66ef33014986d412a30992c856ac13549751f8b4f8c6f347f82fb5a583e1581"
+        },
+        {
+          "id": "KB-3",
+          "title": "01-account-and-mfa.txt",
+          "content": "- 适用范围：虚构公司的在职员工统一账号；不适用于客户账号和外部供应商账号。",
+          "source_document": "01-account-and-mfa.txt",
+          "evidence_sha256": "12c98d3a98dfabac7c316cefe897142e0002ecea1349bf6b06815f363c64c427"
+        }
+      ],
+      "retrieval_hit": null,
+      "source_hit": null,
+      "answer": "公司打印机打印一页收费多少钱？",
+      "model_insufficient": true,
+      "citation_valid": false,
+      "answer_correct": null,
+      "refusal_correct": false,
+      "review_notes": "资料明确未覆盖打印收费，但模型仅重复问题，未明确说明资料不足，不算正确拒答。",
+      "retrieval_seconds": null,
+      "generation_seconds": null,
+      "total_seconds": 4.507186,
+      "status": "ok",
+      "error": null,
+      "dify_request": {
+        "inputs": {
+          "query": "公司打印机打印一页收费多少钱？"
+        },
+        "response_mode": "blocking",
+        "user": "knowledge-qa-docs-eval"
+      },
+      "api_seconds": 4.506575,
+      "dify_response": {
+        "task_id": "7aaf3561-095b-4069-bea2-ea13cc026c0a",
+        "workflow_run_id": "a061ef9c-698e-44a6-8485-0d1ccc0651db",
+        "data": {
+          "id": "a061ef9c-698e-44a6-8485-0d1ccc0651db",
+          "workflow_id": "e79af8cc-e57d-4440-a5b6-6e053511266d",
+          "status": "succeeded",
+          "outputs": {
+            "answer": "公司打印机打印一页收费多少钱？",
+            "insufficient": true,
+            "raw_answer": "{\n  \"answer\": \"公司打印机打印一页收费多少钱？\",\n  \"insufficient\": true\n}",
+            "retrieval_body": "{\"query\": \"公司打印机打印一页收费多少钱？\", \"top_k\": 3, \"results\": [{\"id\": \"KB-1\", \"title\": \"03-shared-files-and-recovery.txt\", \"content\": \"本文不规定本地磁盘误删恢复成功率、个人网盘恢复政策、打印收费或离职人员数据保留期限。遇到这些问题应明确资料未覆盖。\"}, {\"id\": \"KB-2\", \"title\": \"02-network-and-vpn.txt\", \"content\": \"员工办公无线网络名称为 Nebula-Staff，使用统一账号和密码登录。首次连接前，必须通过“软件中心 → 网络组件”安装公司无线网络证书。\"}, {\"id\": \"KB-3\", \"title\": \"01-account-and-mfa.txt\", \"content\": \"- 适用范围：虚构公司的在职员工统一账号；不适用于客户账号和外部供应商账号。\"}]}"
+          },
+          "error": null,
+          "elapsed_time": 4.46130954399996,
+          "total_tokens": 402,
+          "total_steps": 6,
+          "created_at": 1793953416,
+          "finished_at": 1793953421
+        }
+      },
+      "workflow_run_id": "a061ef9c-698e-44a6-8485-0d1ccc0651db",
+      "workflow_id": "e79af8cc-e57d-4440-a5b6-6e053511266d",
+      "workflow_status": "succeeded",
+      "workflow_elapsed_seconds": 4.46130954399996,
+      "workflow_total_tokens": 402,
+      "retrieval_response": {
+        "query": "公司打印机打印一页收费多少钱？",
+        "top_k": 3,
+        "results": [
+          {
+            "id": "KB-1",
+            "title": "03-shared-files-and-recovery.txt",
+            "content": "本文不规定本地磁盘误删恢复成功率、个人网盘恢复政策、打印收费或离职人员数据保留期限。遇到这些问题应明确资料未覆盖。",
+            "source_document": "03-shared-files-and-recovery.txt",
+            "evidence_sha256": "92212137cdbe7e70aa7f962082bbc3b48dfafe7c8b639f319897bed5422f70e3"
+          },
+          {
+            "id": "KB-2",
+            "title": "02-network-and-vpn.txt",
+            "content": "员工办公无线网络名称为 Nebula-Staff，使用统一账号和密码登录。首次连接前，必须通过“软件中心 → 网络组件”安装公司无线网络证书。",
+            "source_document": "02-network-and-vpn.txt",
+            "evidence_sha256": "a66ef33014986d412a30992c856ac13549751f8b4f8c6f347f82fb5a583e1581"
+          },
+          {
+            "id": "KB-3",
+            "title": "01-account-and-mfa.txt",
+            "content": "- 适用范围：虚构公司的在职员工统一账号；不适用于客户账号和外部供应商账号。",
+            "source_document": "01-account-and-mfa.txt",
+            "evidence_sha256": "12c98d3a98dfabac7c316cefe897142e0002ecea1349bf6b06815f363c64c427"
+          }
+        ]
+      },
+      "expected_ids_provenance": "per_request_aliases_from_expected_source_not_stable_gold_ids",
+      "evidence_groups_covered": [],
+      "cited_ids": [],
+      "unknown_citations": [],
+      "reviewed_at": "2026-11-06T08:38:38.178816+00:00"
+    },
+    {
+      "id": "D19",
+      "query": "人工身份核验保证多少分钟内完成？",
+      "answerable": false,
+      "expected_sources": [],
+      "expected_sections": [],
+      "evidence_groups": [],
+      "reference_answer": "资料明确没有规定身份核验完成时限，不得拿服务台工作时间代替SLA。",
+      "rubric": "资料明确没有规定身份核验完成时限，不得拿服务台工作时间代替SLA。 有答案题需引用本次实际提供且支持回答的KB片段；无答案题需明确资料不足且不编造。",
+      "expected_ids": [],
+      "fragments": [
+        {
+          "id": "KB-1",
+          "title": "01-account-and-mfa.txt",
+          "content": "员工无法接收绑定手机的验证码时，不得借用其他员工的验证码。应在服务门户选择“人工身份核验”，提交员工编号和可联系时间，由服务台通过已登记的工作联系方式回访。本文不规定人工身份核验完成时限。",
+          "source_document": "01-account-and-mfa.txt",
+          "evidence_sha256": "5d5d58ac68fe9f4eb3e2a51758775a065d3e533dcbccfb239ba9d841514fff18"
+        },
+        {
+          "id": "KB-2",
+          "title": "01-account-and-mfa.txt",
+          "content": "IT 服务台人工服务时间为工作日 09:00—18:00，时区为北京时间；自助密码重置入口全天可用。人工服务时间不等于工单解决时限。",
+          "source_document": "01-account-and-mfa.txt",
+          "evidence_sha256": "5be6881d4afc83e8e18f1ea2599891201849bcb8d45f313caf6fb14e8433812f"
+        },
+        {
+          "id": "KB-3",
+          "title": "01-account-and-mfa.txt",
+          "content": "连续输错密码 5 次，账号会锁定 15 分钟，期间继续尝试登录不会提前解锁。员工可等待自动解锁，或提交“账号解锁”工单，由服务台完成身份核验后处理。",
+          "source_document": "01-account-and-mfa.txt",
+          "evidence_sha256": "0510875f558c848cb6aa430543745f5c126a3a3ae47e478b355e6f898bad2d3b"
+        }
+      ],
+      "retrieval_hit": null,
+      "source_hit": null,
+      "answer": "人工身份核验完成时限未在资料中明确规定。[KB-1] 说明本文不规定人工身份核验完成时限。",
+      "model_insufficient": true,
+      "citation_valid": true,
+      "answer_correct": null,
+      "refusal_correct": true,
+      "review_notes": "明确说明资料未规定人工身份核验完成时限，未编造分钟数或将工作时间当作SLA，引用KB-1正确。",
+      "retrieval_seconds": null,
+      "generation_seconds": null,
+      "total_seconds": 7.043733,
+      "status": "ok",
+      "error": null,
+      "dify_request": {
+        "inputs": {
+          "query": "人工身份核验保证多少分钟内完成？"
+        },
+        "response_mode": "blocking",
+        "user": "knowledge-qa-docs-eval"
+      },
+      "api_seconds": 7.043246,
+      "dify_response": {
+        "task_id": "ffdd3273-c47d-43e1-b404-750d0a922fee",
+        "workflow_run_id": "c590abd4-8633-4645-9ddf-f7eeddd9fab0",
+        "data": {
+          "id": "c590abd4-8633-4645-9ddf-f7eeddd9fab0",
+          "workflow_id": "e79af8cc-e57d-4440-a5b6-6e053511266d",
+          "status": "succeeded",
+          "outputs": {
+            "answer": "人工身份核验完成时限未在资料中明确规定。[KB-1] 说明本文不规定人工身份核验完成时限。",
+            "insufficient": true,
+            "raw_answer": "{\n  \"answer\": \"人工身份核验完成时限未在资料中明确规定。[KB-1] 说明本文不规定人工身份核验完成时限。\",\n  \"insufficient\": true\n}",
+            "retrieval_body": "{\"query\": \"人工身份核验保证多少分钟内完成？\", \"top_k\": 3, \"results\": [{\"id\": \"KB-1\", \"title\": \"01-account-and-mfa.txt\", \"content\": \"员工无法接收绑定手机的验证码时，不得借用其他员工的验证码。应在服务门户选择“人工身份核验”，提交员工编号和可联系时间，由服务台通过已登记的工作联系方式回访。本文不规定人工身份核验完成时限。\"}, {\"id\": \"KB-2\", \"title\": \"01-account-and-mfa.txt\", \"content\": \"IT 服务台人工服务时间为工作日 09:00—18:00，时区为北京时间；自助密码重置入口全天可用。人工服务时间不等于工单解决时限。\"}, {\"id\": \"KB-3\", \"title\": \"01-account-and-mfa.txt\", \"content\": \"连续输错密码 5 次，账号会锁定 15 分钟，期间继续尝试登录不会提前解锁。员工可等待自动解锁，或提交“账号解锁”工单，由服务台完成身份核验后处理。\"}]}"
+          },
+          "error": null,
+          "elapsed_time": 6.9926427110003715,
+          "total_tokens": 483,
+          "total_steps": 6,
+          "created_at": 1793953421,
+          "finished_at": 1793953428
+        }
+      },
+      "workflow_run_id": "c590abd4-8633-4645-9ddf-f7eeddd9fab0",
+      "workflow_id": "e79af8cc-e57d-4440-a5b6-6e053511266d",
+      "workflow_status": "succeeded",
+      "workflow_elapsed_seconds": 6.9926427110003715,
+      "workflow_total_tokens": 483,
+      "retrieval_response": {
+        "query": "人工身份核验保证多少分钟内完成？",
+        "top_k": 3,
+        "results": [
+          {
+            "id": "KB-1",
+            "title": "01-account-and-mfa.txt",
+            "content": "员工无法接收绑定手机的验证码时，不得借用其他员工的验证码。应在服务门户选择“人工身份核验”，提交员工编号和可联系时间，由服务台通过已登记的工作联系方式回访。本文不规定人工身份核验完成时限。",
+            "source_document": "01-account-and-mfa.txt",
+            "evidence_sha256": "5d5d58ac68fe9f4eb3e2a51758775a065d3e533dcbccfb239ba9d841514fff18"
+          },
+          {
+            "id": "KB-2",
+            "title": "01-account-and-mfa.txt",
+            "content": "IT 服务台人工服务时间为工作日 09:00—18:00，时区为北京时间；自助密码重置入口全天可用。人工服务时间不等于工单解决时限。",
+            "source_document": "01-account-and-mfa.txt",
+            "evidence_sha256": "5be6881d4afc83e8e18f1ea2599891201849bcb8d45f313caf6fb14e8433812f"
+          },
+          {
+            "id": "KB-3",
+            "title": "01-account-and-mfa.txt",
+            "content": "连续输错密码 5 次，账号会锁定 15 分钟，期间继续尝试登录不会提前解锁。员工可等待自动解锁，或提交“账号解锁”工单，由服务台完成身份核验后处理。",
+            "source_document": "01-account-and-mfa.txt",
+            "evidence_sha256": "0510875f558c848cb6aa430543745f5c126a3a3ae47e478b355e6f898bad2d3b"
+          }
+        ]
+      },
+      "expected_ids_provenance": "per_request_aliases_from_expected_source_not_stable_gold_ids",
+      "evidence_groups_covered": [],
+      "cited_ids": [
+        "KB-1"
+      ],
+      "unknown_citations": [],
+      "reviewed_at": "2026-11-06T08:38:55.683335+00:00"
+    },
+    {
+      "id": "D20",
+      "query": "员工个人电脑本地磁盘误删文件，保证恢复成功率是多少？",
+      "answerable": false,
+      "expected_sources": [],
+      "expected_sections": [],
+      "evidence_groups": [],
+      "reference_answer": "资料不规定本地磁盘误删恢复成功率，不得将团队网盘恢复规则套用到本地磁盘。",
+      "rubric": "资料不规定本地磁盘误删恢复成功率，不得将团队网盘恢复规则套用到本地磁盘。 有答案题需引用本次实际提供且支持回答的KB片段；无答案题需明确资料不足且不编造。",
+      "expected_ids": [],
+      "fragments": [
+        {
+          "id": "KB-1",
+          "title": "03-shared-files-and-recovery.txt",
+          "content": "本文不规定本地磁盘误删恢复成功率、个人网盘恢复政策、打印收费或离职人员数据保留期限。遇到这些问题应明确资料未覆盖。",
+          "source_document": "03-shared-files-and-recovery.txt",
+          "evidence_sha256": "92212137cdbe7e70aa7f962082bbc3b48dfafe7c8b639f319897bed5422f70e3"
+        },
+        {
+          "id": "KB-2",
+          "title": "03-shared-files-and-recovery.txt",
+          "content": "FILE-03：团队网盘误删文件恢复",
+          "source_document": "03-shared-files-and-recovery.txt",
+          "evidence_sha256": "975e97cc3b5a9c3dd6e2dcd5152091e47e0b513b26df5d9c84feb6c1d8a8be83"
+        },
+        {
+          "id": "KB-3",
+          "title": "03-shared-files-and-recovery.txt",
+          "content": "团队共享文件权限与误删恢复规范",
+          "source_document": "03-shared-files-and-recovery.txt",
+          "evidence_sha256": "bf0aeda0ac8dac195480cff4ef18735c583296510766f2506b47c79db2605790"
+        }
+      ],
+      "retrieval_hit": null,
+      "source_hit": null,
+      "answer": "资料不足，无法回答",
+      "model_insufficient": true,
+      "citation_valid": false,
+      "answer_correct": null,
+      "refusal_correct": true,
+      "review_notes": "资料未提供本地磁盘恢复成功率，模型明确说明资料不足，未编造数值或套用团队网盘规则，拒答正确。",
+      "retrieval_seconds": null,
+      "generation_seconds": null,
+      "total_seconds": 4.195965,
+      "status": "ok",
+      "error": null,
+      "dify_request": {
+        "inputs": {
+          "query": "员工个人电脑本地磁盘误删文件，保证恢复成功率是多少？"
+        },
+        "response_mode": "blocking",
+        "user": "knowledge-qa-docs-eval"
+      },
+      "api_seconds": 4.19544,
+      "dify_response": {
+        "task_id": "d879d06a-0008-4369-8144-2c5561e2bb33",
+        "workflow_run_id": "e7c83f55-5856-4277-93e4-4e444b9cd681",
+        "data": {
+          "id": "e7c83f55-5856-4277-93e4-4e444b9cd681",
+          "workflow_id": "e79af8cc-e57d-4440-a5b6-6e053511266d",
+          "status": "succeeded",
+          "outputs": {
+            "answer": "资料不足，无法回答",
+            "insufficient": true,
+            "raw_answer": "{\n  \"answer\": \"资料不足，无法回答\",\n  \"insufficient\": true\n}",
+            "retrieval_body": "{\"query\": \"员工个人电脑本地磁盘误删文件，保证恢复成功率是多少？\", \"top_k\": 3, \"results\": [{\"id\": \"KB-1\", \"title\": \"03-shared-files-and-recovery.txt\", \"content\": \"本文不规定本地磁盘误删恢复成功率、个人网盘恢复政策、打印收费或离职人员数据保留期限。遇到这些问题应明确资料未覆盖。\"}, {\"id\": \"KB-2\", \"title\": \"03-shared-files-and-recovery.txt\", \"content\": \"FILE-03：团队网盘误删文件恢复\"}, {\"id\": \"KB-3\", \"title\": \"03-shared-files-and-recovery.txt\", \"content\": \"团队共享文件权限与误删恢复规范\"}]}"
+          },
+          "error": null,
+          "elapsed_time": 4.150778168001125,
+          "total_tokens": 371,
+          "total_steps": 6,
+          "created_at": 1793953428,
+          "finished_at": 1793953432
+        }
+      },
+      "workflow_run_id": "e7c83f55-5856-4277-93e4-4e444b9cd681",
+      "workflow_id": "e79af8cc-e57d-4440-a5b6-6e053511266d",
+      "workflow_status": "succeeded",
+      "workflow_elapsed_seconds": 4.150778168001125,
+      "workflow_total_tokens": 371,
+      "retrieval_response": {
+        "query": "员工个人电脑本地磁盘误删文件，保证恢复成功率是多少？",
+        "top_k": 3,
+        "results": [
+          {
+            "id": "KB-1",
+            "title": "03-shared-files-and-recovery.txt",
+            "content": "本文不规定本地磁盘误删恢复成功率、个人网盘恢复政策、打印收费或离职人员数据保留期限。遇到这些问题应明确资料未覆盖。",
+            "source_document": "03-shared-files-and-recovery.txt",
+            "evidence_sha256": "92212137cdbe7e70aa7f962082bbc3b48dfafe7c8b639f319897bed5422f70e3"
+          },
+          {
+            "id": "KB-2",
+            "title": "03-shared-files-and-recovery.txt",
+            "content": "FILE-03：团队网盘误删文件恢复",
+            "source_document": "03-shared-files-and-recovery.txt",
+            "evidence_sha256": "975e97cc3b5a9c3dd6e2dcd5152091e47e0b513b26df5d9c84feb6c1d8a8be83"
+          },
+          {
+            "id": "KB-3",
+            "title": "03-shared-files-and-recovery.txt",
+            "content": "团队共享文件权限与误删恢复规范",
+            "source_document": "03-shared-files-and-recovery.txt",
+            "evidence_sha256": "bf0aeda0ac8dac195480cff4ef18735c583296510766f2506b47c79db2605790"
+          }
+        ]
+      },
+      "expected_ids_provenance": "per_request_aliases_from_expected_source_not_stable_gold_ids",
+      "evidence_groups_covered": [],
+      "cited_ids": [],
+      "unknown_citations": [],
+      "reviewed_at": "2026-11-06T08:39:14.730554+00:00"
+    }
+  ],
+  "api_parameters": {
+    "opening_statement": null,
+    "suggested_questions": [],
+    "suggested_questions_after_answer": {
+      "enabled": false
+    },
+    "speech_to_text": {
+      "enabled": false
+    },
+    "text_to_speech": {
+      "enabled": false,
+      "language": "",
+      "voice": ""
+    },
+    "retriever_resource": {
+      "enabled": true
+    },
+    "show_thoughts": {
+      "enabled": false
+    },
+    "annotation_reply": {
+      "enabled": false
+    },
+    "more_like_this": {
+      "enabled": false
+    },
+    "user_input_form": [
+      {
+        "text-input": {
+          "variable": "query",
+          "required": true,
+          "max_length": 2000,
+          "hint": "",
+          "label": "问题",
+          "type": "text-input",
+          "options": [],
+          "default": ""
+        }
+      }
+    ],
+    "sensitive_word_avoidance": {
+      "enabled": false
+    },
+    "file_upload": {},
+    "system_parameters": {
+      "image_file_size_limit": 10,
+      "video_file_size_limit": 100,
+      "audio_file_size_limit": 50,
+      "file_size_limit": 15,
+      "workflow_file_upload_limit": 10
+    }
+  },
+  "app_info": {
+    "name": "knowledge-qa-docs",
+    "description": "与 qa_eval.py 对齐的提示词、资料和 JSON Schema；保留旧工作流用于对照",
+    "tags": [],
+    "mode": "workflow",
+    "author_name": "Evelyn"
+  },
+  "summary": {
+    "run_state": "completed",
+    "processed": 20,
+    "errors": [],
+    "retrieval_hits": 14,
+    "retrieval_denominator": 15,
+    "unanswerable_with_fragments": [
+      "D16",
+      "D17",
+      "D18",
+      "D19",
+      "D20"
+    ],
+    "answer_correct": {
+      "total": 15,
+      "processed": 15,
+      "unprocessed": 0,
+      "reviewed": 15,
+      "correct": 13,
+      "pending_ids": []
+    },
+    "refusal_correct": {
+      "total": 5,
+      "processed": 5,
+      "unprocessed": 0,
+      "reviewed": 5,
+      "correct": 3,
+      "pending_ids": []
+    },
+    "source_hits": 15
+  },
+  "finished_at": "2026-11-06T08:23:52.325712+00:00"
+}

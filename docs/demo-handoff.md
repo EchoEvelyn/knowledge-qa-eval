@@ -9,7 +9,7 @@
 | 第一阶段 | FastAPI 关键词检索，12条虚构资料，20道固定题，top_k=3/5 | [检索报告](../reports/report.md)，两组命中14/15，HTTP正常/无匹配/缺参数验证完成 |
 | 第二阶段 | Python直接检索并调用本机Ollama，逐题保存、评分与HTML | [Mac实测](../reports/mac-run-02/README.md)，20题完成并评分 |
 | 第三阶段 | Docker Dify编排、动态query、对齐提示词/Schema、发布API和20题评测 | [Dify实测](../reports/dify-run-01/README.md)，20题完成并评分 |
-| 第四阶段 | 三份TXT、自有Dify Knowledge、bge-m3向量检索与问答 | [单题节点执行成功](../reports/knowledge-base-smoke/README.md)，尚未进行新题集批量评测 |
+| 第四阶段 | 三份TXT、自有Dify Knowledge、bge-m3向量检索与问答 | [新文档20题完成API执行和评分](../reports/kb-run-01/README.md)，来源15/15、证据14/15、回答13/15、拒答3/5 |
 
 正式第三阶段链路：
 
@@ -93,4 +93,4 @@ python3 dify_eval.py report --run-dir reports/dify-run-01 --open
 
 当前是本机可复现Demo：虚构小语料、固定题集、人工评分，不是生产系统。尚未接入真实业务资料，也未完成生产鉴权权限体系、多人并发、持续监控或自动独立语义评审。
 
-新增虚构文档的入库与单题流程已完成，建议下一步归档新应用导出包、建立新题集和稳定片段证据，再选择API批量回归或评测台页面。完整整理见[项目总览](project-overview.md)，不用重新跑原20题。
+新增文档的新20题API批量评测、评分与归档已完成；可继续归档新应用导出包、补充稳定片段标识，再选择真实资料接入或评测台页面。完整整理见[项目总览](project-overview.md)，不用重新跑原20题。

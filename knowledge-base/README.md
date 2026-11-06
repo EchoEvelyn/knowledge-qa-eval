@@ -43,3 +43,5 @@
 ## 独立批量题集
 
 [eval/questions.json](eval/questions.json) 为新20题，含来源、证据短语、参考答案和评分标准；仅给评测脚本使用，不上传知识库。运行方式见 [批量评测指南](../docs/knowledge-base-evaluation.md)。
+
+新20题已在Mac完成并人工评分，原始记录与结果见[第四阶段实测](../reports/kb-run-01/README.md)。

@@ -1,0 +1,27 @@
+{
+  "origin": "用户上传的Mac真实Dify文档知识库20题API评测与人工评分，非测试桩结果",
+  "imported_at_utc": "2026-11-06T08:41:32.236763+00:00",
+  "evaluated_client_git_ref": "8ecbf29",
+  "integrity_checks": [
+    "D01-D20与独立题集逐字段一致",
+    "源文档、题集与评测代码SHA256核对一致",
+    "20个唯一运行ID、一个工作流ID、全部工作流成功",
+    "根据原始Dify响应重新计算来源、证据组覆盖及引用，结果一致",
+    "CSV、JSON、summary与人工评分一致",
+    "分段耗时未被伪造，原始文件按字节保存"
+  ],
+  "files": {
+    "results.csv": {
+      "sha256": "c03130175f764eb6d5c8fc435f6a14b5f59a9d8ea6654cc7b77658bdc601026b",
+      "bytes": 9280
+    },
+    "summary.md": {
+      "sha256": "04bd14de1959aa8b8c637378fef6701e066ac57610d25b87b01cfb5fb2f203c3",
+      "bytes": 1410
+    },
+    "results.json": {
+      "sha256": "5732638f2f87f4bc7405627631e0e32f1280bc82bf629ab2cec6eb109d285e1c",
+      "bytes": 139775
+    }
+  }
+}

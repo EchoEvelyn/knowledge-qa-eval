@@ -1,0 +1,143 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><title>问答评测报告</title><style>body{font:16px system-ui;margin:32px;color:#17212b}table{border-collapse:collapse;width:100%}
+    td,th{border:1px solid #ccd4dc;padding:10px;text-align:left;vertical-align:top}th{background:#eef3f7}
+    pre{white-space:pre-wrap}details{margin-top:12px}small{color:#52606d}</style><h1>第四阶段：文档知识库批量评测</h1><p>检索命中为正确文档中的标注证据规则覆盖，非原IT-ID命中。KB编号仅在本次请求内有效。总秒数为客户端端到端耗时。</p><p>模型：qwen3:4b；top_k=3；处理 20/20；错误题：[]</p><p>状态：completed；预检错误：无</p><p><b>检索命中</b>：14/15</p><p><b>回答正确</b>：13/15（已评 15/15）</p><p><b>正确拒答</b>：3/5（已评 5/5）</p><p>耗时统计（秒）：{&quot;retrieval_seconds&quot;: {&quot;count&quot;: 0, &quot;mean&quot;: null, &quot;total&quot;: 0}, &quot;generation_seconds&quot;: {&quot;count&quot;: 0, &quot;mean&quot;: null, &quot;total&quot;: 0}, &quot;total_seconds&quot;: {&quot;count&quot;: 20, &quot;mean&quot;: 6.973499, &quot;total&quot;: 139.469972}}</p><p>单题试跑或未完成评分不能当作完整正确率；语义评分来自人工判定。</p><table><thead><tr><th>题号</th><th>问题</th><th>检索命中</th><th>回答及资料</th><th>回答正确</th><th>拒答正确</th><th>总秒数</th><th>评分理由/错误</th></tr></thead><tbody><tr><td>D01</td><td>密码重置的短信验证码多久有效？</td><td>True</td><td>密码重置的短信验证码有效期为 5 分钟。[KB-1]<details><summary>检索片段</summary><pre>[KB-1] 01-account-and-mfa.txt
+新密码至少 12 位，必须同时包含大写字母、小写字母、数字和特殊字符，且不得与最近 5 次使用过的密码相同。短信验证码有效期为 5 分钟。
+
+[KB-2] 01-account-and-mfa.txt
+员工无法接收绑定手机的验证码时，不得借用其他员工的验证码。应在服务门户选择“人工身份核验”，提交员工编号和可联系时间，由服务台通过已登记的工作联系方式回访。本文不规定人工身份核验完成时限。
+
+[KB-3] 01-account-and-mfa.txt
+旧手机丢失或损坏、无法完成验证时，联系服务台申请“认证设备重绑”，完成身份核验后由服务台清除旧绑定，再由员工注册新设备。服务台不会要求员工提供密码、短信验证码或认证器动态口令。</pre></details></td><td>正确</td><td>待评/不适用</td><td>3.127932</td><td>正确回答短信验证码有效期为5分钟，引用KB-1直接支持该结论。<br></td></tr><tr><td>D02</td><td>新密码需要满足哪些长度、字符和历史密码要求？</td><td>True</td><td>新密码至少 12 位，必须同时包含大写字母、小写字母、数字和特殊字符，且不得与最近 5 次使用过的密码相同。[KB-1]<details><summary>检索片段</summary><pre>[KB-1] 01-account-and-mfa.txt
+新密码至少 12 位，必须同时包含大写字母、小写字母、数字和特殊字符，且不得与最近 5 次使用过的密码相同。短信验证码有效期为 5 分钟。
+
+[KB-2] 01-account-and-mfa.txt
+解锁不等于密码重置。员工仍不知道原密码时，应按照 ACC-01 重置密码。
+
+[KB-3] 01-account-and-mfa.txt
+ACC-01：忘记密码如何重置</pre></details></td><td>正确</td><td>待评/不适用</td><td>7.82345</td><td>正确说明至少12位、包含大小写字母数字及特殊字符、不得与最近5次密码相同，引用KB-1正确。<br></td></tr><tr><td>D03</td><td>连续输错几次密码会锁定，锁定多长时间？</td><td>True</td><td>连续输错5次密码会锁定，锁定时间为15分钟。[KB-1]<details><summary>检索片段</summary><pre>[KB-1] 01-account-and-mfa.txt
+连续输错密码 5 次，账号会锁定 15 分钟，期间继续尝试登录不会提前解锁。员工可等待自动解锁，或提交“账号解锁”工单，由服务台完成身份核验后处理。
+
+[KB-2] 01-account-and-mfa.txt
+新密码至少 12 位，必须同时包含大写字母、小写字母、数字和特殊字符，且不得与最近 5 次使用过的密码相同。短信验证码有效期为 5 分钟。
+
+[KB-3] 01-account-and-mfa.txt
+解锁不等于密码重置。员工仍不知道原密码时，应按照 ACC-01 重置密码。</pre></details></td><td>正确</td><td>待评/不适用</td><td>6.160705</td><td>正确回答连续输错5次会锁定15分钟，引用KB-1直接支持两个数值。<br></td></tr><tr><td>D04</td><td>旧手机还能用，换认证手机时先删旧设备还是先验证新设备？</td><td>True</td><td>旧手机仍可使用时，先打开“安全中心 → 多因素认证 → 添加设备”，在新手机完成绑定并通过一次验证，再移除旧手机。必须先验证新设备，再删除旧设备，避免失去登录方式。[KB-1]<details><summary>检索片段</summary><pre>[KB-1] 01-account-and-mfa.txt
+旧手机仍可使用时，先打开“安全中心 → 多因素认证 → 添加设备”，在新手机完成绑定并通过一次验证，再移除旧手机。必须先验证新设备，再删除旧设备，避免失去登录方式。
+
+[KB-2] 01-account-and-mfa.txt
+旧手机丢失或损坏、无法完成验证时，联系服务台申请“认证设备重绑”，完成身份核验后由服务台清除旧绑定，再由员工注册新设备。服务台不会要求员工提供密码、短信验证码或认证器动态口令。
+
+[KB-3] 01-account-and-mfa.txt
+ACC-03：更换多因素认证手机</pre></details></td><td>正确</td><td>待评/不适用</td><td>9.267745</td><td>正确说明先添加并验证新设备，再移除旧设备，操作顺序与KB-1一致。<br></td></tr><tr><td>D05</td><td>旧认证手机丢失后，如何重新绑定？</td><td>True</td><td>旧认证手机丢失后，联系服务台申请‘认证设备重绑’，完成身份核验后由服务台清除旧绑定，再由员工注册新设备。服务台不会要求员工提供密码、短信验证码或认证器动态口令。[KB-1]<details><summary>检索片段</summary><pre>[KB-1] 01-account-and-mfa.txt
+旧手机丢失或损坏、无法完成验证时，联系服务台申请“认证设备重绑”，完成身份核验后由服务台清除旧绑定，再由员工注册新设备。服务台不会要求员工提供密码、短信验证码或认证器动态口令。
+
+[KB-2] 01-account-and-mfa.txt
+旧手机仍可使用时，先打开“安全中心 → 多因素认证 → 添加设备”，在新手机完成绑定并通过一次验证，再移除旧手机。必须先验证新设备，再删除旧设备，避免失去登录方式。
+
+[KB-3] 01-account-and-mfa.txt
+ACC-03：更换多因素认证手机</pre></details></td><td>正确</td><td>待评/不适用</td><td>8.955606</td><td>正确说明联系服务台、核验身份、清除旧绑定及注册新设备的流程，补充说明符合资料，引用KB-1正确。<br></td></tr><tr><td>D06</td><td>安装工作软件由谁审批，谁负责安装？</td><td>True</td><td>安装工作软件由直属主管审批，IT 负责安装。[KB-1] [KB-2]<details><summary>检索片段</summary><pre>[KB-1] 01-account-and-mfa.txt
+安装工作软件前，在“服务门户 → 软件申请”提交软件名称、工作用途和所需版本，由直属主管审批。审批通过后由 IT 执行安装；员工不得自行获取本地管理员权限。
+
+[KB-2] 01-account-and-mfa.txt
+直属主管负责审批业务用途，IT 负责安装与技术检查。不能把“IT 执行安装”理解为“IT 代替主管审批”。本文不规定软件申请从提交到安装完成的统一时限。
+
+[KB-3] 01-account-and-mfa.txt
+ACC-04：软件安装与管理员权限</pre></details></td><td>正确</td><td>待评/不适用</td><td>6.33166</td><td>正确区分直属主管审批与IT负责安装，引用KB-1和KB-2均有依据。<br></td></tr><tr><td>D07</td><td>员工办公无线网络叫什么，首次连接前要做什么？</td><td>True</td><td>员工办公无线网络名称为 Nebula-Staff，首次连接前必须通过‘软件中心 → 网络组件’安装公司无线网络证书。[KB-1]<details><summary>检索片段</summary><pre>[KB-1] 02-network-and-vpn.txt
+员工办公无线网络名称为 Nebula-Staff，使用统一账号和密码登录。首次连接前，必须通过“软件中心 → 网络组件”安装公司无线网络证书。
+
+[KB-2] 02-network-and-vpn.txt
+NET-01：办公无线网络接入
+
+[KB-3] 02-network-and-vpn.txt
+办公网络与远程 VPN 使用指南</pre></details></td><td>正确</td><td>待评/不适用</td><td>6.643204</td><td>正确回答网络名称为Nebula-Staff，首次连接前需通过软件中心安装公司无线网络证书，引用KB-1正确。<br></td></tr><tr><td>D08</td><td>访客无线网络能访问公司共享文件夹吗？</td><td>True</td><td>访客无线网络不能访问公司共享文件夹。[KB-1]<details><summary>检索片段</summary><pre>[KB-1] 02-network-and-vpn.txt
+访客无线网络名称为 Nebula-Guest，由会议或接待负责人在前台申请临时连接码。访客网络只能访问互联网，不能访问公司共享文件夹或内部业务系统。员工不得把 Nebula-Staff 的账号凭据提供给访客。
+
+[KB-2] 03-shared-files-and-recovery.txt
+- 适用范围：虚构公司的团队网盘和受管共享文件夹；不适用于个人电脑本地磁盘或私人网盘。
+
+[KB-3] 03-shared-files-and-recovery.txt
+FILE-01：共享文件夹权限申请</pre></details></td><td>正确</td><td>待评/不适用</td><td>5.439494</td><td>明确回答访客无线网络不能访问公司共享文件夹，引用KB-1直接支持结论。<br></td></tr><tr><td>D09</td><td>个人电脑可以按本指南接入远程VPN吗，指定客户端叫什么？</td><td>True</td><td>个人电脑可以按本指南接入远程VPN，指定客户端为Nebula Connect。[KB-2]<details><summary>检索片段</summary><pre>[KB-1] 02-network-and-vpn.txt
+办公网络与远程 VPN 使用指南
+
+[KB-2] 02-network-and-vpn.txt
+远程 VPN 仅允许受管电脑连接。员工先通过软件中心安装 Nebula Connect 客户端，再由直属主管审批远程访问申请；IT 根据批准的访问范围开通权限。
+
+[KB-3] 02-network-and-vpn.txt
+本文没有提供 VPN 出口国家列表、带宽保证值、个人设备 VPN 安装办法或供应商网络接入政策。不得把“允许远程访问”解释为允许访问任何地区或任何内部资源。</pre></details></td><td>错误</td><td>待评/不适用</td><td>6.049137</td><td>客户端Nebula Connect正确，但错误声称个人电脑可以接入；KB-2仅允许受管电脑，KB-3未提供个人设备接入办法。<br></td></tr><tr><td>D10</td><td>VPN连上后，是不是所有内部应用和共享目录都有权限？</td><td>True</td><td>VPN连上后，不是所有内部应用和共享目录都有权限。连接成功只表示进入获准的网络范围，资源权限仍需由对应负责人批准。[KB-1] IT负责执行授权，不代替业务负责人审批。直属主管批准VPN访问，也不自动等于文件夹业务负责人批准共享权限。[KB-3]<details><summary>检索片段</summary><pre>[KB-1] 02-network-and-vpn.txt
+登录 VPN 使用统一账号、密码和多因素认证。连接成功只表示进入获准的网络范围，不代表自动获得所有内部应用或共享文件夹的权限。资源权限仍需由对应负责人批准。
+
+[KB-2] 02-network-and-vpn.txt
+若 VPN 显示已连接但共享目录提示“无权限”，应核查共享文件夹授权，不应仅因该提示重复重装 VPN。
+
+[KB-3] 03-shared-files-and-recovery.txt
+IT 负责执行授权，不代替业务负责人审批。直属主管批准 VPN 访问，也不自动等于文件夹业务负责人批准共享权限。</pre></details></td><td>正确</td><td>待评/不适用</td><td>10.331544</td><td>正确说明VPN连接不自动授予全部资源权限，仍需负责人批准；引用KB-1和KB-3均支持回答。<br></td></tr><tr><td>D11</td><td>VPN仍无法连接时，报障要附哪些信息？</td><td>False</td><td>中文回答，包含引用或明确资料不足<details><summary>检索片段</summary><pre>[KB-1] 02-network-and-vpn.txt
+NET-03：VPN 连接失败的处理顺序
+
+[KB-2] 02-network-and-vpn.txt
+若 VPN 显示已连接但共享目录提示“无权限”，应核查共享文件夹授权，不应仅因该提示重复重装 VPN。
+
+[KB-3] 02-network-and-vpn.txt
+NET-04：VPN 已连接但无法打开内部站点</pre></details></td><td>错误</td><td>待评/不适用</td><td>4.517873</td><td>检索未返回错误码、发生时间和客户端版本的证据；回答为模板占位文字，未实际作答且没有有效引用。<br></td></tr><tr><td>D12</td><td>共享文件夹权限由谁审批，一个工作日从什么时候开始算？</td><td>True</td><td>共享文件夹权限由业务负责人审批，一个工作日从业务负责人审批完成时开始计算。[KB-1]<details><summary>检索片段</summary><pre>[KB-1] 03-shared-files-and-recovery.txt
+审批人为该文件夹的业务负责人。审批通过后，由 IT 在 1 个工作日内开通。这个时限从业务负责人审批完成时开始计算，不从员工提交申请时计算。
+
+[KB-2] 03-shared-files-and-recovery.txt
+FILE-01：共享文件夹权限申请
+
+[KB-3] 03-shared-files-and-recovery.txt
+申请共享文件夹权限时，在“服务门户 → 存储服务 → 共享权限”提交完整目录路径、申请原因、只读或读写级别，以及需要访问的人员名单。</pre></details></td><td>正确</td><td>待评/不适用</td><td>6.241223</td><td>正确说明由文件夹业务负责人审批，时限从审批完成时开始计算，引用KB-1正确。<br></td></tr><tr><td>D13</td><td>共享文件夹只有只读权限，可以上传、修改或删除文件吗？</td><td>True</td><td>共享文件夹只有只读权限时，不允许上传、修改或删除文件。只读权限允许查看和下载文件，但不允许修改、上传或删除。[KB-1]<details><summary>检索片段</summary><pre>[KB-1] 03-shared-files-and-recovery.txt
+只读权限允许查看和下载文件，不允许修改、上传或删除。读写权限允许在授权目录中创建和修改文件，并按该目录策略执行删除。
+
+[KB-2] 03-shared-files-and-recovery.txt
+FILE-02：只读与读写权限
+
+[KB-3] 03-shared-files-and-recovery.txt
+需要扩大权限范围或从只读改成读写时，必须重新提交申请。权限不随文件链接转发而转移；没有授权的员工即使收到链接，也应被拒绝访问。</pre></details></td><td>正确</td><td>待评/不适用</td><td>7.425567</td><td>正确说明只读权限仅允许查看和下载，不允许上传、修改或删除，引用KB-1正确。<br></td></tr><tr><td>D14</td><td>文件删了超过30天、还没到90天，是否保证可以恢复？</td><td>True</td><td>文件删了超过30天、还没到90天，不能保证可以恢复。根据资料，文件已从回收站清空或删除超过30天时，不能保证自助恢复，应提交‘文件恢复’工单；常规备份保留期为90天，但备份中可能没有该文件或该版本未被成功备份，因此即使在90天内也不能保证恢复。[KB-1][KB-2]<details><summary>检索片段</summary><pre>[KB-1] 03-shared-files-and-recovery.txt
+文件已从回收站清空或删除超过 30 天时，不能保证自助恢复。应提交“文件恢复”工单，提供原目录、文件名和大致删除时间，由 IT 检查是否存在可用备份。
+
+[KB-2] 03-shared-files-and-recovery.txt
+常规备份保留期为 90 天，但这不代表任何文件在 90 天内都一定可以恢复：备份中可能没有该文件，或该版本未被成功备份。回收站 30 天保留期与备份 90 天保留期是不同机制。
+
+[KB-3] 03-shared-files-and-recovery.txt
+团队网盘文件删除后进入回收站，自删除时间起保留 30 天。员工可在“团队网盘 → 回收站”找到文件并恢复。这里的 30 天是自然日，不是工作日。</pre></details></td><td>正确</td><td>待评/不适用</td><td>12.863828</td><td>正确说明超过30天但未满90天也不保证恢复，并解释回收站与备份的区别及备份可能缺失，引用KB-1和KB-2正确。<br></td></tr><tr><td>D15</td><td>保留最近20个文件历史版本，等于能恢复最近20天的文件吗？</td><td>True</td><td>保留最近20个文件历史版本不等于能恢复最近20天的文件。根据资料，团队网盘可保留最近20个历史版本，但版本数量上限不等于固定天数，不能据此推断可恢复最近20天。[KB-1]<details><summary>检索片段</summary><pre>[KB-1] 03-shared-files-and-recovery.txt
+团队网盘可保留最近 20 个历史版本。员工可在文件详情中的“版本历史”查看并恢复已有版本。版本数量上限不等于固定天数，不能据此推断“可恢复最近 20 天”。
+
+[KB-2] 03-shared-files-and-recovery.txt
+恢复历史版本前应通知正在协作的同事。没有出现在版本历史中的版本，不能承诺可以自助找回。
+
+[KB-3] 03-shared-files-and-recovery.txt
+FILE-04：文件版本恢复</pre></details></td><td>正确</td><td>待评/不适用</td><td>9.278916</td><td>正确区分20个历史版本与20天，说明版本数量不代表固定恢复天数，引用KB-1正确。<br></td></tr><tr><td>D16</td><td>公司VPN提供哪些国家的出口节点？</td><td>None</td><td>公司VPN提供哪些国家的出口节点？<details><summary>检索片段</summary><pre>[KB-1] 02-network-and-vpn.txt
+本文没有提供 VPN 出口国家列表、带宽保证值、个人设备 VPN 安装办法或供应商网络接入政策。不得把“允许远程访问”解释为允许访问任何地区或任何内部资源。
+
+[KB-2] 02-network-and-vpn.txt
+办公网络与远程 VPN 使用指南
+
+[KB-3] 02-network-and-vpn.txt
+NET-04：VPN 已连接但无法打开内部站点</pre></details></td><td>待评/不适用</td><td>错误</td><td>4.764048</td><td>KB-1明确未提供VPN出口国家列表，但模型仅重复问题，未明确说明资料不足，拒答不合格。<br></td></tr><tr><td>D17</td><td>公司邮箱一封邮件最多能发送多大？</td><td>None</td><td>公司邮箱单封邮件发送限制未在资料中明确说明。根据资料，统一邮箱容量上限为5GB，但5GB指邮箱总容量，不是单封邮件或单个附件的最大发送限制。资料中未提供单封邮件发送限制的具体数值。<details><summary>检索片段</summary><pre>[KB-1] 03-shared-files-and-recovery.txt
+统一邮箱容量上限为 5GB。邮箱空间不足时，可清空已删除邮件和垃圾邮件，并将需要留存的大附件归档到有权限的团队网盘目录。
+
+[KB-2] 03-shared-files-and-recovery.txt
+5GB 指邮箱总容量，不是单封邮件或单个附件的最大发送限制。本文没有提供单封邮件发送限制，不得根据总容量推算。
+
+[KB-3] 03-shared-files-and-recovery.txt
+FILE-05：邮箱大附件归档</pre></details></td><td>待评/不适用</td><td>正确</td><td>8.501156</td><td>明确说明资料缺少单封邮件发送限制，正确区分5GB总容量与单封限制，未编造数值，拒答正确。<br></td></tr><tr><td>D18</td><td>公司打印机打印一页收费多少钱？</td><td>None</td><td>公司打印机打印一页收费多少钱？<details><summary>检索片段</summary><pre>[KB-1] 03-shared-files-and-recovery.txt
+本文不规定本地磁盘误删恢复成功率、个人网盘恢复政策、打印收费或离职人员数据保留期限。遇到这些问题应明确资料未覆盖。
+
+[KB-2] 02-network-and-vpn.txt
+员工办公无线网络名称为 Nebula-Staff，使用统一账号和密码登录。首次连接前，必须通过“软件中心 → 网络组件”安装公司无线网络证书。
+
+[KB-3] 01-account-and-mfa.txt
+- 适用范围：虚构公司的在职员工统一账号；不适用于客户账号和外部供应商账号。</pre></details></td><td>待评/不适用</td><td>错误</td><td>4.507186</td><td>资料明确未覆盖打印收费，但模型仅重复问题，未明确说明资料不足，不算正确拒答。<br></td></tr><tr><td>D19</td><td>人工身份核验保证多少分钟内完成？</td><td>None</td><td>人工身份核验完成时限未在资料中明确规定。[KB-1] 说明本文不规定人工身份核验完成时限。<details><summary>检索片段</summary><pre>[KB-1] 01-account-and-mfa.txt
+员工无法接收绑定手机的验证码时，不得借用其他员工的验证码。应在服务门户选择“人工身份核验”，提交员工编号和可联系时间，由服务台通过已登记的工作联系方式回访。本文不规定人工身份核验完成时限。
+
+[KB-2] 01-account-and-mfa.txt
+IT 服务台人工服务时间为工作日 09:00—18:00，时区为北京时间；自助密码重置入口全天可用。人工服务时间不等于工单解决时限。
+
+[KB-3] 01-account-and-mfa.txt
+连续输错密码 5 次，账号会锁定 15 分钟，期间继续尝试登录不会提前解锁。员工可等待自动解锁，或提交“账号解锁”工单，由服务台完成身份核验后处理。</pre></details></td><td>待评/不适用</td><td>正确</td><td>7.043733</td><td>明确说明资料未规定人工身份核验完成时限，未编造分钟数或将工作时间当作SLA，引用KB-1正确。<br></td></tr><tr><td>D20</td><td>员工个人电脑本地磁盘误删文件，保证恢复成功率是多少？</td><td>None</td><td>资料不足，无法回答<details><summary>检索片段</summary><pre>[KB-1] 03-shared-files-and-recovery.txt
+本文不规定本地磁盘误删恢复成功率、个人网盘恢复政策、打印收费或离职人员数据保留期限。遇到这些问题应明确资料未覆盖。
+
+[KB-2] 03-shared-files-and-recovery.txt
+FILE-03：团队网盘误删文件恢复
+
+[KB-3] 03-shared-files-and-recovery.txt
+团队共享文件权限与误删恢复规范</pre></details></td><td>待评/不适用</td><td>正确</td><td>4.195965</td><td>资料未提供本地磁盘恢复成功率，模型明确说明资料不足，未编造数值或套用团队网盘规则，拒答正确。<br></td></tr></tbody></table><p><small>来源 JSON SHA256：5732638f2f87f4bc7405627631e0e32f1280bc82bf629ab2cec6eb109d285e1c</small></p></html>
