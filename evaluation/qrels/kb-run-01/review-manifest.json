@@ -1,0 +1,69 @@
+{
+  "corpus_sha256": "e25e0c843e402b533d4514f6ccc963f2c7f339166ea7bf4da686b3c990535cca",
+  "questions_sha256": "c5610f0c357bf8b92a5a36a133390026b413939ceddee17f89f63ef81baf0098",
+  "pair_count": 1155,
+  "instructions": "逐对审查全部有答案题×全部片段。relevance=0无关/1仅背景/2支持至少一个核心答案事实，>=2为相关。suggested_only不是已完成标注。",
+  "reviewed_at": "2026-11-06T09:11:32.958945+00:00",
+  "reviewer_description": "助手阅读完整77段后对15题×77段作事后语义审核；非人类独立盲评，允许复核。",
+  "scope": "all_15_answerable_questions_x_all_77_exported_segments",
+  "qrels_sha256": "646c587d3733a9a458fa7e81660aaeb87ca36223803c55b123a05e483f3f2bdd",
+  "corpus_segment_count": 77,
+  "relevance_threshold": 2,
+  "relevance_definition": "0无关；1仅背景/标题/不同条件；2直接支持至少一个本题核心事实（不要求单段覆盖整题）。",
+  "not_inferred_from_top3": true,
+  "positive_snapshot_ordinals": {
+    "D01": [
+      37
+    ],
+    "D02": [
+      37
+    ],
+    "D03": [
+      40
+    ],
+    "D04": [
+      43
+    ],
+    "D05": [
+      44
+    ],
+    "D06": [
+      46,
+      47
+    ],
+    "D07": [
+      9
+    ],
+    "D08": [
+      10
+    ],
+    "D09": [
+      12,
+      27
+    ],
+    "D10": [
+      12,
+      13,
+      21,
+      61
+    ],
+    "D11": [
+      17
+    ],
+    "D12": [
+      60,
+      61
+    ],
+    "D13": [
+      63
+    ],
+    "D14": [
+      67,
+      68
+    ],
+    "D15": [
+      70
+    ]
+  },
+  "snapshot_caveat": "用户在测试后导出；60条历史返回均唯一映射，但这不能证明历史时点与导出时点全库内容完全相同。Recall以本快照为分母。"
+}

@@ -18,6 +18,23 @@ REVIEWS=qa.ROOT/'evaluation/reviews/kb-run-01'
 
 
 class MetricsTests(unittest.TestCase):
+    def test_archived_full_corpus_recall_and_provenance(self):
+        corpus=qa.ROOT/'evaluation/corpora/kb-run-01/segments.json'
+        gold=qa.ROOT/'evaluation/qrels/kb-run-01'
+        pairs=km.read_csv(gold/'qrels.csv')
+        self.assertEqual(len(pairs),15*77)
+        with tempfile.TemporaryDirectory() as temp,contextlib.redirect_stdout(io.StringIO()):
+            data=km.analyze(RUN,REVIEWS,Path(temp)/'full',corpus,gold)
+            self.assertAlmostEqual(data['retrieval']['recall_at_3']['value'],13/15)
+            self.assertAlmostEqual(data['retrieval']['precision_at_3']['value'],.4)
+            by_id={r['id']:r for r in data['per_question']}
+            self.assertEqual(by_id['D10']['relevant_total'],4)
+            self.assertEqual(by_id['D10']['recall_at_3'],.5)
+            self.assertEqual(by_id['D12']['recall_at_3'],.5)
+            self.assertEqual(by_id['D11']['recall_at_3'],0)
+            self.assertIn('非人类',data['review_attribution'])
+            self.assertIsNone(by_id['D16']['recall_at_3'])
+
     def test_existing_run_audit_and_source_immutability(self):
         before=(RUN/'results.json').read_bytes()
         with tempfile.TemporaryDirectory() as temp,contextlib.redirect_stdout(io.StringIO()):

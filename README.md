@@ -11,7 +11,7 @@
 | 3. Dify应用/API | 可导入的对齐工作流、动态query、发布API | Mac真实20题API评测、评分和归档完成 |
 | 4. 文档向量知识库 | 三份TXT入库、bge-m3、Knowledge Retrieval | Mac真实新20题API执行、人工评分和归档完成 |
 
-新增：[知识库测评指标与完整Recall流程](docs/knowledge-base-metrics.md)；[现有20题指标审计](reports/kb-run-01-metric-audit/report.md)；[Mac指标工具包](knowledge-base/kb-metrics-kit.zip)。严格Recall等待全量片段与金标，其余指标已按现有记录补算。
+新增：[知识库测评指标与完整Recall流程](docs/knowledge-base-metrics.md)；[现有20题指标审计](reports/kb-run-01-metric-audit/report.md)；[Mac指标工具包](knowledge-base/kb-metrics-kit.zip)。已完成77段全量审核，Recall@3宏平均86.67%；见[全量指标报告](reports/kb-run-01-full-metrics/README.md)。
 
 完整架构、文件说明与当前边界见 [项目总览](docs/project-overview.md)。
 

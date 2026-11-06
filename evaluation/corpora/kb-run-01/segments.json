@@ -1,0 +1,798 @@
+{
+  "exported_at": "2026-11-06T09:09:20.887508+00:00",
+  "complete": true,
+  "scope": "selected_datasets_enabled_completed_segments",
+  "dataset_ids": [
+    "d97144f0-a39e-433b-aea3-5f4c935aa688"
+  ],
+  "documents": [
+    {
+      "dataset_id": "d97144f0-a39e-433b-aea3-5f4c935aa688",
+      "document_id": "dfc9f89f-4dd6-4a58-b564-9c6162958d69",
+      "name": "02-network-and-vpn.txt"
+    },
+    {
+      "dataset_id": "d97144f0-a39e-433b-aea3-5f4c935aa688",
+      "document_id": "495099d9-1572-4f84-b483-e70768cefad3",
+      "name": "01-account-and-mfa.txt"
+    },
+    {
+      "dataset_id": "d97144f0-a39e-433b-aea3-5f4c935aa688",
+      "document_id": "759c7ae2-7e71-4e5a-bd60-a4aa00c6e148",
+      "name": "03-shared-files-and-recovery.txt"
+    }
+  ],
+  "segments": [
+    {
+      "stable_id": "dify:d97144f0-a39e-433b-aea3-5f4c935aa688:dfc9f89f-4dd6-4a58-b564-9c6162958d69:45e0eb2f-774d-4a15-b07c-a21697f9ef6a",
+      "dataset_id": "d97144f0-a39e-433b-aea3-5f4c935aa688",
+      "document_id": "dfc9f89f-4dd6-4a58-b564-9c6162958d69",
+      "segment_id": "45e0eb2f-774d-4a15-b07c-a21697f9ef6a",
+      "source_document": "02-network-and-vpn.txt",
+      "content": "办公网络与远程 VPN 使用指南",
+      "evidence_sha256": "0f6d27a01e085a3f7826e8810ae54fed701fbb23a74d95134691878697e2891d",
+      "position": 1
+    },
+    {
+      "stable_id": "dify:d97144f0-a39e-433b-aea3-5f4c935aa688:dfc9f89f-4dd6-4a58-b564-9c6162958d69:ab993f2b-95cc-434e-8879-29990d8288ee",
+      "dataset_id": "d97144f0-a39e-433b-aea3-5f4c935aa688",
+      "document_id": "dfc9f89f-4dd6-4a58-b564-9c6162958d69",
+      "segment_id": "ab993f2b-95cc-434e-8879-29990d8288ee",
+      "source_document": "02-network-and-vpn.txt",
+      "content": "虚构测试资料：本文为“星河示例科技”知识库 Demo 人工编写，不代表真实网络配置；网络名称和系统名称均为测试设定。",
+      "evidence_sha256": "0a927f75855b35295e26b01d0639826881cb8fdfac15347cf68e7ffe769e439d",
+      "position": 2
+    },
+    {
+      "stable_id": "dify:d97144f0-a39e-433b-aea3-5f4c935aa688:dfc9f89f-4dd6-4a58-b564-9c6162958d69:8bb94762-4f71-4d99-a600-da4c3d7f4968",
+      "dataset_id": "d97144f0-a39e-433b-aea3-5f4c935aa688",
+      "document_id": "dfc9f89f-4dd6-4a58-b564-9c6162958d69",
+      "segment_id": "8bb94762-4f71-4d99-a600-da4c3d7f4968",
+      "source_document": "02-network-and-vpn.txt",
+      "content": "- 文档编号：DOC-NETWORK-001",
+      "evidence_sha256": "d2abb7b9dde1831e6e8eab08e6c6c94de43f6d498fd0355393ba95796821743f",
+      "position": 3
+    },
+    {
+      "stable_id": "dify:d97144f0-a39e-433b-aea3-5f4c935aa688:dfc9f89f-4dd6-4a58-b564-9c6162958d69:c04ef65d-aa17-48c6-bfe9-b7b576d6d914",
+      "dataset_id": "d97144f0-a39e-433b-aea3-5f4c935aa688",
+      "document_id": "dfc9f89f-4dd6-4a58-b564-9c6162958d69",
+      "segment_id": "c04ef65d-aa17-48c6-bfe9-b7b576d6d914",
+      "source_document": "02-network-and-vpn.txt",
+      "content": "- 版本：1.0",
+      "evidence_sha256": "70876c34708a53551ccbf27afcb3a8c471c7ecfd377fef2eeeebdbaa408913de",
+      "position": 4
+    },
+    {
+      "stable_id": "dify:d97144f0-a39e-433b-aea3-5f4c935aa688:dfc9f89f-4dd6-4a58-b564-9c6162958d69:1e2db2c6-d6c9-4888-bbfd-25bf241397be",
+      "dataset_id": "d97144f0-a39e-433b-aea3-5f4c935aa688",
+      "document_id": "dfc9f89f-4dd6-4a58-b564-9c6162958d69",
+      "segment_id": "1e2db2c6-d6c9-4888-bbfd-25bf241397be",
+      "source_document": "02-network-and-vpn.txt",
+      "content": "- 生效日期：2026-11-06",
+      "evidence_sha256": "4618f7f84ee5bd3780412ee1390d5843c33bd4916113d7c27abb21d1f8f1cb72",
+      "position": 5
+    },
+    {
+      "stable_id": "dify:d97144f0-a39e-433b-aea3-5f4c935aa688:dfc9f89f-4dd6-4a58-b564-9c6162958d69:96bf21e1-d868-4c24-927f-a3e147f566c8",
+      "dataset_id": "d97144f0-a39e-433b-aea3-5f4c935aa688",
+      "document_id": "dfc9f89f-4dd6-4a58-b564-9c6162958d69",
+      "segment_id": "96bf21e1-d868-4c24-927f-a3e147f566c8",
+      "source_document": "02-network-and-vpn.txt",
+      "content": "- 维护部门：IT 网络支持组",
+      "evidence_sha256": "4a501db2c36936871c252f12576597bb4e7f7c8be3c75e2ef3b3eb43aa215eac",
+      "position": 6
+    },
+    {
+      "stable_id": "dify:d97144f0-a39e-433b-aea3-5f4c935aa688:dfc9f89f-4dd6-4a58-b564-9c6162958d69:8e1d0df0-1205-4800-93a5-c7d068cf7c39",
+      "dataset_id": "d97144f0-a39e-433b-aea3-5f4c935aa688",
+      "document_id": "dfc9f89f-4dd6-4a58-b564-9c6162958d69",
+      "segment_id": "8e1d0df0-1205-4800-93a5-c7d068cf7c39",
+      "source_document": "02-network-and-vpn.txt",
+      "content": "- 适用范围：虚构公司的受管办公电脑和员工远程办公场景。",
+      "evidence_sha256": "7677a9241aebeb026d91a59cf25b1320d338a220801b50ee23aa21421e86c3a4",
+      "position": 7
+    },
+    {
+      "stable_id": "dify:d97144f0-a39e-433b-aea3-5f4c935aa688:dfc9f89f-4dd6-4a58-b564-9c6162958d69:94ae032c-b0de-4cdd-bdb9-8d83866e2fa3",
+      "dataset_id": "d97144f0-a39e-433b-aea3-5f4c935aa688",
+      "document_id": "dfc9f89f-4dd6-4a58-b564-9c6162958d69",
+      "segment_id": "94ae032c-b0de-4cdd-bdb9-8d83866e2fa3",
+      "source_document": "02-network-and-vpn.txt",
+      "content": "NET-01：办公无线网络接入",
+      "evidence_sha256": "b4488066f774ad8fbb1d5651b5a91080d3e47a424f730979481237e3db6ae955",
+      "position": 8
+    },
+    {
+      "stable_id": "dify:d97144f0-a39e-433b-aea3-5f4c935aa688:dfc9f89f-4dd6-4a58-b564-9c6162958d69:13970953-9a52-46dc-adeb-b97b12402bf6",
+      "dataset_id": "d97144f0-a39e-433b-aea3-5f4c935aa688",
+      "document_id": "dfc9f89f-4dd6-4a58-b564-9c6162958d69",
+      "segment_id": "13970953-9a52-46dc-adeb-b97b12402bf6",
+      "source_document": "02-network-and-vpn.txt",
+      "content": "员工办公无线网络名称为 Nebula-Staff，使用统一账号和密码登录。首次连接前，必须通过“软件中心 → 网络组件”安装公司无线网络证书。",
+      "evidence_sha256": "a66ef33014986d412a30992c856ac13549751f8b4f8c6f347f82fb5a583e1581",
+      "position": 9
+    },
+    {
+      "stable_id": "dify:d97144f0-a39e-433b-aea3-5f4c935aa688:dfc9f89f-4dd6-4a58-b564-9c6162958d69:8218101a-253f-4cb0-9812-7851ec3c68bf",
+      "dataset_id": "d97144f0-a39e-433b-aea3-5f4c935aa688",
+      "document_id": "dfc9f89f-4dd6-4a58-b564-9c6162958d69",
+      "segment_id": "8218101a-253f-4cb0-9812-7851ec3c68bf",
+      "source_document": "02-network-and-vpn.txt",
+      "content": "访客无线网络名称为 Nebula-Guest，由会议或接待负责人在前台申请临时连接码。访客网络只能访问互联网，不能访问公司共享文件夹或内部业务系统。员工不得把 Nebula-Staff 的账号凭据提供给访客。",
+      "evidence_sha256": "502f36192e5967169690a9db2d7096dee286d031392b4f17299499c0011502f8",
+      "position": 10
+    },
+    {
+      "stable_id": "dify:d97144f0-a39e-433b-aea3-5f4c935aa688:dfc9f89f-4dd6-4a58-b564-9c6162958d69:e2d2ebeb-c622-42c1-b4c0-e01d84486773",
+      "dataset_id": "d97144f0-a39e-433b-aea3-5f4c935aa688",
+      "document_id": "dfc9f89f-4dd6-4a58-b564-9c6162958d69",
+      "segment_id": "e2d2ebeb-c622-42c1-b4c0-e01d84486773",
+      "source_document": "02-network-and-vpn.txt",
+      "content": "NET-02：首次使用远程 VPN",
+      "evidence_sha256": "b38cf49ad8956131191af12f3bac75de9cbc0ee8a27ea476bbad0a140db4f9c8",
+      "position": 11
+    },
+    {
+      "stable_id": "dify:d97144f0-a39e-433b-aea3-5f4c935aa688:dfc9f89f-4dd6-4a58-b564-9c6162958d69:7f8c1031-a64f-408c-a733-50c5e52a5f64",
+      "dataset_id": "d97144f0-a39e-433b-aea3-5f4c935aa688",
+      "document_id": "dfc9f89f-4dd6-4a58-b564-9c6162958d69",
+      "segment_id": "7f8c1031-a64f-408c-a733-50c5e52a5f64",
+      "source_document": "02-network-and-vpn.txt",
+      "content": "远程 VPN 仅允许受管电脑连接。员工先通过软件中心安装 Nebula Connect 客户端，再由直属主管审批远程访问申请；IT 根据批准的访问范围开通权限。",
+      "evidence_sha256": "cba19395937ae9c8e1410629cfc67f8652587f30a8db754418e066fc497381f8",
+      "position": 12
+    },
+    {
+      "stable_id": "dify:d97144f0-a39e-433b-aea3-5f4c935aa688:dfc9f89f-4dd6-4a58-b564-9c6162958d69:e4931928-f90e-417c-92ea-fa39b598d331",
+      "dataset_id": "d97144f0-a39e-433b-aea3-5f4c935aa688",
+      "document_id": "dfc9f89f-4dd6-4a58-b564-9c6162958d69",
+      "segment_id": "e4931928-f90e-417c-92ea-fa39b598d331",
+      "source_document": "02-network-and-vpn.txt",
+      "content": "登录 VPN 使用统一账号、密码和多因素认证。连接成功只表示进入获准的网络范围，不代表自动获得所有内部应用或共享文件夹的权限。资源权限仍需由对应负责人批准。",
+      "evidence_sha256": "a10f7f027c44e313b1b3272377ea510b60de68508e95dab08da2a6cc39511b86",
+      "position": 13
+    },
+    {
+      "stable_id": "dify:d97144f0-a39e-433b-aea3-5f4c935aa688:dfc9f89f-4dd6-4a58-b564-9c6162958d69:792665db-73d4-43a4-bedb-209b4fb445bb",
+      "dataset_id": "d97144f0-a39e-433b-aea3-5f4c935aa688",
+      "document_id": "dfc9f89f-4dd6-4a58-b564-9c6162958d69",
+      "segment_id": "792665db-73d4-43a4-bedb-209b4fb445bb",
+      "source_document": "02-network-and-vpn.txt",
+      "content": "NET-03：VPN 连接失败的处理顺序",
+      "evidence_sha256": "0a2537df766ffceff6749f0aa89c6ab361a8e662b9dd134900e77e537c524a7c",
+      "position": 14
+    },
+    {
+      "stable_id": "dify:d97144f0-a39e-433b-aea3-5f4c935aa688:dfc9f89f-4dd6-4a58-b564-9c6162958d69:c6484590-be27-4946-b953-f533a2efd29f",
+      "dataset_id": "d97144f0-a39e-433b-aea3-5f4c935aa688",
+      "document_id": "dfc9f89f-4dd6-4a58-b564-9c6162958d69",
+      "segment_id": "c6484590-be27-4946-b953-f533a2efd29f",
+      "source_document": "02-network-and-vpn.txt",
+      "content": "VPN 连接失败时，先确认普通互联网访问正常，再检查 Nebula Connect 是否为软件中心发布的当前版本，更新后重新登录。",
+      "evidence_sha256": "85f0ee6c98e1468c94d5a62860d25230a23be75dbc0bfe4a55a87fb97f52e6cd",
+      "position": 15
+    },
+    {
+      "stable_id": "dify:d97144f0-a39e-433b-aea3-5f4c935aa688:dfc9f89f-4dd6-4a58-b564-9c6162958d69:3d887bb6-d27a-4f3f-9f49-67c0e7c958a6",
+      "dataset_id": "d97144f0-a39e-433b-aea3-5f4c935aa688",
+      "document_id": "dfc9f89f-4dd6-4a58-b564-9c6162958d69",
+      "segment_id": "3d887bb6-d27a-4f3f-9f49-67c0e7c958a6",
+      "source_document": "02-network-and-vpn.txt",
+      "content": "若提示身份验证失败，应检查统一账号是否锁定、密码是否正确及多因素认证是否完成。账号锁定、密码重置和认证设备重绑的流程，见《统一账号与多因素认证操作手册》。",
+      "evidence_sha256": "cd4d254e899622256b4527031397d9bc137bfa3b784d5375d1d6adf0bb6b4120",
+      "position": 16
+    },
+    {
+      "stable_id": "dify:d97144f0-a39e-433b-aea3-5f4c935aa688:dfc9f89f-4dd6-4a58-b564-9c6162958d69:1bb2bcc0-9f33-49cb-8ec3-6f54fe96739d",
+      "dataset_id": "d97144f0-a39e-433b-aea3-5f4c935aa688",
+      "document_id": "dfc9f89f-4dd6-4a58-b564-9c6162958d69",
+      "segment_id": "1bb2bcc0-9f33-49cb-8ec3-6f54fe96739d",
+      "source_document": "02-network-and-vpn.txt",
+      "content": "仍无法连接时，提交“远程网络故障”工单，附错误码、发生时间和客户端版本。不要提交密码、验证码或认证器动态口令。",
+      "evidence_sha256": "dd84d54eece49504e7a23bb192d1a2fc9baeda68f128d0b475aa1d2d9abb6edf",
+      "position": 17
+    },
+    {
+      "stable_id": "dify:d97144f0-a39e-433b-aea3-5f4c935aa688:dfc9f89f-4dd6-4a58-b564-9c6162958d69:969d7e43-4982-4a8d-9cd2-54100f6c13dc",
+      "dataset_id": "d97144f0-a39e-433b-aea3-5f4c935aa688",
+      "document_id": "dfc9f89f-4dd6-4a58-b564-9c6162958d69",
+      "segment_id": "969d7e43-4982-4a8d-9cd2-54100f6c13dc",
+      "source_document": "02-network-and-vpn.txt",
+      "content": "若 VPN 显示已连接但共享目录提示“无权限”，应核查共享文件夹授权，不应仅因该提示重复重装 VPN。",
+      "evidence_sha256": "f28ad64f2db64b1ea614c69298c9198993515b59ff152e6d968b9e7d2be6e6a3",
+      "position": 18
+    },
+    {
+      "stable_id": "dify:d97144f0-a39e-433b-aea3-5f4c935aa688:dfc9f89f-4dd6-4a58-b564-9c6162958d69:e913381f-7c2f-4b71-a6c4-0bbdfe15124c",
+      "dataset_id": "d97144f0-a39e-433b-aea3-5f4c935aa688",
+      "document_id": "dfc9f89f-4dd6-4a58-b564-9c6162958d69",
+      "segment_id": "e913381f-7c2f-4b71-a6c4-0bbdfe15124c",
+      "source_document": "02-network-and-vpn.txt",
+      "content": "NET-04：VPN 已连接但无法打开内部站点",
+      "evidence_sha256": "c1d076cfc68e8a15f0c1b9b7a448f061016c84ff60652d6c540793fe788c723b",
+      "position": 19
+    },
+    {
+      "stable_id": "dify:d97144f0-a39e-433b-aea3-5f4c935aa688:dfc9f89f-4dd6-4a58-b564-9c6162958d69:a9a2f788-94e5-4398-acda-f3f2c2d7c7bb",
+      "dataset_id": "d97144f0-a39e-433b-aea3-5f4c935aa688",
+      "document_id": "dfc9f89f-4dd6-4a58-b564-9c6162958d69",
+      "segment_id": "a9a2f788-94e5-4398-acda-f3f2c2d7c7bb",
+      "source_document": "02-network-and-vpn.txt",
+      "content": "先确认无法访问的站点是否在已批准范围内。受管电脑上的 DNS 设置应保持公司管理策略，不得自行替换为公共 DNS 来绕过问题。",
+      "evidence_sha256": "95324a416e85cc23378db36f14da2e8e6d3a19710de00c24bdb4afd4833dca05",
+      "position": 20
+    },
+    {
+      "stable_id": "dify:d97144f0-a39e-433b-aea3-5f4c935aa688:dfc9f89f-4dd6-4a58-b564-9c6162958d69:225818a9-e7a5-496c-8209-290a91d3e4fa",
+      "dataset_id": "d97144f0-a39e-433b-aea3-5f4c935aa688",
+      "document_id": "dfc9f89f-4dd6-4a58-b564-9c6162958d69",
+      "segment_id": "225818a9-e7a5-496c-8209-290a91d3e4fa",
+      "source_document": "02-network-and-vpn.txt",
+      "content": "提交工单时提供站点名称、访问时间、错误提示，以及“其他内部站点是否可访问”的结果。对于没有授权的资源，应走资源权限申请流程，不能要求网络组直接扩大权限。",
+      "evidence_sha256": "1878aa19e0eef8329e4d7c57ae2594c9c0504cd0016cb00d68fb73cf354a902a",
+      "position": 21
+    },
+    {
+      "stable_id": "dify:d97144f0-a39e-433b-aea3-5f4c935aa688:dfc9f89f-4dd6-4a58-b564-9c6162958d69:912e49b8-e6e3-45c5-b000-0aa3e3ec816c",
+      "dataset_id": "d97144f0-a39e-433b-aea3-5f4c935aa688",
+      "document_id": "dfc9f89f-4dd6-4a58-b564-9c6162958d69",
+      "segment_id": "912e49b8-e6e3-45c5-b000-0aa3e3ec816c",
+      "source_document": "02-network-and-vpn.txt",
+      "content": "NET-05：会议室投屏",
+      "evidence_sha256": "8709fcb4c5272bfd771910d5afe7a4ffa17dbff6bd8a16978e4866dda0f86567",
+      "position": 22
+    },
+    {
+      "stable_id": "dify:d97144f0-a39e-433b-aea3-5f4c935aa688:dfc9f89f-4dd6-4a58-b564-9c6162958d69:b32aaa2b-5709-46db-a874-c81289b6967d",
+      "dataset_id": "d97144f0-a39e-433b-aea3-5f4c935aa688",
+      "document_id": "dfc9f89f-4dd6-4a58-b564-9c6162958d69",
+      "segment_id": "b32aaa2b-5709-46db-a874-c81289b6967d",
+      "source_document": "02-network-and-vpn.txt",
+      "content": "会议室投屏应连接该会议室提供的无线网络，再在投屏客户端输入会议室屏幕显示的 6 位连接码。投屏码只用于当前会议室连接，不是统一账号密码。",
+      "evidence_sha256": "fa5fe2e8777cd5cfd4fcaa753a8d7cee3b4298920acd80dbd5119f9d513ed575",
+      "position": 23
+    },
+    {
+      "stable_id": "dify:d97144f0-a39e-433b-aea3-5f4c935aa688:dfc9f89f-4dd6-4a58-b564-9c6162958d69:ef3d4f35-a2d5-427c-8b71-302b21b0cbb2",
+      "dataset_id": "d97144f0-a39e-433b-aea3-5f4c935aa688",
+      "document_id": "dfc9f89f-4dd6-4a58-b564-9c6162958d69",
+      "segment_id": "ef3d4f35-a2d5-427c-8b71-302b21b0cbb2",
+      "source_document": "02-network-and-vpn.txt",
+      "content": "没有画面时，先检查屏幕输入源和电脑所连网络，再重新输入屏幕当前显示的连接码。",
+      "evidence_sha256": "386e4e9b75aebad088eaab0223023233a0469aed537c342e5334c405504b6f91",
+      "position": 24
+    },
+    {
+      "stable_id": "dify:d97144f0-a39e-433b-aea3-5f4c935aa688:dfc9f89f-4dd6-4a58-b564-9c6162958d69:1af5b4fd-9341-44e7-981a-3a46bc19cd56",
+      "dataset_id": "d97144f0-a39e-433b-aea3-5f4c935aa688",
+      "document_id": "dfc9f89f-4dd6-4a58-b564-9c6162958d69",
+      "segment_id": "1af5b4fd-9341-44e7-981a-3a46bc19cd56",
+      "source_document": "02-network-and-vpn.txt",
+      "content": "NET-06：支持范围与资料边界",
+      "evidence_sha256": "ff2bc0dda1d26208af8eb528bd5341ba71a6b5e27f7c18ab287031c4b8509f21",
+      "position": 25
+    },
+    {
+      "stable_id": "dify:d97144f0-a39e-433b-aea3-5f4c935aa688:dfc9f89f-4dd6-4a58-b564-9c6162958d69:86328643-fab8-4268-839f-7abf3f8ca53d",
+      "dataset_id": "d97144f0-a39e-433b-aea3-5f4c935aa688",
+      "document_id": "dfc9f89f-4dd6-4a58-b564-9c6162958d69",
+      "segment_id": "86328643-fab8-4268-839f-7abf3f8ca53d",
+      "source_document": "02-network-and-vpn.txt",
+      "content": "网络支持组人工服务时间为工作日 09:00—18:00，时区为北京时间。连接码、证书和软件应通过公司指定入口获取。",
+      "evidence_sha256": "e8da7403d6a3f7137b9c615cda4fd77e72e456850b7a30268bc5de8fd34caba5",
+      "position": 26
+    },
+    {
+      "stable_id": "dify:d97144f0-a39e-433b-aea3-5f4c935aa688:dfc9f89f-4dd6-4a58-b564-9c6162958d69:55fa460a-fec5-4a89-936f-4ec21fca4f84",
+      "dataset_id": "d97144f0-a39e-433b-aea3-5f4c935aa688",
+      "document_id": "dfc9f89f-4dd6-4a58-b564-9c6162958d69",
+      "segment_id": "55fa460a-fec5-4a89-936f-4ec21fca4f84",
+      "source_document": "02-network-and-vpn.txt",
+      "content": "本文没有提供 VPN 出口国家列表、带宽保证值、个人设备 VPN 安装办法或供应商网络接入政策。不得把“允许远程访问”解释为允许访问任何地区或任何内部资源。",
+      "evidence_sha256": "501300b8eb9147d4382c17ee771910fb68346b9d0cffd470502d0ad75d19cfa9",
+      "position": 27
+    },
+    {
+      "stable_id": "dify:d97144f0-a39e-433b-aea3-5f4c935aa688:495099d9-1572-4f84-b483-e70768cefad3:381c4ea7-c0b3-4858-b726-1b3dfb14c399",
+      "dataset_id": "d97144f0-a39e-433b-aea3-5f4c935aa688",
+      "document_id": "495099d9-1572-4f84-b483-e70768cefad3",
+      "segment_id": "381c4ea7-c0b3-4858-b726-1b3dfb14c399",
+      "source_document": "01-account-and-mfa.txt",
+      "content": "统一账号与多因素认证操作手册",
+      "evidence_sha256": "2b3041d71826db471c5d9ac9a14966dfb5241b9cbc64bb8b269616928475063e",
+      "position": 1
+    },
+    {
+      "stable_id": "dify:d97144f0-a39e-433b-aea3-5f4c935aa688:495099d9-1572-4f84-b483-e70768cefad3:15b9550d-6e35-433e-b617-12b63bb1a5bc",
+      "dataset_id": "d97144f0-a39e-433b-aea3-5f4c935aa688",
+      "document_id": "495099d9-1572-4f84-b483-e70768cefad3",
+      "segment_id": "15b9550d-6e35-433e-b617-12b63bb1a5bc",
+      "source_document": "01-account-and-mfa.txt",
+      "content": "虚构测试资料：本文为“星河示例科技”知识库 Demo 人工编写，不是真实公司的制度，不含真实账号、个人信息或密钥。",
+      "evidence_sha256": "fed8f54af132578a00a72f9fffca0095ce222b93f0783ecc16bea9dc7eb42627",
+      "position": 2
+    },
+    {
+      "stable_id": "dify:d97144f0-a39e-433b-aea3-5f4c935aa688:495099d9-1572-4f84-b483-e70768cefad3:a1f50c0b-ce32-44f6-90a5-9c4fc6b58052",
+      "dataset_id": "d97144f0-a39e-433b-aea3-5f4c935aa688",
+      "document_id": "495099d9-1572-4f84-b483-e70768cefad3",
+      "segment_id": "a1f50c0b-ce32-44f6-90a5-9c4fc6b58052",
+      "source_document": "01-account-and-mfa.txt",
+      "content": "- 文档编号：DOC-ACCOUNT-001",
+      "evidence_sha256": "a61bad34f282b11f83e1de2572795c552ea42695582b29ad56aa7be705bade50",
+      "position": 3
+    },
+    {
+      "stable_id": "dify:d97144f0-a39e-433b-aea3-5f4c935aa688:495099d9-1572-4f84-b483-e70768cefad3:c4354821-9687-4f70-b5e6-1830a8b11173",
+      "dataset_id": "d97144f0-a39e-433b-aea3-5f4c935aa688",
+      "document_id": "495099d9-1572-4f84-b483-e70768cefad3",
+      "segment_id": "c4354821-9687-4f70-b5e6-1830a8b11173",
+      "source_document": "01-account-and-mfa.txt",
+      "content": "- 版本：1.0",
+      "evidence_sha256": "191aca1a86a1966dff6dac86cb4f26961f992bde12555171939489dd1e6c5779",
+      "position": 4
+    },
+    {
+      "stable_id": "dify:d97144f0-a39e-433b-aea3-5f4c935aa688:495099d9-1572-4f84-b483-e70768cefad3:c9743ca4-773a-4b27-97e3-ebc285ea53c9",
+      "dataset_id": "d97144f0-a39e-433b-aea3-5f4c935aa688",
+      "document_id": "495099d9-1572-4f84-b483-e70768cefad3",
+      "segment_id": "c9743ca4-773a-4b27-97e3-ebc285ea53c9",
+      "source_document": "01-account-and-mfa.txt",
+      "content": "- 生效日期：2026-11-06",
+      "evidence_sha256": "12d65f483a03fbdccb148711b2bc004311b1c0f78db1d414bba5cdd0eb3166f6",
+      "position": 5
+    },
+    {
+      "stable_id": "dify:d97144f0-a39e-433b-aea3-5f4c935aa688:495099d9-1572-4f84-b483-e70768cefad3:2d6ad2c4-36f9-4340-aa4f-980a948de309",
+      "dataset_id": "d97144f0-a39e-433b-aea3-5f4c935aa688",
+      "document_id": "495099d9-1572-4f84-b483-e70768cefad3",
+      "segment_id": "2d6ad2c4-36f9-4340-aa4f-980a948de309",
+      "source_document": "01-account-and-mfa.txt",
+      "content": "- 维护部门：IT 服务台",
+      "evidence_sha256": "b016f53688624248f0d58527d5851f35883d20a0eb2b38ecf38b2830b46398d9",
+      "position": 6
+    },
+    {
+      "stable_id": "dify:d97144f0-a39e-433b-aea3-5f4c935aa688:495099d9-1572-4f84-b483-e70768cefad3:ac5abdad-9504-42d2-9a2b-4f2593ebf08f",
+      "dataset_id": "d97144f0-a39e-433b-aea3-5f4c935aa688",
+      "document_id": "495099d9-1572-4f84-b483-e70768cefad3",
+      "segment_id": "ac5abdad-9504-42d2-9a2b-4f2593ebf08f",
+      "source_document": "01-account-and-mfa.txt",
+      "content": "- 适用范围：虚构公司的在职员工统一账号；不适用于客户账号和外部供应商账号。",
+      "evidence_sha256": "12c98d3a98dfabac7c316cefe897142e0002ecea1349bf6b06815f363c64c427",
+      "position": 7
+    },
+    {
+      "stable_id": "dify:d97144f0-a39e-433b-aea3-5f4c935aa688:495099d9-1572-4f84-b483-e70768cefad3:f6e633af-a115-4f7e-a69a-95ccabb0a233",
+      "dataset_id": "d97144f0-a39e-433b-aea3-5f4c935aa688",
+      "document_id": "495099d9-1572-4f84-b483-e70768cefad3",
+      "segment_id": "f6e633af-a115-4f7e-a69a-95ccabb0a233",
+      "source_document": "01-account-and-mfa.txt",
+      "content": "ACC-01：忘记密码如何重置",
+      "evidence_sha256": "66abdda0a4690556aab8864d63ef5c4f839c9b0777bf4d9812f7f9623909be92",
+      "position": 8
+    },
+    {
+      "stable_id": "dify:d97144f0-a39e-433b-aea3-5f4c935aa688:495099d9-1572-4f84-b483-e70768cefad3:1226c45c-3a34-4271-9c44-59be3cf308f0",
+      "dataset_id": "d97144f0-a39e-433b-aea3-5f4c935aa688",
+      "document_id": "495099d9-1572-4f84-b483-e70768cefad3",
+      "segment_id": "1226c45c-3a34-4271-9c44-59be3cf308f0",
+      "source_document": "01-account-and-mfa.txt",
+      "content": "员工忘记统一账号密码时，进入“服务门户 → 账号服务 → 密码重置”，输入员工编号，使用已绑定手机收到的短信验证码验证身份。验证通过后设置新密码，再使用新密码登录。",
+      "evidence_sha256": "dc3be05827be968acdaeb1ff1f29fc59c6dd057469c0ce4a8bb318d93a000c65",
+      "position": 9
+    },
+    {
+      "stable_id": "dify:d97144f0-a39e-433b-aea3-5f4c935aa688:495099d9-1572-4f84-b483-e70768cefad3:e032a235-d315-44cf-9c13-ae416d3809ff",
+      "dataset_id": "d97144f0-a39e-433b-aea3-5f4c935aa688",
+      "document_id": "495099d9-1572-4f84-b483-e70768cefad3",
+      "segment_id": "e032a235-d315-44cf-9c13-ae416d3809ff",
+      "source_document": "01-account-and-mfa.txt",
+      "content": "新密码至少 12 位，必须同时包含大写字母、小写字母、数字和特殊字符，且不得与最近 5 次使用过的密码相同。短信验证码有效期为 5 分钟。",
+      "evidence_sha256": "45eea4dde8d913f76537417fcdaca6d4cbb7e0fc7038dd2c10183faf4927c02e",
+      "position": 10
+    },
+    {
+      "stable_id": "dify:d97144f0-a39e-433b-aea3-5f4c935aa688:495099d9-1572-4f84-b483-e70768cefad3:9b36d268-9fb7-4cd7-aae7-34ade372e0db",
+      "dataset_id": "d97144f0-a39e-433b-aea3-5f4c935aa688",
+      "document_id": "495099d9-1572-4f84-b483-e70768cefad3",
+      "segment_id": "9b36d268-9fb7-4cd7-aae7-34ade372e0db",
+      "source_document": "01-account-and-mfa.txt",
+      "content": "员工无法接收绑定手机的验证码时，不得借用其他员工的验证码。应在服务门户选择“人工身份核验”，提交员工编号和可联系时间，由服务台通过已登记的工作联系方式回访。本文不规定人工身份核验完成时限。",
+      "evidence_sha256": "5d5d58ac68fe9f4eb3e2a51758775a065d3e533dcbccfb239ba9d841514fff18",
+      "position": 11
+    },
+    {
+      "stable_id": "dify:d97144f0-a39e-433b-aea3-5f4c935aa688:495099d9-1572-4f84-b483-e70768cefad3:7c75c3e8-d104-471e-ad22-3678c9ae1191",
+      "dataset_id": "d97144f0-a39e-433b-aea3-5f4c935aa688",
+      "document_id": "495099d9-1572-4f84-b483-e70768cefad3",
+      "segment_id": "7c75c3e8-d104-471e-ad22-3678c9ae1191",
+      "source_document": "01-account-and-mfa.txt",
+      "content": "ACC-02：账号锁定与解锁",
+      "evidence_sha256": "1f92a9d5bf4a5f22597d69ef2a6dab9c8eda52e8899cad023569c8ea1c6aace7",
+      "position": 12
+    },
+    {
+      "stable_id": "dify:d97144f0-a39e-433b-aea3-5f4c935aa688:495099d9-1572-4f84-b483-e70768cefad3:446f3ab8-eaea-4296-b005-3d6cc6186dcd",
+      "dataset_id": "d97144f0-a39e-433b-aea3-5f4c935aa688",
+      "document_id": "495099d9-1572-4f84-b483-e70768cefad3",
+      "segment_id": "446f3ab8-eaea-4296-b005-3d6cc6186dcd",
+      "source_document": "01-account-and-mfa.txt",
+      "content": "连续输错密码 5 次，账号会锁定 15 分钟，期间继续尝试登录不会提前解锁。员工可等待自动解锁，或提交“账号解锁”工单，由服务台完成身份核验后处理。",
+      "evidence_sha256": "0510875f558c848cb6aa430543745f5c126a3a3ae47e478b355e6f898bad2d3b",
+      "position": 13
+    },
+    {
+      "stable_id": "dify:d97144f0-a39e-433b-aea3-5f4c935aa688:495099d9-1572-4f84-b483-e70768cefad3:dd416d3b-3676-40cc-94b3-defc99f10351",
+      "dataset_id": "d97144f0-a39e-433b-aea3-5f4c935aa688",
+      "document_id": "495099d9-1572-4f84-b483-e70768cefad3",
+      "segment_id": "dd416d3b-3676-40cc-94b3-defc99f10351",
+      "source_document": "01-account-and-mfa.txt",
+      "content": "解锁不等于密码重置。员工仍不知道原密码时，应按照 ACC-01 重置密码。",
+      "evidence_sha256": "4e762be25361910cfe510a7f6df0812a650a8913d37fbcb381cf4b4fa6b572ce",
+      "position": 14
+    },
+    {
+      "stable_id": "dify:d97144f0-a39e-433b-aea3-5f4c935aa688:495099d9-1572-4f84-b483-e70768cefad3:d5109224-92bd-4de7-bdcd-39339244cdf4",
+      "dataset_id": "d97144f0-a39e-433b-aea3-5f4c935aa688",
+      "document_id": "495099d9-1572-4f84-b483-e70768cefad3",
+      "segment_id": "d5109224-92bd-4de7-bdcd-39339244cdf4",
+      "source_document": "01-account-and-mfa.txt",
+      "content": "ACC-03：更换多因素认证手机",
+      "evidence_sha256": "4de3501b82e13c1b81acfdf5e91842df21efe08c8a77855f71ea880007aa5192",
+      "position": 15
+    },
+    {
+      "stable_id": "dify:d97144f0-a39e-433b-aea3-5f4c935aa688:495099d9-1572-4f84-b483-e70768cefad3:f299edf1-ef28-4c41-b529-e1b3053d5f06",
+      "dataset_id": "d97144f0-a39e-433b-aea3-5f4c935aa688",
+      "document_id": "495099d9-1572-4f84-b483-e70768cefad3",
+      "segment_id": "f299edf1-ef28-4c41-b529-e1b3053d5f06",
+      "source_document": "01-account-and-mfa.txt",
+      "content": "旧手机仍可使用时，先打开“安全中心 → 多因素认证 → 添加设备”，在新手机完成绑定并通过一次验证，再移除旧手机。必须先验证新设备，再删除旧设备，避免失去登录方式。",
+      "evidence_sha256": "20ea08141c99c120efa298e3a251d353801f1529b53d2d61cf7873b54e950472",
+      "position": 16
+    },
+    {
+      "stable_id": "dify:d97144f0-a39e-433b-aea3-5f4c935aa688:495099d9-1572-4f84-b483-e70768cefad3:c21186ee-5c10-464d-b8f1-39813bd53a43",
+      "dataset_id": "d97144f0-a39e-433b-aea3-5f4c935aa688",
+      "document_id": "495099d9-1572-4f84-b483-e70768cefad3",
+      "segment_id": "c21186ee-5c10-464d-b8f1-39813bd53a43",
+      "source_document": "01-account-and-mfa.txt",
+      "content": "旧手机丢失或损坏、无法完成验证时，联系服务台申请“认证设备重绑”，完成身份核验后由服务台清除旧绑定，再由员工注册新设备。服务台不会要求员工提供密码、短信验证码或认证器动态口令。",
+      "evidence_sha256": "295700501081ad9f493788647bb9bc35a7529eea8b304e447827c9288672c16c",
+      "position": 17
+    },
+    {
+      "stable_id": "dify:d97144f0-a39e-433b-aea3-5f4c935aa688:495099d9-1572-4f84-b483-e70768cefad3:3825702c-9132-41e6-a722-7eb19319afd1",
+      "dataset_id": "d97144f0-a39e-433b-aea3-5f4c935aa688",
+      "document_id": "495099d9-1572-4f84-b483-e70768cefad3",
+      "segment_id": "3825702c-9132-41e6-a722-7eb19319afd1",
+      "source_document": "01-account-and-mfa.txt",
+      "content": "ACC-04：软件安装与管理员权限",
+      "evidence_sha256": "eb99386eceb88581725596702e629eb7ac8116f6e4993d72f02ea9c051e08bce",
+      "position": 18
+    },
+    {
+      "stable_id": "dify:d97144f0-a39e-433b-aea3-5f4c935aa688:495099d9-1572-4f84-b483-e70768cefad3:b73a6875-5623-4e65-8abe-37bc24afd81b",
+      "dataset_id": "d97144f0-a39e-433b-aea3-5f4c935aa688",
+      "document_id": "495099d9-1572-4f84-b483-e70768cefad3",
+      "segment_id": "b73a6875-5623-4e65-8abe-37bc24afd81b",
+      "source_document": "01-account-and-mfa.txt",
+      "content": "安装工作软件前，在“服务门户 → 软件申请”提交软件名称、工作用途和所需版本，由直属主管审批。审批通过后由 IT 执行安装；员工不得自行获取本地管理员权限。",
+      "evidence_sha256": "f015399a0fe8384694876785fc7dfd40ea6d366bd37b13da9ac8f5d3cf86c5c0",
+      "position": 19
+    },
+    {
+      "stable_id": "dify:d97144f0-a39e-433b-aea3-5f4c935aa688:495099d9-1572-4f84-b483-e70768cefad3:4b5d8c07-9c4d-46f8-b504-0964f0832829",
+      "dataset_id": "d97144f0-a39e-433b-aea3-5f4c935aa688",
+      "document_id": "495099d9-1572-4f84-b483-e70768cefad3",
+      "segment_id": "4b5d8c07-9c4d-46f8-b504-0964f0832829",
+      "source_document": "01-account-and-mfa.txt",
+      "content": "直属主管负责审批业务用途，IT 负责安装与技术检查。不能把“IT 执行安装”理解为“IT 代替主管审批”。本文不规定软件申请从提交到安装完成的统一时限。",
+      "evidence_sha256": "1dc05006269cc763afac3240468299dbde4294729013022bd2c223f4f1d95cc0",
+      "position": 20
+    },
+    {
+      "stable_id": "dify:d97144f0-a39e-433b-aea3-5f4c935aa688:495099d9-1572-4f84-b483-e70768cefad3:aa1dbc72-0571-4005-846e-e21fd5e9ddaf",
+      "dataset_id": "d97144f0-a39e-433b-aea3-5f4c935aa688",
+      "document_id": "495099d9-1572-4f84-b483-e70768cefad3",
+      "segment_id": "aa1dbc72-0571-4005-846e-e21fd5e9ddaf",
+      "source_document": "01-account-and-mfa.txt",
+      "content": "ACC-05：服务时间与资料边界",
+      "evidence_sha256": "32b2ef8c15ff31b093adf60e6f1bcaabd82565581071a7f9a06cc0b3d30f70b0",
+      "position": 21
+    },
+    {
+      "stable_id": "dify:d97144f0-a39e-433b-aea3-5f4c935aa688:495099d9-1572-4f84-b483-e70768cefad3:47753209-cd67-4bdf-a676-571b025669fc",
+      "dataset_id": "d97144f0-a39e-433b-aea3-5f4c935aa688",
+      "document_id": "495099d9-1572-4f84-b483-e70768cefad3",
+      "segment_id": "47753209-cd67-4bdf-a676-571b025669fc",
+      "source_document": "01-account-and-mfa.txt",
+      "content": "IT 服务台人工服务时间为工作日 09:00—18:00，时区为北京时间；自助密码重置入口全天可用。人工服务时间不等于工单解决时限。",
+      "evidence_sha256": "5be6881d4afc83e8e18f1ea2599891201849bcb8d45f313caf6fb14e8433812f",
+      "position": 22
+    },
+    {
+      "stable_id": "dify:d97144f0-a39e-433b-aea3-5f4c935aa688:495099d9-1572-4f84-b483-e70768cefad3:303f5fbe-e9e6-4696-b9d5-ef1510aa147e",
+      "dataset_id": "d97144f0-a39e-433b-aea3-5f4c935aa688",
+      "document_id": "495099d9-1572-4f84-b483-e70768cefad3",
+      "segment_id": "303f5fbe-e9e6-4696-b9d5-ef1510aa147e",
+      "source_document": "01-account-and-mfa.txt",
+      "content": "本文没有规定客户账号的密码策略、访客账号申请规则、员工年假政策或软件采购报销标准，不能从本文推断这些事项。",
+      "evidence_sha256": "c0dfb2c2968c8323e086dac76e3c9e6fd1fcc5a9bedd4b63898863758150f19c",
+      "position": 23
+    },
+    {
+      "stable_id": "dify:d97144f0-a39e-433b-aea3-5f4c935aa688:759c7ae2-7e71-4e5a-bd60-a4aa00c6e148:17954f8e-584a-415e-93a4-3da7c153144a",
+      "dataset_id": "d97144f0-a39e-433b-aea3-5f4c935aa688",
+      "document_id": "759c7ae2-7e71-4e5a-bd60-a4aa00c6e148",
+      "segment_id": "17954f8e-584a-415e-93a4-3da7c153144a",
+      "source_document": "03-shared-files-and-recovery.txt",
+      "content": "团队共享文件权限与误删恢复规范",
+      "evidence_sha256": "bf0aeda0ac8dac195480cff4ef18735c583296510766f2506b47c79db2605790",
+      "position": 1
+    },
+    {
+      "stable_id": "dify:d97144f0-a39e-433b-aea3-5f4c935aa688:759c7ae2-7e71-4e5a-bd60-a4aa00c6e148:b4f08111-e471-4bb4-aa81-e8cc252c495c",
+      "dataset_id": "d97144f0-a39e-433b-aea3-5f4c935aa688",
+      "document_id": "759c7ae2-7e71-4e5a-bd60-a4aa00c6e148",
+      "segment_id": "b4f08111-e471-4bb4-aa81-e8cc252c495c",
+      "source_document": "03-shared-files-and-recovery.txt",
+      "content": "虚构测试资料：本文为“星河示例科技”知识库 Demo 人工编写。审批、容量、保留期和服务承诺均为测试设定，不可作为真实企业操作依据。",
+      "evidence_sha256": "25e52ae0d7901373f6a5bcf8fb2266763109650b28e9df8dd1bc01f730de01ad",
+      "position": 2
+    },
+    {
+      "stable_id": "dify:d97144f0-a39e-433b-aea3-5f4c935aa688:759c7ae2-7e71-4e5a-bd60-a4aa00c6e148:5a9c08bd-77bf-46c6-b522-ae29b67e0c34",
+      "dataset_id": "d97144f0-a39e-433b-aea3-5f4c935aa688",
+      "document_id": "759c7ae2-7e71-4e5a-bd60-a4aa00c6e148",
+      "segment_id": "5a9c08bd-77bf-46c6-b522-ae29b67e0c34",
+      "source_document": "03-shared-files-and-recovery.txt",
+      "content": "- 文档编号：DOC-FILES-001",
+      "evidence_sha256": "6eaf16ba061868601988676acc3cf45fbc91d6af09915f5bb7448e2a9dec38af",
+      "position": 3
+    },
+    {
+      "stable_id": "dify:d97144f0-a39e-433b-aea3-5f4c935aa688:759c7ae2-7e71-4e5a-bd60-a4aa00c6e148:4863326a-3e45-4a25-8beb-17813462bd30",
+      "dataset_id": "d97144f0-a39e-433b-aea3-5f4c935aa688",
+      "document_id": "759c7ae2-7e71-4e5a-bd60-a4aa00c6e148",
+      "segment_id": "4863326a-3e45-4a25-8beb-17813462bd30",
+      "source_document": "03-shared-files-and-recovery.txt",
+      "content": "- 版本：1.0",
+      "evidence_sha256": "0852a6dae179ca61170fdf5cf06a6ee7186bfe15a3812fe2640a91ea0a5ecb33",
+      "position": 4
+    },
+    {
+      "stable_id": "dify:d97144f0-a39e-433b-aea3-5f4c935aa688:759c7ae2-7e71-4e5a-bd60-a4aa00c6e148:4d815204-b892-4e82-b2ff-819fe6aa412e",
+      "dataset_id": "d97144f0-a39e-433b-aea3-5f4c935aa688",
+      "document_id": "759c7ae2-7e71-4e5a-bd60-a4aa00c6e148",
+      "segment_id": "4d815204-b892-4e82-b2ff-819fe6aa412e",
+      "source_document": "03-shared-files-and-recovery.txt",
+      "content": "- 生效日期：2026-11-06",
+      "evidence_sha256": "e1b2134077ad4a59a940cebce782a7f9b7dab3da4b825e5086cb81c20cda7195",
+      "position": 5
+    },
+    {
+      "stable_id": "dify:d97144f0-a39e-433b-aea3-5f4c935aa688:759c7ae2-7e71-4e5a-bd60-a4aa00c6e148:3245ecee-2c4e-4915-bc8d-65d253081d30",
+      "dataset_id": "d97144f0-a39e-433b-aea3-5f4c935aa688",
+      "document_id": "759c7ae2-7e71-4e5a-bd60-a4aa00c6e148",
+      "segment_id": "3245ecee-2c4e-4915-bc8d-65d253081d30",
+      "source_document": "03-shared-files-and-recovery.txt",
+      "content": "- 维护部门：IT 存储支持组",
+      "evidence_sha256": "b9b1fbbd6a1d1593c129bc0f477bc96a2ca962da15d744816a9222b90e0b84cc",
+      "position": 6
+    },
+    {
+      "stable_id": "dify:d97144f0-a39e-433b-aea3-5f4c935aa688:759c7ae2-7e71-4e5a-bd60-a4aa00c6e148:b97327ea-90d4-4022-ba7a-3fa35cf439ea",
+      "dataset_id": "d97144f0-a39e-433b-aea3-5f4c935aa688",
+      "document_id": "759c7ae2-7e71-4e5a-bd60-a4aa00c6e148",
+      "segment_id": "b97327ea-90d4-4022-ba7a-3fa35cf439ea",
+      "source_document": "03-shared-files-and-recovery.txt",
+      "content": "- 适用范围：虚构公司的团队网盘和受管共享文件夹；不适用于个人电脑本地磁盘或私人网盘。",
+      "evidence_sha256": "dc4b7d09a0fa701e80b0ccf2404e60f49078c764fe64db585f55bd9d68044b0a",
+      "position": 7
+    },
+    {
+      "stable_id": "dify:d97144f0-a39e-433b-aea3-5f4c935aa688:759c7ae2-7e71-4e5a-bd60-a4aa00c6e148:e1940c65-be43-4d6d-a759-1298d5594c47",
+      "dataset_id": "d97144f0-a39e-433b-aea3-5f4c935aa688",
+      "document_id": "759c7ae2-7e71-4e5a-bd60-a4aa00c6e148",
+      "segment_id": "e1940c65-be43-4d6d-a759-1298d5594c47",
+      "source_document": "03-shared-files-and-recovery.txt",
+      "content": "FILE-01：共享文件夹权限申请",
+      "evidence_sha256": "a0cb74f363e366fea70caf946843ac429f6f84a98c95e6ed446e640496e30016",
+      "position": 8
+    },
+    {
+      "stable_id": "dify:d97144f0-a39e-433b-aea3-5f4c935aa688:759c7ae2-7e71-4e5a-bd60-a4aa00c6e148:c021c65d-7e16-48b6-aab7-6bd2769856dc",
+      "dataset_id": "d97144f0-a39e-433b-aea3-5f4c935aa688",
+      "document_id": "759c7ae2-7e71-4e5a-bd60-a4aa00c6e148",
+      "segment_id": "c021c65d-7e16-48b6-aab7-6bd2769856dc",
+      "source_document": "03-shared-files-and-recovery.txt",
+      "content": "申请共享文件夹权限时，在“服务门户 → 存储服务 → 共享权限”提交完整目录路径、申请原因、只读或读写级别，以及需要访问的人员名单。",
+      "evidence_sha256": "766c8b7f4ce7ea3cb8b2d4f3a4d735d94344e7b975638cdc7c11214fdfe97e86",
+      "position": 9
+    },
+    {
+      "stable_id": "dify:d97144f0-a39e-433b-aea3-5f4c935aa688:759c7ae2-7e71-4e5a-bd60-a4aa00c6e148:939e6430-8f83-4907-97ad-b409e4132bdd",
+      "dataset_id": "d97144f0-a39e-433b-aea3-5f4c935aa688",
+      "document_id": "759c7ae2-7e71-4e5a-bd60-a4aa00c6e148",
+      "segment_id": "939e6430-8f83-4907-97ad-b409e4132bdd",
+      "source_document": "03-shared-files-and-recovery.txt",
+      "content": "审批人为该文件夹的业务负责人。审批通过后，由 IT 在 1 个工作日内开通。这个时限从业务负责人审批完成时开始计算，不从员工提交申请时计算。",
+      "evidence_sha256": "e48774d486506a79b6ad4604c11446d8c1cae3cf8adc01d6d62b69dd25d4e0d4",
+      "position": 10
+    },
+    {
+      "stable_id": "dify:d97144f0-a39e-433b-aea3-5f4c935aa688:759c7ae2-7e71-4e5a-bd60-a4aa00c6e148:acc3177c-b366-456e-9084-e8a61d4e1a10",
+      "dataset_id": "d97144f0-a39e-433b-aea3-5f4c935aa688",
+      "document_id": "759c7ae2-7e71-4e5a-bd60-a4aa00c6e148",
+      "segment_id": "acc3177c-b366-456e-9084-e8a61d4e1a10",
+      "source_document": "03-shared-files-and-recovery.txt",
+      "content": "IT 负责执行授权，不代替业务负责人审批。直属主管批准 VPN 访问，也不自动等于文件夹业务负责人批准共享权限。",
+      "evidence_sha256": "357a2e31045aeeaa604fb648786810d20094d8c1acbec34bb1867754db75ebbb",
+      "position": 11
+    },
+    {
+      "stable_id": "dify:d97144f0-a39e-433b-aea3-5f4c935aa688:759c7ae2-7e71-4e5a-bd60-a4aa00c6e148:383c7dbd-a31d-4b61-96b4-d70ff03a0386",
+      "dataset_id": "d97144f0-a39e-433b-aea3-5f4c935aa688",
+      "document_id": "759c7ae2-7e71-4e5a-bd60-a4aa00c6e148",
+      "segment_id": "383c7dbd-a31d-4b61-96b4-d70ff03a0386",
+      "source_document": "03-shared-files-and-recovery.txt",
+      "content": "FILE-02：只读与读写权限",
+      "evidence_sha256": "7eb1b8fd86cdbba8c63a8ae191ac00d4d4e53368168a6e4361b555e58eb68a38",
+      "position": 12
+    },
+    {
+      "stable_id": "dify:d97144f0-a39e-433b-aea3-5f4c935aa688:759c7ae2-7e71-4e5a-bd60-a4aa00c6e148:9b35887a-cb3b-45c8-88ae-5676dfa8e36a",
+      "dataset_id": "d97144f0-a39e-433b-aea3-5f4c935aa688",
+      "document_id": "759c7ae2-7e71-4e5a-bd60-a4aa00c6e148",
+      "segment_id": "9b35887a-cb3b-45c8-88ae-5676dfa8e36a",
+      "source_document": "03-shared-files-and-recovery.txt",
+      "content": "只读权限允许查看和下载文件，不允许修改、上传或删除。读写权限允许在授权目录中创建和修改文件，并按该目录策略执行删除。",
+      "evidence_sha256": "8d9d05b646d61b3988d292e3993605910dac572db3f4bedd4d8e49806f5e446a",
+      "position": 13
+    },
+    {
+      "stable_id": "dify:d97144f0-a39e-433b-aea3-5f4c935aa688:759c7ae2-7e71-4e5a-bd60-a4aa00c6e148:0a6750ed-1f1d-417e-b9db-77e870c22909",
+      "dataset_id": "d97144f0-a39e-433b-aea3-5f4c935aa688",
+      "document_id": "759c7ae2-7e71-4e5a-bd60-a4aa00c6e148",
+      "segment_id": "0a6750ed-1f1d-417e-b9db-77e870c22909",
+      "source_document": "03-shared-files-and-recovery.txt",
+      "content": "需要扩大权限范围或从只读改成读写时，必须重新提交申请。权限不随文件链接转发而转移；没有授权的员工即使收到链接，也应被拒绝访问。",
+      "evidence_sha256": "0dd6097611539c65bb2998e5bf168600fae37893f789ea8d2dfa856716eb1a1d",
+      "position": 14
+    },
+    {
+      "stable_id": "dify:d97144f0-a39e-433b-aea3-5f4c935aa688:759c7ae2-7e71-4e5a-bd60-a4aa00c6e148:a71a1fd4-719a-44c5-bc25-95563ad89a90",
+      "dataset_id": "d97144f0-a39e-433b-aea3-5f4c935aa688",
+      "document_id": "759c7ae2-7e71-4e5a-bd60-a4aa00c6e148",
+      "segment_id": "a71a1fd4-719a-44c5-bc25-95563ad89a90",
+      "source_document": "03-shared-files-and-recovery.txt",
+      "content": "FILE-03：团队网盘误删文件恢复",
+      "evidence_sha256": "975e97cc3b5a9c3dd6e2dcd5152091e47e0b513b26df5d9c84feb6c1d8a8be83",
+      "position": 15
+    },
+    {
+      "stable_id": "dify:d97144f0-a39e-433b-aea3-5f4c935aa688:759c7ae2-7e71-4e5a-bd60-a4aa00c6e148:81e40ac5-13c9-4392-b51d-773d65de4d68",
+      "dataset_id": "d97144f0-a39e-433b-aea3-5f4c935aa688",
+      "document_id": "759c7ae2-7e71-4e5a-bd60-a4aa00c6e148",
+      "segment_id": "81e40ac5-13c9-4392-b51d-773d65de4d68",
+      "source_document": "03-shared-files-and-recovery.txt",
+      "content": "团队网盘文件删除后进入回收站，自删除时间起保留 30 天。员工可在“团队网盘 → 回收站”找到文件并恢复。这里的 30 天是自然日，不是工作日。",
+      "evidence_sha256": "77d28469b51e445cc714c732338d9f01e7fa7a47f1d11a67eeaccc3192bb5dcc",
+      "position": 16
+    },
+    {
+      "stable_id": "dify:d97144f0-a39e-433b-aea3-5f4c935aa688:759c7ae2-7e71-4e5a-bd60-a4aa00c6e148:6b99ccf3-c340-453a-bbd8-fb510446c5df",
+      "dataset_id": "d97144f0-a39e-433b-aea3-5f4c935aa688",
+      "document_id": "759c7ae2-7e71-4e5a-bd60-a4aa00c6e148",
+      "segment_id": "6b99ccf3-c340-453a-bbd8-fb510446c5df",
+      "source_document": "03-shared-files-and-recovery.txt",
+      "content": "文件已从回收站清空或删除超过 30 天时，不能保证自助恢复。应提交“文件恢复”工单，提供原目录、文件名和大致删除时间，由 IT 检查是否存在可用备份。",
+      "evidence_sha256": "9ec1fa81e230f66e868cb69584942264fc6029ceafb6fa8510661e17673cfeb4",
+      "position": 17
+    },
+    {
+      "stable_id": "dify:d97144f0-a39e-433b-aea3-5f4c935aa688:759c7ae2-7e71-4e5a-bd60-a4aa00c6e148:da78d263-a1d0-4f69-95bc-c7c4016616fe",
+      "dataset_id": "d97144f0-a39e-433b-aea3-5f4c935aa688",
+      "document_id": "759c7ae2-7e71-4e5a-bd60-a4aa00c6e148",
+      "segment_id": "da78d263-a1d0-4f69-95bc-c7c4016616fe",
+      "source_document": "03-shared-files-and-recovery.txt",
+      "content": "常规备份保留期为 90 天，但这不代表任何文件在 90 天内都一定可以恢复：备份中可能没有该文件，或该版本未被成功备份。回收站 30 天保留期与备份 90 天保留期是不同机制。",
+      "evidence_sha256": "2c2727182a56e8168fbc4c95ff858374576c5e6992fd1b41a435fc1b374bf7e5",
+      "position": 18
+    },
+    {
+      "stable_id": "dify:d97144f0-a39e-433b-aea3-5f4c935aa688:759c7ae2-7e71-4e5a-bd60-a4aa00c6e148:fc2fd751-8c2a-42bb-96aa-fc65fbf4c097",
+      "dataset_id": "d97144f0-a39e-433b-aea3-5f4c935aa688",
+      "document_id": "759c7ae2-7e71-4e5a-bd60-a4aa00c6e148",
+      "segment_id": "fc2fd751-8c2a-42bb-96aa-fc65fbf4c097",
+      "source_document": "03-shared-files-and-recovery.txt",
+      "content": "FILE-04：文件版本恢复",
+      "evidence_sha256": "1970ed1aa7c9d5cc50f6895c66f97450438205298e14f44936060583b50f056f",
+      "position": 19
+    },
+    {
+      "stable_id": "dify:d97144f0-a39e-433b-aea3-5f4c935aa688:759c7ae2-7e71-4e5a-bd60-a4aa00c6e148:a592aa1e-137b-49f4-8c9b-136a91a4766e",
+      "dataset_id": "d97144f0-a39e-433b-aea3-5f4c935aa688",
+      "document_id": "759c7ae2-7e71-4e5a-bd60-a4aa00c6e148",
+      "segment_id": "a592aa1e-137b-49f4-8c9b-136a91a4766e",
+      "source_document": "03-shared-files-and-recovery.txt",
+      "content": "团队网盘可保留最近 20 个历史版本。员工可在文件详情中的“版本历史”查看并恢复已有版本。版本数量上限不等于固定天数，不能据此推断“可恢复最近 20 天”。",
+      "evidence_sha256": "653e5307a1222af75eb513ef00051a33138f9c3e25c71f9bde1bcbe24b1a3d1b",
+      "position": 20
+    },
+    {
+      "stable_id": "dify:d97144f0-a39e-433b-aea3-5f4c935aa688:759c7ae2-7e71-4e5a-bd60-a4aa00c6e148:60c66e9f-8674-41b4-a12a-d9de9d496ab8",
+      "dataset_id": "d97144f0-a39e-433b-aea3-5f4c935aa688",
+      "document_id": "759c7ae2-7e71-4e5a-bd60-a4aa00c6e148",
+      "segment_id": "60c66e9f-8674-41b4-a12a-d9de9d496ab8",
+      "source_document": "03-shared-files-and-recovery.txt",
+      "content": "恢复历史版本前应通知正在协作的同事。没有出现在版本历史中的版本，不能承诺可以自助找回。",
+      "evidence_sha256": "6ce68a9226b944ba6aa13e24760c32ce955bcdbc8d29e733d93fa8630c9fb324",
+      "position": 21
+    },
+    {
+      "stable_id": "dify:d97144f0-a39e-433b-aea3-5f4c935aa688:759c7ae2-7e71-4e5a-bd60-a4aa00c6e148:91801b32-4723-4c01-85aa-3f0dc15ba1fb",
+      "dataset_id": "d97144f0-a39e-433b-aea3-5f4c935aa688",
+      "document_id": "759c7ae2-7e71-4e5a-bd60-a4aa00c6e148",
+      "segment_id": "91801b32-4723-4c01-85aa-3f0dc15ba1fb",
+      "source_document": "03-shared-files-and-recovery.txt",
+      "content": "FILE-05：邮箱大附件归档",
+      "evidence_sha256": "cc6abc261c7e04a5c4344d7c17ff90f37783886fcd90657e1c7d5083f391ef57",
+      "position": 22
+    },
+    {
+      "stable_id": "dify:d97144f0-a39e-433b-aea3-5f4c935aa688:759c7ae2-7e71-4e5a-bd60-a4aa00c6e148:cba94e51-0544-40a7-8451-5c0599c79cf4",
+      "dataset_id": "d97144f0-a39e-433b-aea3-5f4c935aa688",
+      "document_id": "759c7ae2-7e71-4e5a-bd60-a4aa00c6e148",
+      "segment_id": "cba94e51-0544-40a7-8451-5c0599c79cf4",
+      "source_document": "03-shared-files-and-recovery.txt",
+      "content": "统一邮箱容量上限为 5GB。邮箱空间不足时，可清空已删除邮件和垃圾邮件，并将需要留存的大附件归档到有权限的团队网盘目录。",
+      "evidence_sha256": "63284d1fdc3580d49a44029697a85bbf99fc5f3f6d072118779e87bb942268c2",
+      "position": 23
+    },
+    {
+      "stable_id": "dify:d97144f0-a39e-433b-aea3-5f4c935aa688:759c7ae2-7e71-4e5a-bd60-a4aa00c6e148:bb797349-0b25-461f-9f2d-e5129be7ace1",
+      "dataset_id": "d97144f0-a39e-433b-aea3-5f4c935aa688",
+      "document_id": "759c7ae2-7e71-4e5a-bd60-a4aa00c6e148",
+      "segment_id": "bb797349-0b25-461f-9f2d-e5129be7ace1",
+      "source_document": "03-shared-files-and-recovery.txt",
+      "content": "5GB 指邮箱总容量，不是单封邮件或单个附件的最大发送限制。本文没有提供单封邮件发送限制，不得根据总容量推算。",
+      "evidence_sha256": "b835bae140c6bd833d8fb020dc404e6e3b93194c0e494736c28336036fbdbdc4",
+      "position": 24
+    },
+    {
+      "stable_id": "dify:d97144f0-a39e-433b-aea3-5f4c935aa688:759c7ae2-7e71-4e5a-bd60-a4aa00c6e148:87c14092-216d-4189-a61e-ebf455ef48ad",
+      "dataset_id": "d97144f0-a39e-433b-aea3-5f4c935aa688",
+      "document_id": "759c7ae2-7e71-4e5a-bd60-a4aa00c6e148",
+      "segment_id": "87c14092-216d-4189-a61e-ebf455ef48ad",
+      "source_document": "03-shared-files-and-recovery.txt",
+      "content": "FILE-06：外部分享与资料边界",
+      "evidence_sha256": "d134d5daa63d562c7518c6b1546ae49ad9d49981f01e97a2a543508fae9d530f",
+      "position": 25
+    },
+    {
+      "stable_id": "dify:d97144f0-a39e-433b-aea3-5f4c935aa688:759c7ae2-7e71-4e5a-bd60-a4aa00c6e148:d5b2ec05-66db-41a2-a2ae-904420ba58ec",
+      "dataset_id": "d97144f0-a39e-433b-aea3-5f4c935aa688",
+      "document_id": "759c7ae2-7e71-4e5a-bd60-a4aa00c6e148",
+      "segment_id": "d5b2ec05-66db-41a2-a2ae-904420ba58ec",
+      "source_document": "03-shared-files-and-recovery.txt",
+      "content": "向公司外部人员分享团队文件前，必须取得文件业务负责人的批准，并使用获准的外部分享方式。本文不提供具体外部分享平台、链接有效期或审批完成时限。",
+      "evidence_sha256": "4fcb73d3c203b1fa0a1129d6e7e0d47b27a3bd62be453010b6bfed18e178d169",
+      "position": 26
+    },
+    {
+      "stable_id": "dify:d97144f0-a39e-433b-aea3-5f4c935aa688:759c7ae2-7e71-4e5a-bd60-a4aa00c6e148:2b37e7ff-7890-402e-89a4-e100757f1ccf",
+      "dataset_id": "d97144f0-a39e-433b-aea3-5f4c935aa688",
+      "document_id": "759c7ae2-7e71-4e5a-bd60-a4aa00c6e148",
+      "segment_id": "2b37e7ff-7890-402e-89a4-e100757f1ccf",
+      "source_document": "03-shared-files-and-recovery.txt",
+      "content": "本文不规定本地磁盘误删恢复成功率、个人网盘恢复政策、打印收费或离职人员数据保留期限。遇到这些问题应明确资料未覆盖。",
+      "evidence_sha256": "92212137cdbe7e70aa7f962082bbc3b48dfafe7c8b639f319897bed5422f70e3",
+      "position": 27
+    }
+  ],
+  "note": "导出期间应停止修改、重新分段和索引；这是导出时快照，非数据库事务快照。"
+}

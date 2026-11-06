@@ -109,6 +109,7 @@ def strict_qrels(corpus_path,qrels_dir,rows):
     if len(segments)!=len(corpus['segments']):raise qa.EvaluationError('快照片段ID重复')
     case_ids={r['id'] for r in rows if r['answerable']}
     expected={(qid,sid) for qid in case_ids for sid in segments}
+    if manifest.get('qrels_sha256') and manifest['qrels_sha256']!=hashlib.sha256((qrels_dir/'qrels.csv').read_bytes()).hexdigest():raise qa.EvaluationError('金标表哈希与审核manifest不符')
     pairs=read_csv(qrels_dir/'qrels.csv');labels={}
     for pair in pairs:
         key=(pair['question_id'],pair['stable_id'])
@@ -180,14 +181,17 @@ def analyze(run_dir,reviews,out,corpus_path=None,qrels_dir=None):
         return dict(value=statistics.mean(vals) if vals else None,evaluated=len(vals))
     times=sorted(r['total_seconds'] for r in rows)
     metrics=dict(source_run_sha256=hashlib.sha256((run_dir/'results.json').read_bytes()).hexdigest(),
-        scope='complete_corpus_human_qrels' if full else 'human_reviewed_returned_top3_only' if review_map else 'rules_and_existing_scores_only',
-        review_attribution=manifest.get('reviewer_description') if reviews else None,
+        scope='complete_corpus_reviewed_qrels' if full else 'human_reviewed_returned_top3_only' if review_map else 'rules_and_existing_scores_only',
+        review_attribution=json.loads((qrels_dir/'review-manifest.json').read_text()).get('reviewer_description') if full else (manifest.get('reviewer_description') if reviews else None),
         retrieval={k:avg(k) for k in ('precision_at_3','hit_at_3','reciprocal_rank_at_3','recall_at_3','evidence_group_coverage')},
         recall_status='available_from_complete_corpus_qrels' if full else 'pending_full_corpus_export_and_complete_qrels',
         answer_correct=dict(correct=sum(r['answer_correct'] is True for r in rows),reviewed=sum(r['answer_correct'] is not None for r in rows),total=15),
         refusal_correct=dict(correct=sum(r['refusal_correct'] is True for r in rows),reviewed=sum(r['refusal_correct'] is not None for r in rows),total=5),
         timing=dict(mean=statistics.mean(times),p95_nearest_rank=times[math.ceil(.95*len(times))-1],max=max(times),count=len(times)),
         success=dict(successful=len(rows),total=20),per_question=per)
+    if full:
+        metrics['corpus_review_manifest']=json.loads((qrels_dir/'review-manifest.json').read_text())
+        metrics['corpus_sha256']=hashlib.sha256(corpus_path.read_bytes()).hexdigest()
     if reviews:
         claims=read_csv(reviews/'claims.csv');groups=read_csv(reviews/'citation-groups.csv')
         claim_keys=set()
@@ -226,8 +230,10 @@ def analyze(run_dir,reviews,out,corpus_path=None,qrels_dir=None):
         lines.append(f"| {key} | {shown} | {val['evaluated']} |")
     lines+=['',f"回答正确：{metrics['answer_correct']['correct']}/15；拒答正确：{metrics['refusal_correct']['correct']}/5（沿用用户评分）。",'',
             f"客户端平均 {metrics['timing']['mean']:.4f}秒；P95（nearest-rank）{metrics['timing']['p95_nearest_rank']:.4f}秒，样本20。",'',
-            'Precision固定除以K=3；Hit/MRR在15道有答案题上宏平均。Recall只在完整片段快照且全部题片段组合人工审核后显示。', '',
+            'Precision固定除以K=3；Hit/MRR在15道有答案题上宏平均。Recall只在完整片段快照且全部题片段组合审核后显示。', '',
             '证据组覆盖按已有短语金标计算，与Hit不是同一指标。无答案题不进入检索指标分母。']
+    if full:
+        lines+=['','全量相关性审核：'+str(metrics['review_attribution']),'',metrics['corpus_review_manifest'].get('snapshot_caveat','')]
     if 'generation_audit' in metrics:
         audit=metrics['generation_audit']
         lines+=['','## 事实与引用审核','',

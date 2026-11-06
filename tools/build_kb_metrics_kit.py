@@ -6,7 +6,7 @@ ROOT = Path(__file__).resolve().parents[1]
 FILES = ['kb_metrics.py', 'kb_eval.py', 'dify_eval.py', 'qa_eval.py', 'manage.py',
          'knowledge-base/eval/questions.json', 'docs/knowledge-base-metrics.md']
 FILES += [str(p.relative_to(ROOT)) for p in sorted((ROOT/'knowledge-base/it-demo').glob('*.txt'))]
-FILES += [str(p.relative_to(ROOT)) for folder in ('evaluation/reviews/kb-run-01', 'reports/kb-run-01-metric-audit')
+FILES += [str(p.relative_to(ROOT)) for folder in ('evaluation/reviews/kb-run-01', 'reports/kb-run-01-metric-audit', 'reports/kb-run-01-full-metrics', 'evaluation/corpora/kb-run-01', 'evaluation/qrels/kb-run-01')
           for p in sorted((ROOT/folder).iterdir()) if p.is_file()]
 
 

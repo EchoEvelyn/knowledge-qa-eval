@@ -1,0 +1,399 @@
+{
+  "source_run_sha256": "5732638f2f87f4bc7405627631e0e32f1280bc82bf629ab2cec6eb109d285e1c",
+  "scope": "complete_corpus_reviewed_qrels",
+  "review_attribution": "助手阅读完整77段后对15题×77段作事后语义审核；非人类独立盲评，允许复核。",
+  "retrieval": {
+    "precision_at_3": {
+      "value": 0.39999999999999997,
+      "evaluated": 15
+    },
+    "hit_at_3": {
+      "value": 0.9333333333333333,
+      "evaluated": 15
+    },
+    "reciprocal_rank_at_3": {
+      "value": 0.9,
+      "evaluated": 15
+    },
+    "recall_at_3": {
+      "value": 0.8666666666666667,
+      "evaluated": 15
+    },
+    "evidence_group_coverage": {
+      "value": 0.9333333333333333,
+      "evaluated": 15
+    }
+  },
+  "recall_status": "available_from_complete_corpus_qrels",
+  "answer_correct": {
+    "correct": 13,
+    "reviewed": 15,
+    "total": 15
+  },
+  "refusal_correct": {
+    "correct": 3,
+    "reviewed": 5,
+    "total": 5
+  },
+  "timing": {
+    "mean": 6.9734986,
+    "p95_nearest_rank": 10.331544,
+    "max": 12.863828,
+    "count": 20
+  },
+  "success": {
+    "successful": 20,
+    "total": 20
+  },
+  "per_question": [
+    {
+      "id": "D01",
+      "answerable": true,
+      "source_hit": true,
+      "evidence_all_hit": true,
+      "evidence_group_coverage": 1.0,
+      "precision_at_3": 0.3333333333333333,
+      "hit_at_3": true,
+      "reciprocal_rank_at_3": 1.0,
+      "recall_at_3": 1.0,
+      "relevant_total": 1,
+      "total_seconds": 3.127932
+    },
+    {
+      "id": "D02",
+      "answerable": true,
+      "source_hit": true,
+      "evidence_all_hit": true,
+      "evidence_group_coverage": 1.0,
+      "precision_at_3": 0.3333333333333333,
+      "hit_at_3": true,
+      "reciprocal_rank_at_3": 1.0,
+      "recall_at_3": 1.0,
+      "relevant_total": 1,
+      "total_seconds": 7.82345
+    },
+    {
+      "id": "D03",
+      "answerable": true,
+      "source_hit": true,
+      "evidence_all_hit": true,
+      "evidence_group_coverage": 1.0,
+      "precision_at_3": 0.3333333333333333,
+      "hit_at_3": true,
+      "reciprocal_rank_at_3": 1.0,
+      "recall_at_3": 1.0,
+      "relevant_total": 1,
+      "total_seconds": 6.160705
+    },
+    {
+      "id": "D04",
+      "answerable": true,
+      "source_hit": true,
+      "evidence_all_hit": true,
+      "evidence_group_coverage": 1.0,
+      "precision_at_3": 0.3333333333333333,
+      "hit_at_3": true,
+      "reciprocal_rank_at_3": 1.0,
+      "recall_at_3": 1.0,
+      "relevant_total": 1,
+      "total_seconds": 9.267745
+    },
+    {
+      "id": "D05",
+      "answerable": true,
+      "source_hit": true,
+      "evidence_all_hit": true,
+      "evidence_group_coverage": 1.0,
+      "precision_at_3": 0.3333333333333333,
+      "hit_at_3": true,
+      "reciprocal_rank_at_3": 1.0,
+      "recall_at_3": 1.0,
+      "relevant_total": 1,
+      "total_seconds": 8.955606
+    },
+    {
+      "id": "D06",
+      "answerable": true,
+      "source_hit": true,
+      "evidence_all_hit": true,
+      "evidence_group_coverage": 1.0,
+      "precision_at_3": 0.6666666666666666,
+      "hit_at_3": true,
+      "reciprocal_rank_at_3": 1.0,
+      "recall_at_3": 1.0,
+      "relevant_total": 2,
+      "total_seconds": 6.33166
+    },
+    {
+      "id": "D07",
+      "answerable": true,
+      "source_hit": true,
+      "evidence_all_hit": true,
+      "evidence_group_coverage": 1.0,
+      "precision_at_3": 0.3333333333333333,
+      "hit_at_3": true,
+      "reciprocal_rank_at_3": 1.0,
+      "recall_at_3": 1.0,
+      "relevant_total": 1,
+      "total_seconds": 6.643204
+    },
+    {
+      "id": "D08",
+      "answerable": true,
+      "source_hit": true,
+      "evidence_all_hit": true,
+      "evidence_group_coverage": 1.0,
+      "precision_at_3": 0.3333333333333333,
+      "hit_at_3": true,
+      "reciprocal_rank_at_3": 1.0,
+      "recall_at_3": 1.0,
+      "relevant_total": 1,
+      "total_seconds": 5.439494
+    },
+    {
+      "id": "D09",
+      "answerable": true,
+      "source_hit": true,
+      "evidence_all_hit": true,
+      "evidence_group_coverage": 1.0,
+      "precision_at_3": 0.6666666666666666,
+      "hit_at_3": true,
+      "reciprocal_rank_at_3": 0.5,
+      "recall_at_3": 1.0,
+      "relevant_total": 2,
+      "total_seconds": 6.049137
+    },
+    {
+      "id": "D10",
+      "answerable": true,
+      "source_hit": true,
+      "evidence_all_hit": true,
+      "evidence_group_coverage": 1.0,
+      "precision_at_3": 0.6666666666666666,
+      "hit_at_3": true,
+      "reciprocal_rank_at_3": 1.0,
+      "recall_at_3": 0.5,
+      "relevant_total": 4,
+      "total_seconds": 10.331544
+    },
+    {
+      "id": "D11",
+      "answerable": true,
+      "source_hit": true,
+      "evidence_all_hit": false,
+      "evidence_group_coverage": 0.0,
+      "precision_at_3": 0.0,
+      "hit_at_3": false,
+      "reciprocal_rank_at_3": 0,
+      "recall_at_3": 0.0,
+      "relevant_total": 1,
+      "total_seconds": 4.517873
+    },
+    {
+      "id": "D12",
+      "answerable": true,
+      "source_hit": true,
+      "evidence_all_hit": true,
+      "evidence_group_coverage": 1.0,
+      "precision_at_3": 0.3333333333333333,
+      "hit_at_3": true,
+      "reciprocal_rank_at_3": 1.0,
+      "recall_at_3": 0.5,
+      "relevant_total": 2,
+      "total_seconds": 6.241223
+    },
+    {
+      "id": "D13",
+      "answerable": true,
+      "source_hit": true,
+      "evidence_all_hit": true,
+      "evidence_group_coverage": 1.0,
+      "precision_at_3": 0.3333333333333333,
+      "hit_at_3": true,
+      "reciprocal_rank_at_3": 1.0,
+      "recall_at_3": 1.0,
+      "relevant_total": 1,
+      "total_seconds": 7.425567
+    },
+    {
+      "id": "D14",
+      "answerable": true,
+      "source_hit": true,
+      "evidence_all_hit": true,
+      "evidence_group_coverage": 1.0,
+      "precision_at_3": 0.6666666666666666,
+      "hit_at_3": true,
+      "reciprocal_rank_at_3": 1.0,
+      "recall_at_3": 1.0,
+      "relevant_total": 2,
+      "total_seconds": 12.863828
+    },
+    {
+      "id": "D15",
+      "answerable": true,
+      "source_hit": true,
+      "evidence_all_hit": true,
+      "evidence_group_coverage": 1.0,
+      "precision_at_3": 0.3333333333333333,
+      "hit_at_3": true,
+      "reciprocal_rank_at_3": 1.0,
+      "recall_at_3": 1.0,
+      "relevant_total": 1,
+      "total_seconds": 9.278916
+    },
+    {
+      "id": "D16",
+      "answerable": false,
+      "source_hit": null,
+      "evidence_all_hit": null,
+      "evidence_group_coverage": null,
+      "precision_at_3": null,
+      "hit_at_3": null,
+      "reciprocal_rank_at_3": null,
+      "recall_at_3": null,
+      "relevant_total": null,
+      "total_seconds": 4.764048
+    },
+    {
+      "id": "D17",
+      "answerable": false,
+      "source_hit": null,
+      "evidence_all_hit": null,
+      "evidence_group_coverage": null,
+      "precision_at_3": null,
+      "hit_at_3": null,
+      "reciprocal_rank_at_3": null,
+      "recall_at_3": null,
+      "relevant_total": null,
+      "total_seconds": 8.501156
+    },
+    {
+      "id": "D18",
+      "answerable": false,
+      "source_hit": null,
+      "evidence_all_hit": null,
+      "evidence_group_coverage": null,
+      "precision_at_3": null,
+      "hit_at_3": null,
+      "reciprocal_rank_at_3": null,
+      "recall_at_3": null,
+      "relevant_total": null,
+      "total_seconds": 4.507186
+    },
+    {
+      "id": "D19",
+      "answerable": false,
+      "source_hit": null,
+      "evidence_all_hit": null,
+      "evidence_group_coverage": null,
+      "precision_at_3": null,
+      "hit_at_3": null,
+      "reciprocal_rank_at_3": null,
+      "recall_at_3": null,
+      "relevant_total": null,
+      "total_seconds": 7.043733
+    },
+    {
+      "id": "D20",
+      "answerable": false,
+      "source_hit": null,
+      "evidence_all_hit": null,
+      "evidence_group_coverage": null,
+      "precision_at_3": null,
+      "hit_at_3": null,
+      "reciprocal_rank_at_3": null,
+      "recall_at_3": null,
+      "relevant_total": null,
+      "total_seconds": 4.195965
+    }
+  ],
+  "corpus_review_manifest": {
+    "corpus_sha256": "e25e0c843e402b533d4514f6ccc963f2c7f339166ea7bf4da686b3c990535cca",
+    "questions_sha256": "c5610f0c357bf8b92a5a36a133390026b413939ceddee17f89f63ef81baf0098",
+    "pair_count": 1155,
+    "instructions": "逐对审查全部有答案题×全部片段。relevance=0无关/1仅背景/2支持至少一个核心答案事实，>=2为相关。suggested_only不是已完成标注。",
+    "reviewed_at": "2026-11-06T09:11:32.958945+00:00",
+    "reviewer_description": "助手阅读完整77段后对15题×77段作事后语义审核；非人类独立盲评，允许复核。",
+    "scope": "all_15_answerable_questions_x_all_77_exported_segments",
+    "qrels_sha256": "646c587d3733a9a458fa7e81660aaeb87ca36223803c55b123a05e483f3f2bdd",
+    "corpus_segment_count": 77,
+    "relevance_threshold": 2,
+    "relevance_definition": "0无关；1仅背景/标题/不同条件；2直接支持至少一个本题核心事实（不要求单段覆盖整题）。",
+    "not_inferred_from_top3": true,
+    "positive_snapshot_ordinals": {
+      "D01": [
+        37
+      ],
+      "D02": [
+        37
+      ],
+      "D03": [
+        40
+      ],
+      "D04": [
+        43
+      ],
+      "D05": [
+        44
+      ],
+      "D06": [
+        46,
+        47
+      ],
+      "D07": [
+        9
+      ],
+      "D08": [
+        10
+      ],
+      "D09": [
+        12,
+        27
+      ],
+      "D10": [
+        12,
+        13,
+        21,
+        61
+      ],
+      "D11": [
+        17
+      ],
+      "D12": [
+        60,
+        61
+      ],
+      "D13": [
+        63
+      ],
+      "D14": [
+        67,
+        68
+      ],
+      "D15": [
+        70
+      ]
+    },
+    "snapshot_caveat": "用户在测试后导出；60条历史返回均唯一映射，但这不能证明历史时点与导出时点全库内容完全相同。Recall以本快照为分母。"
+  },
+  "corpus_sha256": "e25e0c843e402b533d4514f6ccc963f2c7f339166ea7bf4da686b3c990535cca",
+  "generation_audit": {
+    "factual_claim_count": 37,
+    "supported_claim_count": 36,
+    "faithfulness": 0.972972972972973,
+    "supported_and_cited_claims": 34,
+    "citation_coverage": 0.918918918918919,
+    "citation_group_count": 15,
+    "fully_supported_groups": 14,
+    "partially_supported_groups": 1,
+    "citation_group_full_support_rate": 0.9333333333333333,
+    "no_factual_claim_ids": [
+      "D11",
+      "D16",
+      "D18",
+      "D19",
+      "D20"
+    ],
+    "caution": "事实与引用为助手事后语义审核，不是独立盲评；无事实断言不计作忠实度满分，拒答另评。"
+  }
+}
