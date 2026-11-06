@@ -101,3 +101,7 @@ y 正确、n 错误、s 待评、q 退出，退出后可重复 review 继续。�
 python -m pip install -r requirements-dev.txt
 python -m unittest discover -s tests -v
 ```
+
+## 已完成的真实验收
+
+用户已在Mac通过已发布API跑完20题并评分，见 [第三阶段实测归档](../reports/dify-run-01/README.md)。上述协议测试边界仍适用于工程测试，不能替代这份独立保存的真实运行证据。归档支持离线report查看，拒绝review改写。

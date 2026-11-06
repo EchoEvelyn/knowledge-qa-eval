@@ -1,6 +1,8 @@
 # knowledge-qa-eval
 
-项目包含第一阶段关键词检索评测，以及第二阶段 Mac 本机 Ollama 问答评测。所有 IT 服务台资料均为虚构；暂不接 Dify。
+项目已完成关键词检索、本机 Ollama 问答评测和 Dify Workflow API 批量评测三个阶段。所有 IT 服务台资料均为虚构。
+
+当前进度和启动方式见 [Demo 交付说明](docs/demo-handoff.md)；第三阶段真实实测见 [Dify 评测归档](reports/dify-run-01/README.md)。
 
 第二阶段使用原接口和原 20 题，固定 top_k=3，调用本机 qwen3:4b。安装、运行、评分及云端验证边界见 [Mac 问答评测说明](docs/phase2-mac.md)。推荐从 [统一运行与查看报告](docs/workflow.md) 开始。已完成的 [Mac 真实模型实测归档](reports/mac-run-02/README.md) 包含原始结果、人工评分和耗时。
 
@@ -80,3 +82,5 @@ Q15“文档不小心扔掉了怎样找回？”的正确片段为 IT-012，但�
 ## 第三阶段 Dify API 批量评测
 
 使用 [dify_eval.py](dify_eval.py) 调用已发布工作流，沿用原20题和人工评分，参见 [Mac运行、密钥及耗时说明](docs/dify-evaluation.md)。
+
+第三阶段已在用户 Mac 上完成20题真实API调用及人工评分：检索14/15、回答13/15、正确拒答1/5。两阶段逐题片段和答案20/20相同，详见 [跨阶段对比](reports/dify-run-01/comparison.json)。

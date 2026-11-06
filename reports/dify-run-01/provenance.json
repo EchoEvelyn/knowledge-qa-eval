@@ -1,0 +1,29 @@
+{
+  "origin": "用户上传的Mac真实Dify API批量评测与人工评分；非云端模拟运行",
+  "imported_at_utc": "2026-11-06T07:09:21.787330+00:00",
+  "integrity_checks": [
+    "20题与原固定题集逐项一致",
+    "本地数据与客户端代码SHA256一致",
+    "20个唯一工作流运行ID且工作流ID一致",
+    "20题HTTP工作流均成功、评分完整",
+    "CSV、JSON与汇总指标交叉一致",
+    "工作流原始输出与解析答案及片段一致",
+    "与第二阶段20题片段、答案、语义评分逐项比较"
+  ],
+  "files": {
+    "results.csv": {
+      "sha256": "f1a2a0a9b03539869fdfdab761beac90f9c7a8db0329a7fdaf71a35af231d2e7",
+      "bytes": 7372
+    },
+    "summary.md": {
+      "sha256": "d6c14d68f4caa44afb5138875dbf14da1dcb4af50fad71e775b7b3f5c759a216",
+      "bytes": 1049
+    },
+    "results.json": {
+      "sha256": "bbefb4ccc9e85a65fd3d5d40d543328711d8da1e7d6b9802ec3fadf74b8367cf",
+      "bytes": 86210
+    }
+  },
+  "evaluated_client_git_ref": "631f000",
+  "note": "客户端源文件哈希在归档前与631f000版本核对一致。后续报告只读改进不改写本轮原始数据。"
+}

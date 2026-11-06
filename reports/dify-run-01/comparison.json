@@ -1,0 +1,38 @@
+{
+  "source_local": "reports/mac-run-02/results.json",
+  "source_dify": "reports/dify-run-01/results.json",
+  "answer_same": 20,
+  "fragments_same": 20,
+  "judgements_same": 20,
+  "timings": {
+    "local_client": {
+      "count": 20,
+      "mean": 2.332738,
+      "median": 2.6353204999999997,
+      "max": 3.532647,
+      "total": 46.654759999999996,
+      "unit": "seconds",
+      "source_field": "total_seconds"
+    },
+    "dify_client": {
+      "count": 20,
+      "mean": 2.8125211,
+      "median": 3.176635,
+      "max": 4.191105,
+      "total": 56.250422,
+      "unit": "seconds",
+      "source_field": "total_seconds"
+    },
+    "dify_workflow": {
+      "count": 20,
+      "mean": 2.7565048492502684,
+      "median": 3.1262752930015267,
+      "max": 4.133172794001439,
+      "total": 55.130096985005366,
+      "unit": "seconds",
+      "source_field": "workflow_elapsed_seconds"
+    }
+  },
+  "client_mean_difference_seconds": 0.47978310000000013,
+  "limitation": "不同日期的单轮运行，客户端及服务端时钟口径不同；均值差不是隔离测得的Dify编排开销，Dify total_tokens不等于Ollama eval_count。"
+}

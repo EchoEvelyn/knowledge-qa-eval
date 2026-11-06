@@ -167,6 +167,11 @@ def save(directory, report):
         for record,row in zip(records,report['rows']):
             record.update({key:row.get(key) for key in fields[-3:]})
             writer.writerow(record)
+    render_report(directory)
+
+
+def render_report(directory):
+    # Viewing a report must not re-export or change original evidence.
     with contextlib.redirect_stdout(io.StringIO()):
         manage.render_report(directory)
     path=directory/'report.html'
@@ -269,12 +274,17 @@ def main():
         if args.command in ('review','report'):
             directory=manage.find_run(args.run_dir)
             report=json.loads((directory/'results.json').read_text(encoding='utf-8'))
-            if report.get('backend')!='dify' or (directory/'provenance.json').exists():
-                raise qa.EvaluationError('请选择本次 Dify 运行目录，不修改本地基线或归档')
+            if report.get('backend')!='dify':
+                raise qa.EvaluationError('请选择 Dify 运行目录')
             if args.command=='review':
+                if (directory/'provenance.json').exists():
+                    raise qa.EvaluationError('归档目录不修改评分；需要复测请使用新目录')
                 qa.review(SimpleNamespace(run_dir=directory))
                 report=json.loads((directory/'results.json').read_text(encoding='utf-8'))
-            save(directory,report)
+                save(directory,report)
+            else:
+                render_report(directory)
+                print(f'报告：{directory / "report.html"}')
             if args.command=='report' and args.open:
                 webbrowser.open((directory/'report.html').resolve().as_uri())
             return 0
