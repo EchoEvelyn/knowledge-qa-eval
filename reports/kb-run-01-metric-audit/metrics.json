@@ -1,0 +1,329 @@
+{
+  "source_run_sha256": "5732638f2f87f4bc7405627631e0e32f1280bc82bf629ab2cec6eb109d285e1c",
+  "scope": "human_reviewed_returned_top3_only",
+  "review_attribution": "助手基于已上传原始结果进行的事后语义审核；不是用户原人工评分，不是独立盲评，可复核或修改。",
+  "retrieval": {
+    "precision_at_3": {
+      "value": 0.39999999999999997,
+      "evaluated": 15
+    },
+    "hit_at_3": {
+      "value": 0.9333333333333333,
+      "evaluated": 15
+    },
+    "reciprocal_rank_at_3": {
+      "value": 0.9,
+      "evaluated": 15
+    },
+    "recall_at_3": {
+      "value": null,
+      "evaluated": 0
+    },
+    "evidence_group_coverage": {
+      "value": 0.9333333333333333,
+      "evaluated": 15
+    }
+  },
+  "recall_status": "pending_full_corpus_export_and_complete_qrels",
+  "answer_correct": {
+    "correct": 13,
+    "reviewed": 15,
+    "total": 15
+  },
+  "refusal_correct": {
+    "correct": 3,
+    "reviewed": 5,
+    "total": 5
+  },
+  "timing": {
+    "mean": 6.9734986,
+    "p95_nearest_rank": 10.331544,
+    "max": 12.863828,
+    "count": 20
+  },
+  "success": {
+    "successful": 20,
+    "total": 20
+  },
+  "per_question": [
+    {
+      "id": "D01",
+      "answerable": true,
+      "source_hit": true,
+      "evidence_all_hit": true,
+      "evidence_group_coverage": 1.0,
+      "precision_at_3": 0.3333333333333333,
+      "hit_at_3": true,
+      "reciprocal_rank_at_3": 1.0,
+      "recall_at_3": null,
+      "relevant_total": null,
+      "total_seconds": 3.127932
+    },
+    {
+      "id": "D02",
+      "answerable": true,
+      "source_hit": true,
+      "evidence_all_hit": true,
+      "evidence_group_coverage": 1.0,
+      "precision_at_3": 0.3333333333333333,
+      "hit_at_3": true,
+      "reciprocal_rank_at_3": 1.0,
+      "recall_at_3": null,
+      "relevant_total": null,
+      "total_seconds": 7.82345
+    },
+    {
+      "id": "D03",
+      "answerable": true,
+      "source_hit": true,
+      "evidence_all_hit": true,
+      "evidence_group_coverage": 1.0,
+      "precision_at_3": 0.3333333333333333,
+      "hit_at_3": true,
+      "reciprocal_rank_at_3": 1.0,
+      "recall_at_3": null,
+      "relevant_total": null,
+      "total_seconds": 6.160705
+    },
+    {
+      "id": "D04",
+      "answerable": true,
+      "source_hit": true,
+      "evidence_all_hit": true,
+      "evidence_group_coverage": 1.0,
+      "precision_at_3": 0.3333333333333333,
+      "hit_at_3": true,
+      "reciprocal_rank_at_3": 1.0,
+      "recall_at_3": null,
+      "relevant_total": null,
+      "total_seconds": 9.267745
+    },
+    {
+      "id": "D05",
+      "answerable": true,
+      "source_hit": true,
+      "evidence_all_hit": true,
+      "evidence_group_coverage": 1.0,
+      "precision_at_3": 0.3333333333333333,
+      "hit_at_3": true,
+      "reciprocal_rank_at_3": 1.0,
+      "recall_at_3": null,
+      "relevant_total": null,
+      "total_seconds": 8.955606
+    },
+    {
+      "id": "D06",
+      "answerable": true,
+      "source_hit": true,
+      "evidence_all_hit": true,
+      "evidence_group_coverage": 1.0,
+      "precision_at_3": 0.6666666666666666,
+      "hit_at_3": true,
+      "reciprocal_rank_at_3": 1.0,
+      "recall_at_3": null,
+      "relevant_total": null,
+      "total_seconds": 6.33166
+    },
+    {
+      "id": "D07",
+      "answerable": true,
+      "source_hit": true,
+      "evidence_all_hit": true,
+      "evidence_group_coverage": 1.0,
+      "precision_at_3": 0.3333333333333333,
+      "hit_at_3": true,
+      "reciprocal_rank_at_3": 1.0,
+      "recall_at_3": null,
+      "relevant_total": null,
+      "total_seconds": 6.643204
+    },
+    {
+      "id": "D08",
+      "answerable": true,
+      "source_hit": true,
+      "evidence_all_hit": true,
+      "evidence_group_coverage": 1.0,
+      "precision_at_3": 0.3333333333333333,
+      "hit_at_3": true,
+      "reciprocal_rank_at_3": 1.0,
+      "recall_at_3": null,
+      "relevant_total": null,
+      "total_seconds": 5.439494
+    },
+    {
+      "id": "D09",
+      "answerable": true,
+      "source_hit": true,
+      "evidence_all_hit": true,
+      "evidence_group_coverage": 1.0,
+      "precision_at_3": 0.6666666666666666,
+      "hit_at_3": true,
+      "reciprocal_rank_at_3": 0.5,
+      "recall_at_3": null,
+      "relevant_total": null,
+      "total_seconds": 6.049137
+    },
+    {
+      "id": "D10",
+      "answerable": true,
+      "source_hit": true,
+      "evidence_all_hit": true,
+      "evidence_group_coverage": 1.0,
+      "precision_at_3": 0.6666666666666666,
+      "hit_at_3": true,
+      "reciprocal_rank_at_3": 1.0,
+      "recall_at_3": null,
+      "relevant_total": null,
+      "total_seconds": 10.331544
+    },
+    {
+      "id": "D11",
+      "answerable": true,
+      "source_hit": true,
+      "evidence_all_hit": false,
+      "evidence_group_coverage": 0.0,
+      "precision_at_3": 0.0,
+      "hit_at_3": false,
+      "reciprocal_rank_at_3": 0,
+      "recall_at_3": null,
+      "relevant_total": null,
+      "total_seconds": 4.517873
+    },
+    {
+      "id": "D12",
+      "answerable": true,
+      "source_hit": true,
+      "evidence_all_hit": true,
+      "evidence_group_coverage": 1.0,
+      "precision_at_3": 0.3333333333333333,
+      "hit_at_3": true,
+      "reciprocal_rank_at_3": 1.0,
+      "recall_at_3": null,
+      "relevant_total": null,
+      "total_seconds": 6.241223
+    },
+    {
+      "id": "D13",
+      "answerable": true,
+      "source_hit": true,
+      "evidence_all_hit": true,
+      "evidence_group_coverage": 1.0,
+      "precision_at_3": 0.3333333333333333,
+      "hit_at_3": true,
+      "reciprocal_rank_at_3": 1.0,
+      "recall_at_3": null,
+      "relevant_total": null,
+      "total_seconds": 7.425567
+    },
+    {
+      "id": "D14",
+      "answerable": true,
+      "source_hit": true,
+      "evidence_all_hit": true,
+      "evidence_group_coverage": 1.0,
+      "precision_at_3": 0.6666666666666666,
+      "hit_at_3": true,
+      "reciprocal_rank_at_3": 1.0,
+      "recall_at_3": null,
+      "relevant_total": null,
+      "total_seconds": 12.863828
+    },
+    {
+      "id": "D15",
+      "answerable": true,
+      "source_hit": true,
+      "evidence_all_hit": true,
+      "evidence_group_coverage": 1.0,
+      "precision_at_3": 0.3333333333333333,
+      "hit_at_3": true,
+      "reciprocal_rank_at_3": 1.0,
+      "recall_at_3": null,
+      "relevant_total": null,
+      "total_seconds": 9.278916
+    },
+    {
+      "id": "D16",
+      "answerable": false,
+      "source_hit": null,
+      "evidence_all_hit": null,
+      "evidence_group_coverage": null,
+      "precision_at_3": null,
+      "hit_at_3": null,
+      "reciprocal_rank_at_3": null,
+      "recall_at_3": null,
+      "relevant_total": null,
+      "total_seconds": 4.764048
+    },
+    {
+      "id": "D17",
+      "answerable": false,
+      "source_hit": null,
+      "evidence_all_hit": null,
+      "evidence_group_coverage": null,
+      "precision_at_3": null,
+      "hit_at_3": null,
+      "reciprocal_rank_at_3": null,
+      "recall_at_3": null,
+      "relevant_total": null,
+      "total_seconds": 8.501156
+    },
+    {
+      "id": "D18",
+      "answerable": false,
+      "source_hit": null,
+      "evidence_all_hit": null,
+      "evidence_group_coverage": null,
+      "precision_at_3": null,
+      "hit_at_3": null,
+      "reciprocal_rank_at_3": null,
+      "recall_at_3": null,
+      "relevant_total": null,
+      "total_seconds": 4.507186
+    },
+    {
+      "id": "D19",
+      "answerable": false,
+      "source_hit": null,
+      "evidence_all_hit": null,
+      "evidence_group_coverage": null,
+      "precision_at_3": null,
+      "hit_at_3": null,
+      "reciprocal_rank_at_3": null,
+      "recall_at_3": null,
+      "relevant_total": null,
+      "total_seconds": 7.043733
+    },
+    {
+      "id": "D20",
+      "answerable": false,
+      "source_hit": null,
+      "evidence_all_hit": null,
+      "evidence_group_coverage": null,
+      "precision_at_3": null,
+      "hit_at_3": null,
+      "reciprocal_rank_at_3": null,
+      "recall_at_3": null,
+      "relevant_total": null,
+      "total_seconds": 4.195965
+    }
+  ],
+  "generation_audit": {
+    "factual_claim_count": 37,
+    "supported_claim_count": 36,
+    "faithfulness": 0.972972972972973,
+    "supported_and_cited_claims": 34,
+    "citation_coverage": 0.918918918918919,
+    "citation_group_count": 15,
+    "fully_supported_groups": 14,
+    "partially_supported_groups": 1,
+    "citation_group_full_support_rate": 0.9333333333333333,
+    "no_factual_claim_ids": [
+      "D11",
+      "D16",
+      "D18",
+      "D19",
+      "D20"
+    ],
+    "caution": "事实与引用为助手事后语义审核，不是独立盲评；无事实断言不计作忠实度满分，拒答另评。"
+  }
+}

@@ -1,0 +1,16 @@
+﻿question_id,cited_ids,support,reviewer,reason
+D01,"[""KB-1""]",full,assistant_posthoc_review,引用组内资料共同支持对应回答；D19引用支持资料未规定时限。
+D02,"[""KB-1""]",full,assistant_posthoc_review,引用组内资料共同支持对应回答；D19引用支持资料未规定时限。
+D03,"[""KB-1""]",full,assistant_posthoc_review,引用组内资料共同支持对应回答；D19引用支持资料未规定时限。
+D04,"[""KB-1""]",full,assistant_posthoc_review,引用组内资料共同支持对应回答；D19引用支持资料未规定时限。
+D05,"[""KB-1""]",full,assistant_posthoc_review,引用组内资料共同支持对应回答；D19引用支持资料未规定时限。
+D06,"[""KB-1"", ""KB-2""]",full,assistant_posthoc_review,引用组内资料共同支持对应回答；D19引用支持资料未规定时限。
+D07,"[""KB-1""]",full,assistant_posthoc_review,引用组内资料共同支持对应回答；D19引用支持资料未规定时限。
+D08,"[""KB-1""]",full,assistant_posthoc_review,引用组内资料共同支持对应回答；D19引用支持资料未规定时限。
+D09,"[""KB-2""]",partial,assistant_posthoc_review,客户端名称有依据，但个人电脑接入结论不被支持。
+D10,"[""KB-1"", ""KB-3""]",full,assistant_posthoc_review,引用组内资料共同支持对应回答；D19引用支持资料未规定时限。
+D12,"[""KB-1""]",full,assistant_posthoc_review,引用组内资料共同支持对应回答；D19引用支持资料未规定时限。
+D13,"[""KB-1""]",full,assistant_posthoc_review,引用组内资料共同支持对应回答；D19引用支持资料未规定时限。
+D14,"[""KB-1"", ""KB-2""]",full,assistant_posthoc_review,引用组内资料共同支持对应回答；D19引用支持资料未规定时限。
+D15,"[""KB-1""]",full,assistant_posthoc_review,引用组内资料共同支持对应回答；D19引用支持资料未规定时限。
+D19,"[""KB-1""]",full,assistant_posthoc_review,引用组内资料共同支持对应回答；D19引用支持资料未规定时限。
