@@ -76,3 +76,7 @@ Q15“文档不小心扔掉了怎样找回？”的正确片段为 IT-012，但�
 ## Dify 与本地配置对齐
 
 直接导入 [对齐工作流包](dify/knowledge-qa-eval-aligned.ifpkg)，按 [配置与验证说明](docs/dify-alignment.md) 进行单题测试。维护者运行完整测试前安装 requirements-dev.txt。
+
+## 第三阶段 Dify API 批量评测
+
+使用 [dify_eval.py](dify_eval.py) 调用已发布工作流，沿用原20题和人工评分，参见 [Mac运行、密钥及耗时说明](docs/dify-evaluation.md)。
