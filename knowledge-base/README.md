@@ -1,18 +1,22 @@
 # 自有知识库入库测试材料
 
-三份中文 Markdown 为人工编写的虚构企业 IT 服务台资料，仅用于 Dify 文档入库和问答测试，不含真实企业数据或凭据。
+三份中文资料为人工编写的虚构企业 IT 服务台资料，提供 UTF-8 TXT 上传版和 Markdown 源文件，仅用于 Dify 文档入库和问答测试，不含真实企业数据或凭据。
 
 | 文件 | 主题 | 适合观察的现象 |
 |---|---|---|
-| it-demo/01-account-and-mfa.md | 账号、密码、认证换机、软件审批 | 操作顺序、身份核验、主管和IT角色 |
-| it-demo/02-network-and-vpn.md | Wi-Fi、VPN、投屏 | 跨文档引用、网络权限不等于资源权限 |
-| it-demo/03-shared-files-and-recovery.md | 共享权限、误删恢复、历史版本 | 时限起点、自然日与工作日、容量与发送限制区别 |
+| [01-account-and-mfa.txt](it-demo/01-account-and-mfa.txt) | 账号、密码、认证换机、软件审批 | 操作顺序、身份核验、主管和IT角色 |
+| [02-network-and-vpn.txt](it-demo/02-network-and-vpn.txt) | Wi-Fi、VPN、投屏 | 跨文档引用、网络权限不等于资源权限 |
+| [03-shared-files-and-recovery.txt](it-demo/03-shared-files-and-recovery.txt) | 共享权限、误删恢复、历史版本 | 时限起点、自然日与工作日、容量与发送限制区别 |
 
-可下载 it-demo-materials.zip，解压后只上传其中三份.md到Dify知识库。也可逐份从GitHub Download raw file下载。不要把本README上传，它含测试题与参考判断。
+推荐下载 [it-demo-materials.zip](it-demo-materials.zip)，解压后只上传其中三份 `.txt` 到 Dify 知识库。压缩包不包含 Markdown、说明或参考题，避免重复导入和答案泄漏。也可点击上表 TXT 链接，再用 GitHub 的 Download raw file 逐份下载。
+
+用户本机实测同内容 TXT 可上传、MD 上传失败，因此当前推荐 TXT。尚未确认 MD 失败的具体原因，不据此认定 Dify 普遍不支持 Markdown。原 `.md` 文件继续作为源文件保留，TXT 与其内容按字节一致（包含原有标题标记）。只选择一种格式导入，不要把同内容的 MD 和 TXT 都上传。
+
+不要把本 README 上传，它含测试题与参考判断。
 
 ## 入库建议
 
-创建一个新的测试知识库，配置Embedding模型后上传三份.md，检查预览保留标题、章节和文档编号，再完成索引。优先保持完整的小节，避免把前提条件与时限切到彼此无关的片段。具体分段长度可在看到实际片段后调整，不要求一开始优化准确率。
+创建一个新的测试知识库，上传三份 `.txt` 并配置 Embedding 模型，检查预览保留标题、章节和文档编号，再完成索引。优先保持完整的小节，避免把前提条件与时限切到彼此无关的片段。具体分段长度可在看到实际片段后调整，不要求一开始优化准确率。
 
 以新工作流测试，保留原固定JSON检索流程和20题基线。Dify自动生成的片段ID与章节编号不是一回事；初期先核对返回文本及来源文档，不要沿用原题集的IT-001等正确片段标签。
 
