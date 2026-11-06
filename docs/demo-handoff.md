@@ -2,13 +2,14 @@
 
 目标：搭通知识问答从资料检索到应用编排、API批量评测、人工评分及报告归档的完整流程。准确率为基线观察值，不作为本轮阻塞项。
 
-## 已完成的三个阶段
+## 原基线三个阶段及新增文档知识库
 
 | 阶段 | 能力 | 实跑与交付 |
 |---|---|---|
 | 第一阶段 | FastAPI 关键词检索，12条虚构资料，20道固定题，top_k=3/5 | [检索报告](../reports/report.md)，两组命中14/15，HTTP正常/无匹配/缺参数验证完成 |
 | 第二阶段 | Python直接检索并调用本机Ollama，逐题保存、评分与HTML | [Mac实测](../reports/mac-run-02/README.md)，20题完成并评分 |
 | 第三阶段 | Docker Dify编排、动态query、对齐提示词/Schema、发布API和20题评测 | [Dify实测](../reports/dify-run-01/README.md)，20题完成并评分 |
+| 第四阶段 | 三份TXT、自有Dify Knowledge、bge-m3向量检索与问答 | [单题节点执行成功](../reports/knowledge-base-smoke/README.md)，尚未进行新题集批量评测 |
 
 正式第三阶段链路：
 
@@ -26,16 +27,16 @@ flowchart LR
 
 本轮Dify返回的片段、回答文本和人工判断均与第二阶段20/20逐题相同：检索14/15、回答13/15、正确拒答1/5。第三阶段客户端平均2.81秒，第二阶段2.33秒；不同运行的均值差不能等同于纯Dify编排开销。
 
-## Mac 当前需要的服务
+## Mac 服务：按所运行的应用选择
 
 | 服务 | 地址/端口 | 用途 |
 |---|---|---|
 | Docker Dify / Nginx | http://localhost，API http://localhost/v1 | 界面、已发布工作流和鉴权 |
-| 本机 FastAPI | 0.0.0.0:8765 | Dify请求 /retrieval |
-| 本机 Ollama | 11434 | Dify凭据 http://host.docker.internal:11434 |
+| 本机 FastAPI | 0.0.0.0:8765 | 旧aligned基线需要；新文档知识库路径不需要 |
+| 本机 Ollama | 11434 | qwen3:4b回答；文档知识库另用bge-m3做Embedding |
 | 诊断转发器 | 11435 | 临时排查工具，正式运行不需要 |
 
-API容器的5001未映射到Mac，评测使用Nginx的80端口，不使用页面中自动拼出的5001地址。只保留一个检索服务。Dify里的Knowledge没有导入资料，本项目通过HTTP接口读取data/corpus.json。
+API容器的5001未映射到Mac，评测使用Nginx的80端口，不使用页面中自动拼出的5001地址。只保留一个检索服务。原aligned基线通过HTTP读取data/corpus.json；新增文档知识库应用已使用Dify Knowledge，不再经过该接口。
 
 ## 下次启动与运行
 
@@ -47,7 +48,7 @@ cd /Users/echo/Desktop/dify-main/docker
 docker compose -p qa-dify -f docker-compose.yaml -f compose.host-access.yaml up -d
 ```
 
-3. 在项目终端启动一个检索服务并保持运行：
+3. 仅运行旧aligned基线时，在项目终端启动一个检索服务并保持运行。若只演示新文档知识库，跳过本步与下面旧20题命令，直接参见[文档知识库指南](document-knowledge-base.md)：
 
 ```bash
 cd /Users/echo/Desktop/knowledge-qa-eval-main
@@ -92,4 +93,4 @@ python3 dify_eval.py report --run-dir reports/dify-run-01 --open
 
 当前是本机可复现Demo：虚构小语料、固定题集、人工评分，不是生产系统。尚未接入真实业务资料，也未完成生产鉴权权限体系、多人并发、持续监控或自动独立语义评审。
 
-如继续推进，应根据用途选择真实资料导入、可视化评测台或自动批量回归；不用再为当前闭环反复优化这20题准确率。
+新增虚构文档的入库与单题流程已完成，建议下一步归档新应用导出包、建立新题集和稳定片段证据，再选择API批量回归或评测台页面。完整整理见[项目总览](project-overview.md)，不用重新跑原20题。

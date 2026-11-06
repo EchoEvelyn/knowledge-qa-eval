@@ -1,86 +1,103 @@
 # knowledge-qa-eval
 
-项目已完成关键词检索、本机 Ollama 问答评测和 Dify Workflow API 批量评测三个阶段。所有 IT 服务台资料均为虚构。
+一个在 Mac 本地搭建的中文知识问答与评测 Demo：从 FastAPI 关键词检索，逐步接入 Ollama、Dify 工作流/API，再扩展到自有文档的 Embedding 向量知识库。重点是端到端流程可运行、可保存、可评分和可复现；资料均为虚构测试内容。
 
-当前进度和启动方式见 [Demo 交付说明](docs/demo-handoff.md)；第三阶段真实实测见 [Dify 评测归档](reports/dify-run-01/README.md)。
+## 当前进展
 
-第二阶段使用原接口和原 20 题，固定 top_k=3，调用本机 qwen3:4b。安装、运行、评分及云端验证边界见 [Mac 问答评测说明](docs/phase2-mac.md)。推荐从 [统一运行与查看报告](docs/workflow.md) 开始。已完成的 [Mac 真实模型实测归档](reports/mac-run-02/README.md) 包含原始结果、人工评分和耗时。
+| 阶段 | 内容 | 已验证范围 |
+|---|---|---|
+| 1. 检索基线 | FastAPI + 12条JSON资料 + 20题，top_k=3/5 | HTTP验证与两组检索评测完成 |
+| 2. 本地问答 | Python直接调用检索和Ollama qwen3:4b | Mac真实20题生成、人工评分及报告完成 |
+| 3. Dify应用/API | 可导入的对齐工作流、动态query、发布API | Mac真实20题API评测、评分和归档完成 |
+| 4. 文档向量知识库 | 三份TXT入库、bge-m3、Knowledge Retrieval | 用户在Mac单题跑通全节点；尚无新语料批量评测 |
+
+完整架构、文件说明与当前边界见 [项目总览](docs/project-overview.md)。
+
+## 两条现有链路
+
+**已归档的固定题集基线：**
+
+```text
+原20题 → dify_eval.py → Dify aligned工作流
+→ FastAPI /retrieval → 12条JSON资料 → Ollama → 保存/评分/报告
+```
+
+**最新跑通的文档知识库：**
+
+```text
+三份TXT → Dify解析分段 → bge-m3向量化 → Dify知识库
+用户query → Knowledge Retrieval → 组装提示 → qwen3:4b
+→ 解析模型JSON → Output
+```
+
+文档知识库路径不调用原FastAPI检索接口；8765服务仅在运行旧基线时需要。原应用和评测结果继续保留。
+
+## 实测结果与证据
+
+| 指标 | 第二阶段本地直连 | 第三阶段Dify API |
+|---|---|---|
+| 工程运行 | 20/20成功 | 20/20成功 |
+| 检索命中 | 14/15 | 14/15 |
+| 有答案题回答正确 | 13/15 | 13/15 |
+| 无答案题正确拒答 | 1/5 | 1/5 |
+| 客户端每题平均耗时 | 2.33秒 | 2.81秒 |
+
+两阶段20题的片段、答案文本和评分逐项相同。不同日期运行的均值差不等同于纯Dify编排开销。
+
+- [第二阶段Mac原始结果](reports/mac-run-02/README.md)
+- [第三阶段Dify原始结果与对比](reports/dify-run-01/README.md)
+- [最新文档知识库单题验证记录](reports/knowledge-base-smoke/README.md)
+
+原20题与正确片段标签仅针对12条JSON资料，不用于直接评价新文档知识库。第四阶段的截图确认工程连通性，不冒充新的准确率报告。
+
+## 从哪里开始
+
+| 目的 | 文档/入口 |
+|---|---|
+| 查看全项目结构和进展 | [项目总览](docs/project-overview.md) |
+| 运行原基线、了解端口 | [Demo交付与启动](docs/demo-handoff.md) |
+| 用Python直接调用本机模型 | [统一运行说明](docs/workflow.md)，`python manage.py run` |
+| 通过已发布Dify API评测 | [Dify评测指南](docs/dify-evaluation.md)，`python3 dify_eval.py run` |
+| 导入固定JSON检索的Dify应用 | [对齐工作流说明](docs/dify-alignment.md) |
+| 上传自有测试文档、接向量检索 | [文档知识库配置](docs/document-knowledge-base.md) |
+| 下载三份测试材料 | [仅含TXT的ZIP](knowledge-base/it-demo-materials.zip) |
+| 查看第一阶段接口和检索规则 | [检索基线说明](docs/retrieval-baseline.md) |
+| 临时诊断Ollama请求 | [诊断工具说明](docs/ollama-probe.md) |
+
+## 核心目录
+
+```text
+app.py                     FastAPI关键词检索服务
+qa_eval.py                 本地Ollama问答评测与人工评分
+manage.py                  本地运行、预检及HTML报告入口
+dify_eval.py               已发布Dify aligned工作流的20题评测
+ollama_probe.py            临时诊断转发器，正常运行无需启动
+data/                      原12条资料、20题及评分标准
+dify/                      第三阶段aligned应用的YAML和ifpkg
+knowledge-base/             三份虚构文档，TXT上传版及Markdown源文件
+reports/                   实测原始证据、评分、对比及工程测试日志
+docs/                      操作、架构和交付说明
+tools/                     对齐工作流生成器
+tests/                     接口、流程、产物和归档检查
+```
+
+当前文档知识库工作流在用户Mac的Dify中手动配置；尚未导出到本仓库。`dify/knowledge-qa-eval-aligned.ifpkg` 仍是旧JSON基线应用，不是新文档知识库应用。
+
+## 环境和工程检查
+
+运行环境：Python 3.10+、Mac Ollama；Dify分支需要Docker Desktop。首次创建环境，已有qa环境只需激活：
 
 ```bash
+python3 -m venv qa
 source qa/bin/activate
-python manage.py run
-python manage.py review
-python manage.py report --open
-```
-
-以下保留第一阶段说明。
-
-## 环境和启动
-
-需要 Python 3.10+；本次实际使用 Python 3.12。以下命令在仓库根目录运行。
-
-```bash
-python -m venv .venv
-source .venv/bin/activate
 python -m pip install -r requirements.txt
-python -m uvicorn app:app --host 127.0.0.1 --port 8765
 ```
 
-服务启动后，在另一个终端运行：
+维护者运行包含工作流产物校验的完整工程检查：
 
 ```bash
-source .venv/bin/activate
-python evaluate.py --base-url http://127.0.0.1:8765
+python -m pip install -r requirements-dev.txt
+python -m unittest discover -s tests -v
 ```
 
-脚本使用真实 HTTP 请求，先验证接口，再用同一份固定题集分别运行 k=3、k=5；任何接口状态、数据数量或排序断言失败会以非零状态退出。可用 `--output-dir reports/reproduced` 保存新结果而保留本次报告。无需联网调用模型。
-
-## 接口
-
-`POST /retrieval`，JSON 必填字段 `query`（去空白后非空，最长 2000 字符），可选 `top_k`（整数 1–12，默认 3）。返回 `query`、`top_k` 和 `results`；片段包含 `id`、`title`、`content`、`score`、`matched_keywords`。无匹配返回 HTTP 200 和空列表，缺参数或非法参数返回 HTTP 422。交互文档：`http://127.0.0.1:8765/docs`。
-
-```bash
-# 正常检索
-curl --noproxy '*' -i http://127.0.0.1:8765/retrieval -H 'Content-Type: application/json' -d '{"query":"忘记密码怎么重置","top_k":3}'
-# 无匹配：results=[]
-curl --noproxy '*' -i http://127.0.0.1:8765/retrieval -H 'Content-Type: application/json' -d '{"query":"量子香蕉星际旅行","top_k":3}'
-# 缺少必填 query：422
-curl --noproxy '*' -i http://127.0.0.1:8765/retrieval -H 'Content-Type: application/json' -d '{"top_k":3}'
-```
-
-## 检索规则与评测口径
-
-`data/corpus.json` 包含 12 个固定片段及人工关键词。对查询与关键词做 Unicode NFKC 规范化并忽略大小写；关键词在查询中出现则计 1 分，同一关键词仅计一次。只返回正分片段，按分数降序、ID 升序排序，截取前 k 条，不补齐零分片段。此基线使用子串匹配，不做分词、词边界判断或语义推理，可能存在词内误匹配。
-
-`data/questions.json` 包含固定 20 题，15 题有答案并标注正确片段 ID，5 题无答案且正确 ID 列表为空。检索服务不读取测试题和答案标签。
-
-有答案题的正确 ID 出现在返回列表中即计命中（Hit@k，分母 15）。无答案题单独统计返回非空列表的题数（分母 5），不混入命中率。报告保存题集和语料 SHA256，便于核实两组使用相同数据。
-
-## 本次实跑
-
-| top_k | 命中 | 漏题 | 无答案仍返回 |
-|---|---|---|---|
-| 3 | 14/15（93.3%） | Q15 | 3/5（Q16、Q17、Q18） |
-| 5 | 14/15（93.3%） | Q15 | 3/5（Q16、Q17、Q18） |
-
-Q15“文档不小心扔掉了怎样找回？”的正确片段为 IT-012，但关键词未覆盖这些同义表达。Q16–Q18 分别询问 VPN 出口国家、邮箱单封发送限制、打印收费，相关资料没有给出答案，却因主题关键词匹配而返回片段。增加 k 无法修复这两种问题。
-
-- `reports/report.md`：汇总、逐题 ID 与判定。
-- `reports/results.csv`：40 行逐题结果，含题目、标注 ID、返回 ID、命中和误返回。
-- `reports/results.json`：完整原始 HTTP 验证请求/响应及全部 40 次检索响应（含分数和关键词）、运行时间、数据哈希。
-
-执行环境最初禁止创建 socket；本次在获得执行权限后实际启动 Uvicorn，并使用 HTTP 访问本机 8765 端口完成验证，并非直接调用函数或 TestClient。本题集仅用于小规模可复现基线，不能外推真实业务准确率。
-
-## Dify 参数诊断
-
-若 Dify 已设置 think=false 但仍出现思考或速度异常，可用 [本地 Ollama 参数诊断转发器](docs/ollama-probe.md) 检查实际 HTTP 请求，无需重新安装环境。
-
-## Dify 与本地配置对齐
-
-直接导入 [对齐工作流包](dify/knowledge-qa-eval-aligned.ifpkg)，按 [配置与验证说明](docs/dify-alignment.md) 进行单题测试。维护者运行完整测试前安装 requirements-dev.txt。
-
-## 第三阶段 Dify API 批量评测
-
-使用 [dify_eval.py](dify_eval.py) 调用已发布工作流，沿用原20题和人工评分，参见 [Mac运行、密钥及耗时说明](docs/dify-evaluation.md)。
-
-第三阶段已在用户 Mac 上完成20题真实API调用及人工评分：检索14/15、回答13/15、正确拒答1/5。两阶段逐题片段和答案20/20相同，详见 [跨阶段对比](reports/dify-run-01/comparison.json)。
+API密钥在本地隐藏输入，不写入代码或仓库。项目是单机测试Demo，尚未接入真实企业数据、文档权限过滤、持续同步或生产并发部署。

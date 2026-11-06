@@ -1,0 +1,48 @@
+{
+  "source": "用户于2026-11-06在对话中提供的Dify TRACING截图，手工转录可见状态与数字",
+  "evidence_type": "user_screenshot_transcription",
+  "scope": "三份TXT文档知识库工作流的一次单题工程连通性验证",
+  "test_query": "文件删除超过30天，但还没到90天，是否保证能恢复？",
+  "query_provenance": "对话中沿用的测试问题；本次截图本身未展示输入正文",
+  "trace_display_time": "03:59:22 PM（截图页面显示）",
+  "nodes": [
+    {
+      "name": "User Input",
+      "status": "success",
+      "elapsed_seconds": 0.000347
+    },
+    {
+      "name": "Knowledge Retrieval",
+      "status": "success",
+      "elapsed_seconds": 2.846
+    },
+    {
+      "name": "组装与本地一致的提示",
+      "status": "success",
+      "elapsed_seconds": 0.166291
+    },
+    {
+      "name": "LLM",
+      "status": "success",
+      "elapsed_seconds": 34.791,
+      "displayed_tokens": 576
+    },
+    {
+      "name": "解析模型 JSON",
+      "status": "success",
+      "elapsed_seconds": 0.218042
+    },
+    {
+      "name": "Output",
+      "status": "success",
+      "elapsed_seconds": 0.000345
+    }
+  ],
+  "timing_note": "由界面显示数字转录，显示精度有限；节点耗时相加不等同于独立测得客户端端到端时间。displayed_tokens不是已核实的Ollama输出token。",
+  "current_workflow_export_archived": false,
+  "raw_api_response_archived": false,
+  "new_corpus_batch_evaluated": false,
+  "semantic_accuracy_verified_from_this_screenshot": false,
+  "limitation": "截图显示全部节点成功；不包含完整输入、片段和答案，不能仅凭截图证明答案正确、运行时模型参数或新知识库准确率。",
+  "visible_node_sum_seconds": 38.022025
+}
