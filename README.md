@@ -72,3 +72,7 @@ Q15“文档不小心扔掉了怎样找回？”的正确片段为 IT-012，但�
 ## Dify 参数诊断
 
 若 Dify 已设置 think=false 但仍出现思考或速度异常，可用 [本地 Ollama 参数诊断转发器](docs/ollama-probe.md) 检查实际 HTTP 请求，无需重新安装环境。
+
+## Dify 与本地配置对齐
+
+直接导入 [对齐工作流包](dify/knowledge-qa-eval-aligned.ifpkg)，按 [配置与验证说明](docs/dify-alignment.md) 进行单题测试。维护者运行完整测试前安装 requirements-dev.txt。
