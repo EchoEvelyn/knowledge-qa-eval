@@ -39,3 +39,7 @@
 ## 当前配置进度
 
 用户已将三份TXT用于Dify自建知识库，配置bge-m3高质量向量索引并完成单题工作流执行。见 [配置指南](../docs/document-knowledge-base.md) 和 [验证范围](../reports/knowledge-base-smoke/README.md)。原20题评测脚本不直接适用于这套新语料。
+
+## 独立批量题集
+
+[eval/questions.json](eval/questions.json) 为新20题，含来源、证据短语、参考答案和评分标准；仅给评测脚本使用，不上传知识库。运行方式见 [批量评测指南](../docs/knowledge-base-evaluation.md)。

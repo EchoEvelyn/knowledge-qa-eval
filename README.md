@@ -9,7 +9,7 @@
 | 1. 检索基线 | FastAPI + 12条JSON资料 + 20题，top_k=3/5 | HTTP验证与两组检索评测完成 |
 | 2. 本地问答 | Python直接调用检索和Ollama qwen3:4b | Mac真实20题生成、人工评分及报告完成 |
 | 3. Dify应用/API | 可导入的对齐工作流、动态query、发布API | Mac真实20题API评测、评分和归档完成 |
-| 4. 文档向量知识库 | 三份TXT入库、bge-m3、Knowledge Retrieval | 用户在Mac单题跑通全节点；尚无新语料批量评测 |
+| 4. 文档向量知识库 | 三份TXT入库、bge-m3、Knowledge Retrieval | Mac单题已跑通；新20题与API评测工具已准备，批量实跑待Mac完成 |
 
 完整架构、文件说明与当前边界见 [项目总览](docs/project-overview.md)。
 
@@ -80,6 +80,8 @@ docs/                      操作、架构和交付说明
 tools/                     对齐工作流生成器
 tests/                     接口、流程、产物和归档检查
 ```
+
+新文档批量评测请使用 [kb_eval.py与独立题集](docs/knowledge-base-evaluation.md)，不沿用旧dify_eval.py入口。
 
 当前文档知识库工作流在用户Mac的Dify中手动配置；尚未导出到本仓库。`dify/knowledge-qa-eval-aligned.ifpkg` 仍是旧JSON基线应用，不是新文档知识库应用。
 

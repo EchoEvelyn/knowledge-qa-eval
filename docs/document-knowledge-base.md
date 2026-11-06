@@ -114,3 +114,7 @@ JSON解析校验answer为非空字符串、insufficient为布尔值，不评价�
 3. 保留原始document_id、segment_id、文档名、版本和正文，再接新应用API与独立评测器。
 
 不要直接运行现有dify_eval.py评新库：该脚本检查旧20题、IT-ID引用和12条JSON资料，遇到KB-ID与新正文会报不一致。需要先适配再批量运行。
+
+## 新增批量评测入口
+
+新20题（D01–D20）与kb_eval.py已经准备，按 [第四阶段批量评测说明](knowledge-base-evaluation.md) 调用新文档应用API。当前仅通过工程测试，真实新题集结果仍需Mac实跑，不把旧20题分数搬到新语料。

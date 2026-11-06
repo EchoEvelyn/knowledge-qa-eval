@@ -1,0 +1,394 @@
+[
+  {
+    "id": "D01",
+    "query": "密码重置的短信验证码多久有效？",
+    "answerable": true,
+    "expected_sources": [
+      "01-account-and-mfa.txt"
+    ],
+    "expected_sections": [
+      "ACC-01"
+    ],
+    "evidence_groups": [
+      [
+        "短信验证码有效期为 5 分钟"
+      ]
+    ],
+    "reference_answer": "验证码有效期为5分钟。",
+    "rubric": "验证码有效期为5分钟。 有答案题需引用本次实际提供且支持回答的KB片段；无答案题需明确资料不足且不编造。"
+  },
+  {
+    "id": "D02",
+    "query": "新密码需要满足哪些长度、字符和历史密码要求？",
+    "answerable": true,
+    "expected_sources": [
+      "01-account-and-mfa.txt"
+    ],
+    "expected_sections": [
+      "ACC-01"
+    ],
+    "evidence_groups": [
+      [
+        "至少 12 位"
+      ],
+      [
+        "大写字母"
+      ],
+      [
+        "小写字母"
+      ],
+      [
+        "数字"
+      ],
+      [
+        "特殊字符"
+      ],
+      [
+        "最近 5 次"
+      ]
+    ],
+    "reference_answer": "至少12位，包含大小写字母、数字和特殊字符，不得与最近5次密码相同。",
+    "rubric": "至少12位，包含大小写字母、数字和特殊字符，不得与最近5次密码相同。 有答案题需引用本次实际提供且支持回答的KB片段；无答案题需明确资料不足且不编造。"
+  },
+  {
+    "id": "D03",
+    "query": "连续输错几次密码会锁定，锁定多长时间？",
+    "answerable": true,
+    "expected_sources": [
+      "01-account-and-mfa.txt"
+    ],
+    "expected_sections": [
+      "ACC-02"
+    ],
+    "evidence_groups": [
+      [
+        "输错密码 5 次"
+      ],
+      [
+        "锁定 15 分钟"
+      ]
+    ],
+    "reference_answer": "连续输错5次锁定15分钟。",
+    "rubric": "连续输错5次锁定15分钟。 有答案题需引用本次实际提供且支持回答的KB片段；无答案题需明确资料不足且不编造。"
+  },
+  {
+    "id": "D04",
+    "query": "旧手机还能用，换认证手机时先删旧设备还是先验证新设备？",
+    "answerable": true,
+    "expected_sources": [
+      "01-account-and-mfa.txt"
+    ],
+    "expected_sections": [
+      "ACC-03"
+    ],
+    "evidence_groups": [
+      [
+        "先验证新设备"
+      ],
+      [
+        "再删除旧设备"
+      ]
+    ],
+    "reference_answer": "先添加并验证新设备，再移除旧设备。",
+    "rubric": "先添加并验证新设备，再移除旧设备。 有答案题需引用本次实际提供且支持回答的KB片段；无答案题需明确资料不足且不编造。"
+  },
+  {
+    "id": "D05",
+    "query": "旧认证手机丢失后，如何重新绑定？",
+    "answerable": true,
+    "expected_sources": [
+      "01-account-and-mfa.txt"
+    ],
+    "expected_sections": [
+      "ACC-03"
+    ],
+    "evidence_groups": [
+      [
+        "旧手机丢失"
+      ],
+      [
+        "身份核验"
+      ],
+      [
+        "清除旧绑定"
+      ],
+      [
+        "注册新设备"
+      ]
+    ],
+    "reference_answer": "联系服务台完成身份核验，清除旧绑定，再注册新设备。",
+    "rubric": "联系服务台完成身份核验，清除旧绑定，再注册新设备。 有答案题需引用本次实际提供且支持回答的KB片段；无答案题需明确资料不足且不编造。"
+  },
+  {
+    "id": "D06",
+    "query": "安装工作软件由谁审批，谁负责安装？",
+    "answerable": true,
+    "expected_sources": [
+      "01-account-and-mfa.txt"
+    ],
+    "expected_sections": [
+      "ACC-04"
+    ],
+    "evidence_groups": [
+      [
+        "直属主管审批"
+      ],
+      [
+        "IT 执行安装"
+      ]
+    ],
+    "reference_answer": "直属主管审批业务用途，审批后IT执行安装。",
+    "rubric": "直属主管审批业务用途，审批后IT执行安装。 有答案题需引用本次实际提供且支持回答的KB片段；无答案题需明确资料不足且不编造。"
+  },
+  {
+    "id": "D07",
+    "query": "员工办公无线网络叫什么，首次连接前要做什么？",
+    "answerable": true,
+    "expected_sources": [
+      "02-network-and-vpn.txt"
+    ],
+    "expected_sections": [
+      "NET-01"
+    ],
+    "evidence_groups": [
+      [
+        "Nebula-Staff"
+      ],
+      [
+        "首次连接前"
+      ],
+      [
+        "安装公司无线网络证书"
+      ]
+    ],
+    "reference_answer": "Nebula-Staff，先通过软件中心安装公司无线网络证书。",
+    "rubric": "Nebula-Staff，先通过软件中心安装公司无线网络证书。 有答案题需引用本次实际提供且支持回答的KB片段；无答案题需明确资料不足且不编造。"
+  },
+  {
+    "id": "D08",
+    "query": "访客无线网络能访问公司共享文件夹吗？",
+    "answerable": true,
+    "expected_sources": [
+      "02-network-and-vpn.txt"
+    ],
+    "expected_sections": [
+      "NET-01"
+    ],
+    "evidence_groups": [
+      [
+        "访客网络只能访问互联网"
+      ],
+      [
+        "不能访问公司共享文件夹"
+      ]
+    ],
+    "reference_answer": "不能；Nebula-Guest只能访问互联网，不能访问共享文件夹或内部业务系统。",
+    "rubric": "不能；Nebula-Guest只能访问互联网，不能访问共享文件夹或内部业务系统。 有答案题需引用本次实际提供且支持回答的KB片段；无答案题需明确资料不足且不编造。"
+  },
+  {
+    "id": "D09",
+    "query": "个人电脑可以按本指南接入远程VPN吗，指定客户端叫什么？",
+    "answerable": true,
+    "expected_sources": [
+      "02-network-and-vpn.txt"
+    ],
+    "expected_sections": [
+      "NET-02"
+    ],
+    "evidence_groups": [
+      [
+        "仅允许受管电脑连接"
+      ],
+      [
+        "Nebula Connect"
+      ]
+    ],
+    "reference_answer": "本指南仅允许受管电脑连接，指定客户端为Nebula Connect；不提供个人设备接入办法。",
+    "rubric": "本指南仅允许受管电脑连接，指定客户端为Nebula Connect；不提供个人设备接入办法。 有答案题需引用本次实际提供且支持回答的KB片段；无答案题需明确资料不足且不编造。"
+  },
+  {
+    "id": "D10",
+    "query": "VPN连上后，是不是所有内部应用和共享目录都有权限？",
+    "answerable": true,
+    "expected_sources": [
+      "02-network-and-vpn.txt"
+    ],
+    "expected_sections": [
+      "NET-02"
+    ],
+    "evidence_groups": [
+      [
+        "不代表自动获得所有内部应用或共享文件夹的权限"
+      ],
+      [
+        "资源权限仍需由对应负责人批准"
+      ]
+    ],
+    "reference_answer": "不是，连接仅限获准网络范围，资源权限仍需负责人批准。",
+    "rubric": "不是，连接仅限获准网络范围，资源权限仍需负责人批准。 有答案题需引用本次实际提供且支持回答的KB片段；无答案题需明确资料不足且不编造。"
+  },
+  {
+    "id": "D11",
+    "query": "VPN仍无法连接时，报障要附哪些信息？",
+    "answerable": true,
+    "expected_sources": [
+      "02-network-and-vpn.txt"
+    ],
+    "expected_sections": [
+      "NET-03"
+    ],
+    "evidence_groups": [
+      [
+        "错误码"
+      ],
+      [
+        "发生时间"
+      ],
+      [
+        "客户端版本"
+      ]
+    ],
+    "reference_answer": "提交远程网络故障工单，附错误码、发生时间和客户端版本，不提供密码或验证码。",
+    "rubric": "提交远程网络故障工单，附错误码、发生时间和客户端版本，不提供密码或验证码。 有答案题需引用本次实际提供且支持回答的KB片段；无答案题需明确资料不足且不编造。"
+  },
+  {
+    "id": "D12",
+    "query": "共享文件夹权限由谁审批，一个工作日从什么时候开始算？",
+    "answerable": true,
+    "expected_sources": [
+      "03-shared-files-and-recovery.txt"
+    ],
+    "expected_sections": [
+      "FILE-01"
+    ],
+    "evidence_groups": [
+      [
+        "审批人为该文件夹的业务负责人"
+      ],
+      [
+        "1 个工作日"
+      ],
+      [
+        "从业务负责人审批完成时开始计算"
+      ]
+    ],
+    "reference_answer": "文件夹业务负责人审批，由IT在审批完成后1个工作日内开通，不从提交申请算。",
+    "rubric": "文件夹业务负责人审批，由IT在审批完成后1个工作日内开通，不从提交申请算。 有答案题需引用本次实际提供且支持回答的KB片段；无答案题需明确资料不足且不编造。"
+  },
+  {
+    "id": "D13",
+    "query": "共享文件夹只有只读权限，可以上传、修改或删除文件吗？",
+    "answerable": true,
+    "expected_sources": [
+      "03-shared-files-and-recovery.txt"
+    ],
+    "expected_sections": [
+      "FILE-02"
+    ],
+    "evidence_groups": [
+      [
+        "只读权限允许查看和下载文件"
+      ],
+      [
+        "不允许修改、上传或删除"
+      ]
+    ],
+    "reference_answer": "不可以，只读只允许查看和下载。",
+    "rubric": "不可以，只读只允许查看和下载。 有答案题需引用本次实际提供且支持回答的KB片段；无答案题需明确资料不足且不编造。"
+  },
+  {
+    "id": "D14",
+    "query": "文件删了超过30天、还没到90天，是否保证可以恢复？",
+    "answerable": true,
+    "expected_sources": [
+      "03-shared-files-and-recovery.txt"
+    ],
+    "expected_sections": [
+      "FILE-03"
+    ],
+    "evidence_groups": [
+      [
+        "保留期为 90 天"
+      ],
+      [
+        "不代表任何文件在 90 天内都一定可以恢复"
+      ],
+      [
+        "不同机制"
+      ]
+    ],
+    "reference_answer": "不保证。回收站30天、备份90天是不同机制，备份中可能没有该文件或版本。",
+    "rubric": "不保证。回收站30天、备份90天是不同机制，备份中可能没有该文件或版本。 有答案题需引用本次实际提供且支持回答的KB片段；无答案题需明确资料不足且不编造。"
+  },
+  {
+    "id": "D15",
+    "query": "保留最近20个文件历史版本，等于能恢复最近20天的文件吗？",
+    "answerable": true,
+    "expected_sources": [
+      "03-shared-files-and-recovery.txt"
+    ],
+    "expected_sections": [
+      "FILE-04"
+    ],
+    "evidence_groups": [
+      [
+        "最近 20 个历史版本"
+      ],
+      [
+        "版本数量上限不等于固定天数"
+      ]
+    ],
+    "reference_answer": "不等于。限制是最近20个历史版本，不是固定天数，只能恢复已有版本。",
+    "rubric": "不等于。限制是最近20个历史版本，不是固定天数，只能恢复已有版本。 有答案题需引用本次实际提供且支持回答的KB片段；无答案题需明确资料不足且不编造。"
+  },
+  {
+    "id": "D16",
+    "query": "公司VPN提供哪些国家的出口节点？",
+    "answerable": false,
+    "expected_sources": [],
+    "expected_sections": [],
+    "evidence_groups": [],
+    "reference_answer": "资料未提供出口国家列表，应明确资料不足，不得猜测。",
+    "rubric": "资料未提供出口国家列表，应明确资料不足，不得猜测。 有答案题需引用本次实际提供且支持回答的KB片段；无答案题需明确资料不足且不编造。"
+  },
+  {
+    "id": "D17",
+    "query": "公司邮箱一封邮件最多能发送多大？",
+    "answerable": false,
+    "expected_sources": [],
+    "expected_sections": [],
+    "evidence_groups": [],
+    "reference_answer": "资料未提供单封发送限制；不能把总容量5GB当作单封限制。",
+    "rubric": "资料未提供单封发送限制；不能把总容量5GB当作单封限制。 有答案题需引用本次实际提供且支持回答的KB片段；无答案题需明确资料不足且不编造。"
+  },
+  {
+    "id": "D18",
+    "query": "公司打印机打印一页收费多少钱？",
+    "answerable": false,
+    "expected_sources": [],
+    "expected_sections": [],
+    "evidence_groups": [],
+    "reference_answer": "三份资料没有打印收费，需明确资料不足，不得猜测金额或免费。",
+    "rubric": "三份资料没有打印收费，需明确资料不足，不得猜测金额或免费。 有答案题需引用本次实际提供且支持回答的KB片段；无答案题需明确资料不足且不编造。"
+  },
+  {
+    "id": "D19",
+    "query": "人工身份核验保证多少分钟内完成？",
+    "answerable": false,
+    "expected_sources": [],
+    "expected_sections": [],
+    "evidence_groups": [],
+    "reference_answer": "资料明确没有规定身份核验完成时限，不得拿服务台工作时间代替SLA。",
+    "rubric": "资料明确没有规定身份核验完成时限，不得拿服务台工作时间代替SLA。 有答案题需引用本次实际提供且支持回答的KB片段；无答案题需明确资料不足且不编造。"
+  },
+  {
+    "id": "D20",
+    "query": "员工个人电脑本地磁盘误删文件，保证恢复成功率是多少？",
+    "answerable": false,
+    "expected_sources": [],
+    "expected_sections": [],
+    "evidence_groups": [],
+    "reference_answer": "资料不规定本地磁盘误删恢复成功率，不得将团队网盘恢复规则套用到本地磁盘。",
+    "rubric": "资料不规定本地磁盘误删恢复成功率，不得将团队网盘恢复规则套用到本地磁盘。 有答案题需引用本次实际提供且支持回答的KB片段；无答案题需明确资料不足且不编造。"
+  }
+]
